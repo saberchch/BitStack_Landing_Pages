@@ -1,0 +1,187 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Hero Section -->
+<section class="py-xl px-gutter max-w-container-max mx-auto text-center flex flex-col items-center justify-center min-h-[614px] transition-colors duration-300">
+    <span class="inline-block py-1 px-3 bg-surface-variant text-on-surface-variant font-label-md text-label-md rounded uppercase tracking-widest mb-md border border-outline-variant transition-colors duration-300">For Experts & Peers</span>
+    <h1 class="font-display-lg text-display-lg text-on-background max-w-4xl mx-auto tracking-tight">
+        Share your expertise. <br/> Help others. <span class="text-primary-container">Earn through knowledge.</span>
+    </h1>
+    <p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto mt-md">
+        Mentors, teachers, and skilled users can monetize their expertise. Offer mentoring sessions, teach university modules, provide coaching, and earn BTS through structured platform workflows.
+    </p>
+    <div class="flex gap-md mt-lg justify-center">
+        <button onclick="window.location.href='/join'" class="bg-primary-container text-on-primary-container font-button text-button px-8 py-4 rounded hover:opacity-90 transition-opacity">
+            Become a Mentor
+        </button>
+        <button onclick="window.location.href='/token'" class="border border-outline-variant text-on-background font-button text-button px-8 py-4 rounded hover:bg-surface-variant transition-colors duration-300">
+            Learn about BTS
+        </button>
+    </div>
+</section>
+
+<!-- Features Grid -->
+<section class="px-8 py-xl max-w-container-max mx-auto border-t border-surface-variant transition-colors duration-300">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+        <!-- Card 1 -->
+        <div class="border border-outline-variant p-md flex flex-col gap-sm bg-surface-container-low hover:border-outline transition-colors duration-300 rounded">
+            <span class="material-symbols-outlined text-4xl text-primary-container mb-xs" style="font-variation-settings: 'FILL' 1;">view_module</span>
+            <h3 class="font-h3 text-h3 text-on-background">Create Impact</h3>
+            <p class="font-body-md text-body-md text-secondary">Share your knowledge where it's needed most. Help university students and peers grasp complex concepts and progress in their academic journeys.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="border border-outline-variant p-md flex flex-col gap-sm bg-surface-container-low hover:border-outline transition-colors duration-300 rounded">
+            <span class="material-symbols-outlined text-4xl text-primary-container mb-xs" style="font-variation-settings: 'FILL' 1;">groups</span>
+            <h3 class="font-h3 text-h3 text-on-background">Guide Students</h3>
+            <p class="font-body-md text-body-md text-secondary">Engage directly with a driven community. Utilize our mentorship channels to provide 1-on-1 guidance, project reviews, and exam preparation.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="border border-outline-variant p-md flex flex-col gap-sm bg-surface-container-low hover:border-outline transition-colors duration-300 rounded">
+            <span class="material-symbols-outlined text-4xl text-primary-container mb-xs" style="font-variation-settings: 'FILL' 1;">toll</span>
+            <h3 class="font-h3 text-h3 text-on-background">Earn BTS</h3>
+            <p class="font-body-md text-body-md text-secondary">Your time is valuable. Earn BTS tokens for successful mentoring sessions, which can be redeemed for TND following our ecosystem rules.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Value Proposition Bento Grid -->
+<section class="py-xl bg-surface-container-highest border-y border-outline-variant transition-colors duration-300">
+    <div class="max-w-container-max mx-auto px-gutter">
+        <div class="mb-lg text-center">
+            <h2 class="font-h1 text-h1 text-on-background">The Mentoring Experience</h2>
+            <p class="font-body-md text-body-md text-secondary mt-base">Designed to make helping others simple and rewarding.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+            <!-- Feature Card 1 -->
+            <div class="col-span-1 md:col-span-4 bg-surface border border-outline-variant rounded p-md flex flex-col h-full hover:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)] transition-colors duration-300">
+                <div class="w-12 h-12 bg-surface-variant rounded flex items-center justify-center mb-md border border-outline-variant">
+                    <span class="material-symbols-outlined text-on-background">calendar_month</span>
+                </div>
+                <h3 class="font-h3 text-h3 text-on-background mb-sm">Flexible Scheduling</h3>
+                <p class="font-body-md text-body-md text-secondary flex-grow">
+                    You control your availability. Set the times you are free to mentor, accept session requests that fit your schedule, and manage your commitments easily.
+                </p>
+            </div>
+            <!-- Feature Card 2 -->
+            <div class="col-span-1 md:col-span-4 bg-surface border border-outline-variant rounded p-md flex flex-col h-full hover:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)] transition-colors duration-300">
+                <div class="w-12 h-12 bg-primary-container rounded flex items-center justify-center mb-md">
+                    <span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">toll</span>
+                </div>
+                <h3 class="font-h3 text-h3 text-on-background mb-sm">Clear Rewards</h3>
+                <p class="font-body-md text-body-md text-secondary flex-grow">
+                    Set your session rate in BTS. Once a session is booked and completed, your BTS is securely credited to your ecosystem balance.
+                </p>
+            </div>
+            <!-- Feature Card 3 -->
+            <div class="col-span-1 md:col-span-4 bg-surface border border-outline-variant rounded p-md flex flex-col h-full hover:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)] transition-colors duration-300">
+                <div class="w-12 h-12 bg-surface-variant rounded flex items-center justify-center mb-md border border-outline-variant">
+                    <span class="material-symbols-outlined text-on-background">verified_user</span>
+                </div>
+                <h3 class="font-h3 text-h3 text-on-background mb-sm">Verified Community</h3>
+                <p class="font-body-md text-body-md text-secondary flex-grow">
+                    Engage with verified learners and peers. Our platform ensures you are helping real individuals who are actively seeking to improve their understanding.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Data/Metrics Section -->
+<section class="px-8 py-xl max-w-container-max mx-auto flex flex-col md:flex-row gap-lg items-center transition-colors duration-300 border-b border-surface-variant">
+    <div class="flex-1 space-y-md">
+        <h2 class="font-display-sm text-display-sm text-on-background">Track your impact.</h2>
+        <p class="font-body-md text-body-md text-secondary">A simple overview of your contributions. Your dashboard provides a clear look at how many peers you've helped and the BTS you've earned.</p>
+        <div class="space-y-sm pt-xs">
+            <div class="flex items-center gap-sm">
+                <div class="w-1.5 h-1.5 bg-primary-container"></div>
+                <span class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest">Session History</span>
+            </div>
+            <div class="flex items-center gap-sm">
+                <div class="w-1.5 h-1.5 bg-primary-container"></div>
+                <span class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest">BTS Balance Tracking</span>
+            </div>
+        </div>
+    </div>
+    <div class="flex-1 w-full border border-outline-variant rounded p-md bg-surface-container-low transition-colors duration-300">
+        <div class="flex justify-between items-end border-b border-surface-variant pb-sm mb-md">
+            <span class="font-label-bold text-label-bold text-secondary uppercase">Current Balance</span>
+            <span class="font-display-sm text-display-sm text-primary-container flex items-center gap-1">4,280 <span class="material-symbols-outlined text-xl">toll</span></span>
+        </div>
+        <div class="space-y-4">
+            <div>
+                <div class="flex justify-between text-xs font-label-bold text-label-bold text-secondary mb-2">
+                    <span>Students Helped</span>
+                    <span>142</span>
+                </div>
+                <div class="h-1 bg-surface-variant w-full rounded">
+                    <div class="h-full bg-primary-container w-[70%] rounded"></div>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between text-xs font-label-bold text-label-bold text-secondary mb-2">
+                    <span>Hours Mentored</span>
+                    <span>56</span>
+                </div>
+                <div class="h-1 bg-surface-variant w-full rounded">
+                    <div class="h-full bg-primary-container w-[45%] rounded"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Social Proof -->
+<section class="py-xl px-gutter max-w-container-max mx-auto border-t border-surface-variant transition-colors duration-300">
+    <div class="bg-inverse-surface text-inverse-on-surface border border-outline-variant rounded p-xl flex flex-col md:flex-row items-center gap-xl transition-colors duration-300">
+        <div class="md:w-1/2">
+            <span class="material-symbols-outlined text-primary-container text-5xl mb-sm" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+            <p class="font-display-sm text-display-sm tracking-tight mb-md">
+                "Bitstack allowed me to share what I learned last semester with juniors. The platform handles the scheduling and BTS rewards, so I can just focus on helping them understand the material."
+            </p>
+            <div>
+                <p class="font-button text-button text-inverse-on-surface uppercase tracking-widest">Omar B.</p>
+                <p class="font-body-sm text-body-sm text-tertiary">Senior Engineering Student & Mentor</p>
+            </div>
+        </div>
+        <div class="md:w-1/2 w-full rounded bg-surface-container-highest border border-outline-variant border-dashed p-lg flex flex-col justify-center gap-4 relative transition-colors duration-300">
+            <div class="flex items-center gap-md">
+                <div class="w-12 h-12 rounded bg-surface flex items-center justify-center text-primary-container border border-outline-variant">
+                    <span class="material-symbols-outlined">event_available</span>
+                </div>
+                <div>
+                    <p class="font-button text-button text-on-background mb-1">1. Session Booked</p>
+                    <p class="font-body-sm text-body-sm text-secondary">Learner schedules via your calendar link.</p>
+                </div>
+            </div>
+            <div class="w-0.5 h-8 bg-outline-variant ml-6"></div>
+            <div class="flex items-center gap-md">
+                <div class="w-12 h-12 rounded bg-surface flex items-center justify-center text-primary-container border border-outline-variant">
+                    <span class="material-symbols-outlined">lock</span>
+                </div>
+                <div>
+                    <p class="font-button text-button text-on-background mb-1">2. BTS Secured</p>
+                    <p class="font-body-sm text-body-sm text-secondary">BTS is held safely in escrow during the session.</p>
+                </div>
+            </div>
+            <div class="w-0.5 h-8 bg-outline-variant ml-6"></div>
+            <div class="flex items-center gap-md">
+                <div class="w-12 h-12 rounded bg-primary-container flex items-center justify-center text-on-primary-container">
+                    <span class="material-symbols-outlined">toll</span>
+                </div>
+                <div>
+                    <p class="font-button text-button text-on-background mb-1">3. Reward Issued</p>
+                    <p class="font-body-sm text-body-sm text-secondary">BTS added to your balance immediately after completion.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA -->
+<section class="py-xl text-center px-gutter border-t border-surface-variant transition-colors duration-300 bg-surface-container-lowest">
+    <h2 class="font-display-sm text-display-sm text-on-background mb-sm">Ready to share your knowledge?</h2>
+    <p class="font-body-md text-body-md text-secondary mb-lg max-w-xl mx-auto">Join the mentor network, help your peers, and earn BTS for your contributions.</p>
+    <button onclick="window.location.href='/join'" class="bg-primary-container text-on-primary-container font-button text-button px-10 py-4 rounded hover:opacity-90 transition-opacity">
+        Start Mentoring
+    </button>
+</section>
+{% endblock %}

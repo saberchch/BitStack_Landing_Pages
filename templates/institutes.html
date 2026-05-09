@@ -1,0 +1,185 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="w-full transition-colors duration-300">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-gutter py-xl">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-6 pr-0 md:pr-xl">
+<h1 class="font-display-lg text-display-lg text-on-background mb-md">For Educational Institutes <br/><span class="text-primary-container">& Training Organizations.</span></h1>
+<p class="font-body-lg text-body-lg text-secondary mb-lg">Integrate your programs into the Bitstack ecosystem. Present your curriculum, share exclusive training opportunities, and connect directly with ambitious learners and professionals.</p>
+<div class="flex flex-col sm:flex-row gap-md">
+<button onclick="window.location.href='/join'" class="bg-primary-container text-on-primary-container font-button text-button px-lg py-md rounded-lg text-center shadow-sm hover:opacity-90 transition-opacity uppercase tracking-widest">Partner with Us</button>
+<button onclick="window.location.href='/app/institutes'" class="border border-outline-variant text-on-background bg-surface font-button text-button px-lg py-md rounded-lg text-center hover:bg-surface-container-low transition-colors uppercase tracking-widest">View Directory</button>
+</div>
+</div>
+<div class="md:col-span-6 mt-xl md:mt-0 relative hidden md:block">
+<div class="aspect-[4/3] w-full rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest shadow-sm flex flex-col relative transition-colors duration-300">
+<!-- Top bar -->
+<div class="h-10 border-b border-outline-variant flex items-center px-4 bg-surface-container-low justify-between">
+<div class="flex gap-2">
+<div class="w-3 h-3 rounded-full bg-surface-variant"></div>
+<div class="w-3 h-3 rounded-full bg-surface-variant"></div>
+<div class="w-3 h-3 rounded-full bg-surface-variant"></div>
+</div>
+<div class="h-4 w-32 bg-surface-variant rounded"></div>
+</div>
+<!-- Main content (Institute Profile) -->
+<div class="flex flex-col p-6 flex-1 bg-surface relative">
+<div class="flex gap-4 items-end mb-6">
+    <div class="w-20 h-20 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container font-h1 text-h1">U</div>
+    <div class="flex flex-col gap-2 flex-1 pb-1">
+        <div class="h-6 w-1/2 bg-surface-variant rounded"></div>
+        <div class="h-3 w-1/4 bg-surface-variant rounded"></div>
+    </div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+    <div class="h-24 rounded bg-surface-container-low border border-surface-variant p-3 flex flex-col gap-2">
+        <div class="h-3 w-1/3 bg-surface-variant rounded"></div>
+        <div class="h-8 w-1/4 bg-primary-container/20 rounded mt-auto"></div>
+    </div>
+    <div class="h-24 rounded bg-surface-container-low border border-surface-variant p-3 flex flex-col gap-2">
+        <div class="h-3 w-1/3 bg-surface-variant rounded"></div>
+        <div class="h-8 w-1/4 bg-primary-container/20 rounded mt-auto"></div>
+    </div>
+</div>
+<div class="mt-4 flex-1 rounded bg-surface-container-lowest border border-surface-variant p-4">
+    <div class="h-4 w-1/4 bg-surface-variant rounded mb-4"></div>
+    <div class="space-y-3">
+        <div class="h-3 w-full bg-surface-variant rounded"></div>
+        <div class="h-3 w-5/6 bg-surface-variant rounded"></div>
+        <div class="h-3 w-4/6 bg-surface-variant rounded"></div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Features Grid -->
+<section class="bg-surface-container-low py-xl border-t border-b border-surface-variant transition-colors duration-300">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="mb-lg text-center md:text-left">
+<h2 class="font-h2 text-h2 text-on-background">Empower Your Students</h2>
+<p class="font-body-md text-body-md text-secondary mt-base">Expand your institution's reach within the Bitstack ecosystem.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Feature Card 1 -->
+<div class="bg-surface border border-surface-variant rounded-xl p-md flex flex-col hover:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)] transition-shadow hover:border-outline group">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center mb-md border border-outline-variant">
+<span class="material-symbols-outlined text-on-background group-hover:text-primary-container transition-colors" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-background mb-base group-hover:text-primary-container transition-colors">Present Programs</h3>
+<p class="font-body-sm text-body-sm text-secondary flex-grow">List your academic programs, degree tracks, and specialized courses. Allow students to discover structured educational paths easily.</p>
+</div>
+<!-- Feature Card 2 -->
+<div class="bg-surface border border-surface-variant rounded-xl p-md flex flex-col hover:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)] transition-shadow hover:border-outline group">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center mb-md border border-outline-variant">
+<span class="material-symbols-outlined text-on-background group-hover:text-primary-container transition-colors" style="font-variation-settings: 'FILL' 1;">model_training</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-background mb-base group-hover:text-primary-container transition-colors">Training Opportunities</h3>
+<p class="font-body-sm text-body-sm text-secondary flex-grow">Broadcast exclusive workshops, bootcamps, and training sessions directly to an engaged community of eager learners.</p>
+</div>
+<!-- Feature Card 3 -->
+<div class="bg-surface border border-surface-variant rounded-xl p-md flex flex-col hover:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)] transition-shadow hover:border-outline group">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center mb-md border border-outline-variant">
+<span class="material-symbols-outlined text-on-background group-hover:text-primary-container transition-colors" style="font-variation-settings: 'FILL' 1;">hub</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-background mb-base group-hover:text-primary-container transition-colors">Ecosystem Integration</h3>
+<p class="font-body-sm text-body-sm text-secondary flex-grow">Connect your curriculum with real-world applications. Allow your students to leverage the mentor network and freelance projects seamlessly.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Why Partner with Bitstack -->
+<section class="max-w-container-max mx-auto px-gutter py-xl transition-colors duration-300 w-full">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
+    <div class="space-y-md">
+        <h2 class="font-display-sm text-display-sm text-on-background">Why partner with Bitstack?</h2>
+        <p class="font-body-md text-body-md text-secondary">
+            Traditional learning platforms isolate students from real-world opportunities. Bitstack connects your academic programs directly into an ecosystem where students can learn, find mentors, and immediately apply their skills on freelance projects.
+        </p>
+        <div class="flex flex-col gap-sm pt-sm">
+            <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary-container mt-1">check_circle</span>
+                <div>
+                    <h4 class="font-label-bold text-label-bold text-on-background uppercase tracking-widest mb-1">Direct Talent Pipeline</h4>
+                    <p class="font-body-sm text-body-sm text-secondary">Connect your students directly with clients seeking verified skills.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary-container mt-1">check_circle</span>
+                <div>
+                    <h4 class="font-label-bold text-label-bold text-on-background uppercase tracking-widest mb-1">Alumni Network Activation</h4>
+                    <p class="font-body-sm text-body-sm text-secondary">Allow your graduates to return as mentors and earn BTS while guiding junior students.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary-container mt-1">check_circle</span>
+                <div>
+                    <h4 class="font-label-bold text-label-bold text-on-background uppercase tracking-widest mb-1">Resource Distribution</h4>
+                    <p class="font-body-sm text-body-sm text-secondary">Publish course materials to the Library and track student engagement efficiently.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-surface border border-surface-variant rounded-xl p-lg flex flex-col gap-md shadow-sm">
+        <h3 class="font-h3 text-h3 text-on-background border-b border-surface-variant pb-sm">Institute Hub Preview</h3>
+        <div class="space-y-4">
+            <div class="flex items-center justify-between p-3 bg-surface-container-lowest border border-outline-variant rounded">
+                <span class="font-label-md text-label-md text-on-background">Active Programs Listed</span>
+                <span class="font-label-bold text-label-bold text-primary-container">12</span>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-surface-container-lowest border border-outline-variant rounded">
+                <span class="font-label-md text-label-md text-on-background">Students Verified</span>
+                <span class="font-label-bold text-label-bold text-primary-container">840+</span>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-surface-container-lowest border border-outline-variant rounded">
+                <span class="font-label-md text-label-md text-on-background">Alumni Mentors</span>
+                <span class="font-label-bold text-label-bold text-primary-container">56</span>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- How Institutes Use Bitstack -->
+<section class="bg-surface-container-lowest border-y border-surface-variant py-xl transition-colors duration-300 w-full">
+<div class="max-w-container-max mx-auto px-gutter">
+<h2 class="font-h2 text-h2 text-on-background text-center mb-xl">Who is this for?</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+    <div class="flex flex-col gap-sm border border-outline-variant p-md rounded bg-surface hover:border-primary-container transition-colors">
+        <h3 class="font-h3 text-h3 text-on-background">University Departments</h3>
+        <p class="font-body-md text-body-md text-secondary">
+            Computer Science or Engineering departments can use Bitstack to organize study materials, connect freshmen with senior mentors, and track alumni success in freelance markets.
+        </p>
+    </div>
+    <div class="flex flex-col gap-sm border border-outline-variant p-md rounded bg-surface hover:border-primary-container transition-colors">
+        <h3 class="font-h3 text-h3 text-on-background">Student Societies</h3>
+        <p class="font-body-md text-body-md text-secondary">
+            Tech clubs and student unions can create hubs to host workshops, share interview prep notes in the Library, and build a verifiable community portfolio.
+        </p>
+    </div>
+    <div class="flex flex-col gap-sm border border-outline-variant p-md rounded bg-surface hover:border-primary-container transition-colors">
+        <h3 class="font-h3 text-h3 text-on-background">Training Bootcamps</h3>
+        <p class="font-body-md text-body-md text-secondary">
+            Intensive training programs can verify their graduates' skills by having them complete actual freelance milestones within the Bitstack ecosystem.
+        </p>
+    </div>
+</div>
+</div>
+</section>
+
+<!-- Call to Action Banner -->
+<section class="max-w-container-max mx-auto px-gutter py-xl mb-xl transition-colors duration-300">
+<div class="bg-surface-container-low border border-surface-variant rounded-xl p-xl flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-lg">
+<div>
+<h2 class="font-display-sm text-display-sm text-on-background mb-base">Ready to join the ecosystem?</h2>
+<p class="font-body-lg text-body-lg text-secondary">Establish your institution's presence on Bitstack today.</p>
+</div>
+<button onclick="window.location.href='/join'" class="bg-primary-container text-on-primary-container font-label-bold text-label-bold uppercase tracking-widest px-xl py-md rounded-lg shadow-sm hover:opacity-90 transition-opacity whitespace-nowrap">Create Organization Profile</button>
+</div>
+</section>
+</div>
+{% endblock %}

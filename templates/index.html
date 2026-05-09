@@ -1,0 +1,403 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Hero Section -->
+<section class="w-full max-w-container-max mx-auto px-gutter pt-xl pb-lg flex flex-col items-center text-center">
+    <div class="inline-flex items-center space-x-2 bg-surface-container-highest px-4 py-1.5 rounded-full mb-8">
+        <span class="w-2 h-2 bg-primary-container rounded-full animate-pulse"></span>
+        <span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Learn • Earn • Freelance</span>
+    </div>
+    <h1 class="font-display-lg text-display-lg text-on-background max-w-5xl mb-6 tracking-tighter">
+        Bitstack — Learn • Earn • Freelance
+    </h1>
+    <p class="font-display-sm text-display-sm text-on-surface-variant max-w-3xl mb-8 font-light">
+        Institutes • Mentors • Freelance Projects • Resources
+    </p>
+    <p class="font-body-lg text-body-lg text-secondary max-w-2xl mb-12 uppercase tracking-widest">
+        Built for University Success • Designed for Career Growth
+    </p>
+</section>
+
+<!-- Platform Overview & Philosophy -->
+<section class="w-full bg-surface-container-lowest py-xl border-t border-b border-surface-variant transition-colors duration-300">
+    <div class="max-w-container-max mx-auto px-gutter">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-xl">
+            <div>
+                <h2 class="font-display-md text-display-md text-on-background mb-6 uppercase tracking-tight">Platform Overview</h2>
+                <p class="font-body-lg text-body-lg text-secondary mb-6 leading-relaxed">
+                    Bitstack is a modern digital ecosystem designed to connect learning, knowledge sharing, freelancing, and real-world opportunity within one unified platform.
+                </p>
+                <p class="font-body-md text-body-md text-secondary mb-6">
+                    Unlike traditional platforms that focus on only one function, Bitstack combines multiple interconnected systems into a single structured environment where users can improve skills, share expertise, earn income, collaborate on projects, and build real professional experience.
+                </p>
+                <p class="font-body-lg text-body-lg text-primary-container font-bold">
+                    It is not only a learning platform, a freelance marketplace, or a resource library. It is a complete growth ecosystem.
+                </p>
+            </div>
+            <div class="bg-surface-container-low p-lg rounded-lg border border-surface-variant flex flex-col justify-center">
+                <h2 class="font-display-md text-display-md text-on-background mb-6 uppercase tracking-tight">Core Philosophy</h2>
+                <blockquote class="border-l-4 border-primary-container pl-6 py-2 mb-6">
+                    <p class="font-display-sm text-display-sm text-on-background italic">
+                        "Knowledge and opportunity should exist in the same ecosystem."
+                    </p>
+                </blockquote>
+                <p class="font-body-md text-body-md text-secondary leading-relaxed">
+                    The platform connects people seeking knowledge, people capable of teaching, people looking for work, and people searching for expertise. This creates a continuous cycle where users can learn, become skilled, earn, gain experience, and eventually help others grow.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Ecosystem Pillars -->
+<section class="w-full bg-surface-container-low transition-colors duration-300">
+    <div class="py-xl border-b border-surface-variant">
+        <div class="max-w-container-max mx-auto px-gutter text-center">
+            <h2 class="font-display-lg text-display-lg text-on-background mb-4 uppercase tracking-tight">Main Ecosystem Pillars</h2>
+            <p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto">Five interconnected systems working together to accelerate your growth.</p>
+        </div>
+    </div>
+    
+    <div class="flex flex-col">
+        <!-- 1. Learn (Text Left, Visual Right) -->
+        <div class="border-b border-surface-variant py-xl">
+            <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
+                <div class="flex flex-col items-start text-left space-y-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 bg-surface-container border border-outline-variant rounded-xl flex items-center justify-center text-primary-container shadow-sm">
+                            <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">school</span>
+                        </div>
+                        <span class="font-display-md text-display-md text-surface-variant opacity-50">01</span>
+                    </div>
+                    <h3 class="font-display-md text-display-md text-on-background">Learn</h3>
+                    <p class="font-body-lg text-body-lg text-secondary leading-relaxed">
+                        Structured academic and skill-based support through mentoring. Find mentors, prepare for exams, and get personalized academic guidance. It is an active support system designed to help users progress faster.
+                    </p>
+                    <a class="inline-flex items-center text-primary-container font-label-bold text-label-bold uppercase tracking-widest hover:underline underline-offset-4 mt-2" href="/learners">
+                        Explore Learning <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="bg-surface-container-lowest border border-surface-variant rounded-2xl aspect-[4/3] flex flex-col items-center justify-center p-8 relative overflow-hidden group">
+                    <div class="w-full max-w-sm flex flex-col gap-4 relative z-10">
+                        <div class="h-16 w-full bg-surface border border-outline-variant rounded-lg flex items-center px-4 gap-4 shadow-sm group-hover:-translate-y-1 transition-transform">
+                            <div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-container"><span class="material-symbols-outlined text-[20px]">person</span></div>
+                            <div class="h-3 w-1/3 bg-surface-variant rounded"></div>
+                            <div class="h-6 w-16 bg-surface-container ml-auto rounded"></div>
+                        </div>
+                        <div class="h-16 w-11/12 bg-surface border border-outline-variant rounded-lg flex items-center px-4 gap-4 shadow-sm group-hover:-translate-y-1 transition-transform delay-75">
+                            <div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-container"><span class="material-symbols-outlined text-[20px]">person</span></div>
+                            <div class="h-3 w-1/2 bg-surface-variant rounded"></div>
+                            <div class="h-6 w-16 bg-surface-container ml-auto rounded"></div>
+                        </div>
+                        <div class="h-16 w-full bg-surface border border-outline-variant rounded-lg flex items-center px-4 gap-4 shadow-sm group-hover:-translate-y-1 transition-transform delay-150">
+                            <div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-container"><span class="material-symbols-outlined text-[20px]">person</span></div>
+                            <div class="h-3 w-2/5 bg-surface-variant rounded"></div>
+                            <div class="h-6 w-16 bg-surface-container ml-auto rounded"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Earn (Visual Left, Text Right) -->
+        <div class="border-b border-surface-variant py-xl bg-surface-container-lowest">
+            <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
+                <div class="bg-surface-container-low border border-surface-variant rounded-2xl aspect-[4/3] flex flex-col items-center justify-center p-8 relative overflow-hidden group order-2 md:order-1">
+                    <div class="w-full max-w-sm bg-surface border border-outline-variant rounded-xl p-6 shadow-sm group-hover:border-primary-container transition-colors">
+                        <div class="flex justify-between items-center mb-6 border-b border-surface-variant pb-4">
+                            <div class="font-label-bold text-label-bold text-secondary uppercase">Current Balance</div>
+                            <div class="font-display-sm text-display-sm text-primary-container flex items-center gap-1">1,250 <span class="material-symbols-outlined text-lg">toll</span></div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <div class="font-body-sm text-secondary">Session Complete</div>
+                                <div class="font-label-bold text-on-background">+150 BTS</div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="font-body-sm text-secondary">Module Taught</div>
+                                <div class="font-label-bold text-on-background">+300 BTS</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col items-start text-left space-y-6 order-1 md:order-2">
+                    <div class="flex items-center gap-4">
+                        <span class="font-display-md text-display-md text-surface-variant opacity-50">02</span>
+                        <div class="w-16 h-16 bg-surface border border-outline-variant rounded-xl flex items-center justify-center text-primary-container shadow-sm">
+                            <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">toll</span>
+                        </div>
+                    </div>
+                    <h3 class="font-display-md text-display-md text-on-background">Earn</h3>
+                    <p class="font-body-lg text-body-lg text-secondary leading-relaxed">
+                        Monetize your expertise. Mentors, teachers, and skilled users can offer mentoring sessions, teach modules, and earn through structured workflows. Transform knowledge into real earning opportunities in BTS.
+                    </p>
+                    <a class="inline-flex items-center text-primary-container font-label-bold text-label-bold uppercase tracking-widest hover:underline underline-offset-4 mt-2" href="/mentors">
+                        Start Earning <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Freelance (Text Left, Visual Right) -->
+        <div class="border-b border-surface-variant py-xl">
+            <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
+                <div class="flex flex-col items-start text-left space-y-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 bg-surface-container border border-outline-variant rounded-xl flex items-center justify-center text-primary-container shadow-sm">
+                            <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">work</span>
+                        </div>
+                        <span class="font-display-md text-display-md text-surface-variant opacity-50">03</span>
+                    </div>
+                    <h3 class="font-display-md text-display-md text-on-background">Freelance</h3>
+                    <p class="font-body-lg text-body-lg text-secondary leading-relaxed">
+                        Bridge the gap between learning and professional execution. Work on real digital projects, collaborate with clients, deliver structured milestones, and gain practical experience while building a verifiable portfolio.
+                    </p>
+                    <a class="inline-flex items-center text-primary-container font-label-bold text-label-bold uppercase tracking-widest hover:underline underline-offset-4 mt-2" href="/freelancers">
+                        View Projects <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="bg-surface-container-lowest border border-surface-variant rounded-2xl aspect-[4/3] flex flex-col items-center justify-center p-8 relative overflow-hidden group">
+                    <div class="w-full max-w-sm space-y-4 relative z-10">
+                        <div class="bg-surface border border-surface-variant rounded-lg p-4 shadow-sm group-hover:-translate-x-2 transition-transform">
+                            <div class="h-3 w-1/4 bg-primary-container/50 rounded mb-2"></div>
+                            <div class="h-4 w-3/4 bg-surface-variant rounded mb-4"></div>
+                            <div class="flex justify-between items-center">
+                                <div class="h-3 w-16 bg-surface-container rounded"></div>
+                                <div class="h-6 w-20 bg-surface-variant rounded"></div>
+                            </div>
+                        </div>
+                        <div class="bg-surface border border-surface-variant rounded-lg p-4 shadow-sm ml-8 group-hover:translate-x-2 transition-transform">
+                            <div class="h-3 w-1/4 bg-primary-container/50 rounded mb-2"></div>
+                            <div class="h-4 w-2/3 bg-surface-variant rounded mb-4"></div>
+                            <div class="flex justify-between items-center">
+                                <div class="h-3 w-16 bg-surface-container rounded"></div>
+                                <div class="h-6 w-20 bg-surface-variant rounded"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Institutes (Visual Left, Text Right) -->
+        <div class="border-b border-surface-variant py-xl bg-surface-container-lowest">
+            <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
+                <div class="bg-surface-container-low border border-surface-variant rounded-2xl aspect-[4/3] flex flex-col items-center justify-center p-8 relative overflow-hidden group order-2 md:order-1">
+                    <div class="w-full max-w-sm bg-surface border border-outline-variant rounded-xl overflow-hidden shadow-sm flex flex-col group-hover:border-primary-container transition-colors">
+                        <div class="h-16 bg-surface-container-low border-b border-surface-variant flex items-center px-4 gap-3">
+                            <div class="w-8 h-8 rounded bg-primary-container flex items-center justify-center text-on-primary-container font-bold">U</div>
+                            <div class="h-4 w-32 bg-surface-variant rounded"></div>
+                        </div>
+                        <div class="p-4 grid grid-cols-2 gap-3">
+                            <div class="h-16 bg-surface-container rounded border border-surface-variant"></div>
+                            <div class="h-16 bg-surface-container rounded border border-surface-variant"></div>
+                            <div class="col-span-2 h-16 bg-surface-container rounded border border-surface-variant"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col items-start text-left space-y-6 order-1 md:order-2">
+                    <div class="flex items-center gap-4">
+                        <span class="font-display-md text-display-md text-surface-variant opacity-50">04</span>
+                        <div class="w-16 h-16 bg-surface border border-outline-variant rounded-xl flex items-center justify-center text-primary-container shadow-sm">
+                            <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+                        </div>
+                    </div>
+                    <h3 class="font-display-md text-display-md text-on-background">Institutes</h3>
+                    <p class="font-body-lg text-body-lg text-secondary leading-relaxed">
+                        Support for educational institutes and training organizations. Present programs, share training opportunities, and directly integrate your students into a verified talent pipeline.
+                    </p>
+                    <a class="inline-flex items-center text-primary-container font-label-bold text-label-bold uppercase tracking-widest hover:underline underline-offset-4 mt-2" href="/institutes">
+                        For Institutes <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Library (Text Left, Visual Right) -->
+        <div class="py-xl">
+            <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
+                <div class="flex flex-col items-start text-left space-y-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 bg-surface-container border border-outline-variant rounded-xl flex items-center justify-center text-primary-container shadow-sm">
+                            <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">local_library</span>
+                        </div>
+                        <span class="font-display-md text-display-md text-surface-variant opacity-50">05</span>
+                    </div>
+                    <h3 class="font-display-md text-display-md text-on-background">Library</h3>
+                    <p class="font-body-lg text-body-lg text-secondary leading-relaxed">
+                        A structured educational resource system. Upload, discover, organize, and access notes, templates, videos, slides, and learning documents organized by schools, levels, and modules.
+                    </p>
+                    <a class="inline-flex items-center text-primary-container font-label-bold text-label-bold uppercase tracking-widest hover:underline underline-offset-4 mt-2" href="/library">
+                        Browse Library <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="bg-surface-container-lowest border border-surface-variant rounded-2xl aspect-[4/3] flex flex-col items-center justify-center p-8 relative overflow-hidden group">
+                    <div class="w-full max-w-sm grid grid-cols-2 gap-4 relative z-10">
+                        <div class="bg-surface border border-outline-variant rounded-lg p-4 shadow-sm flex flex-col gap-2 group-hover:-translate-y-1 transition-transform">
+                            <span class="material-symbols-outlined text-primary-container mb-2">description</span>
+                            <div class="h-3 w-3/4 bg-surface-variant rounded"></div>
+                            <div class="h-2 w-1/2 bg-surface-variant rounded opacity-50"></div>
+                        </div>
+                        <div class="bg-surface border border-outline-variant rounded-lg p-4 shadow-sm flex flex-col gap-2 group-hover:-translate-y-1 transition-transform delay-75">
+                            <span class="material-symbols-outlined text-primary-container mb-2">movie</span>
+                            <div class="h-3 w-2/3 bg-surface-variant rounded"></div>
+                            <div class="h-2 w-1/2 bg-surface-variant rounded opacity-50"></div>
+                        </div>
+                        <div class="bg-surface border border-outline-variant rounded-lg p-4 shadow-sm flex flex-col gap-2 group-hover:-translate-y-1 transition-transform delay-150">
+                            <span class="material-symbols-outlined text-primary-container mb-2">code</span>
+                            <div class="h-3 w-5/6 bg-surface-variant rounded"></div>
+                            <div class="h-2 w-1/3 bg-surface-variant rounded opacity-50"></div>
+                        </div>
+                        <div class="bg-surface border border-outline-variant rounded-lg p-4 shadow-sm flex flex-col gap-2 group-hover:-translate-y-1 transition-transform delay-200">
+                            <span class="material-symbols-outlined text-primary-container mb-2">folder</span>
+                            <div class="h-3 w-1/2 bg-surface-variant rounded"></div>
+                            <div class="h-2 w-3/4 bg-surface-variant rounded opacity-50"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Ecosystem Logic & Target Users -->
+<section class="max-w-container-max mx-auto px-gutter py-xl flex flex-col gap-24 transition-colors duration-300">
+    <div class="flex flex-col md:flex-row items-center gap-xl w-full">
+        <div class="md:w-1/2">
+            <h2 class="font-display-md text-display-md text-on-background mb-6 uppercase tracking-tight">Ecosystem Logic</h2>
+            <p class="font-body-lg text-body-lg text-secondary mb-6">
+                Bitstack is intentionally designed as an interconnected ecosystem rather than isolated services. This creates a self-reinforcing growth loop.
+            </p>
+            <ul class="space-y-4 mb-8">
+                <li class="flex items-start">
+                    <span class="material-symbols-outlined text-primary-container mr-3">cycle</span>
+                    <span class="text-on-background font-body-md"><strong>Learners</strong> become skilled, start mentoring, and move into freelancing.</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="material-symbols-outlined text-primary-container mr-3">cycle</span>
+                    <span class="text-on-background font-body-md"><strong>Mentors</strong> build reputation, access freelance opportunities, and participate globally.</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="material-symbols-outlined text-primary-container mr-3">cycle</span>
+                    <span class="text-on-background font-body-md"><strong>Freelancers</strong> gain practical experience, teach others, and strengthen professional credibility.</span>
+                </li>
+            </ul>
+        </div>
+        <div class="md:w-1/2 bg-surface-container-low p-lg rounded-xl border border-surface-variant relative overflow-hidden">
+            <div class="absolute -right-10 -bottom-10 opacity-5">
+                <span class="material-symbols-outlined text-[200px]">hub</span>
+            </div>
+            <h3 class="font-h3 text-h3 text-on-background mb-6 relative z-10">Target Users</h3>
+            <div class="grid grid-cols-2 gap-4 relative z-10">
+                <div class="flex items-center space-x-2 text-secondary font-body-md"><span class="material-symbols-outlined text-sm">check_circle</span> <span>University Students</span></div>
+                <div class="flex items-center space-x-2 text-secondary font-body-md"><span class="material-symbols-outlined text-sm">check_circle</span> <span>Recent Graduates</span></div>
+                <div class="flex items-center space-x-2 text-secondary font-body-md"><span class="material-symbols-outlined text-sm">check_circle</span> <span>Mentors & Teachers</span></div>
+                <div class="flex items-center space-x-2 text-secondary font-body-md"><span class="material-symbols-outlined text-sm">check_circle</span> <span>Experts & Freelancers</span></div>
+                <div class="flex items-center space-x-2 text-secondary font-body-md"><span class="material-symbols-outlined text-sm">check_circle</span> <span>Project Owners</span></div>
+                <div class="flex items-center space-x-2 text-secondary font-body-md"><span class="material-symbols-outlined text-sm">check_circle</span> <span>Startups & Institutes</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Trust & BTS System -->
+<section class="w-full bg-surface-container-lowest py-xl border-t border-b border-surface-variant transition-colors duration-300">
+    <div class="max-w-container-max mx-auto px-gutter">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-xl">
+            <!-- Trust & Structure -->
+            <div>
+                <h2 class="font-display-md text-display-md text-on-background mb-6 uppercase tracking-tight">Trust & Structure</h2>
+                <p class="font-body-md text-body-md text-secondary mb-8 leading-relaxed">
+                    Bitstack is designed around structured workflows and transparent systems to maintain trust, accountability, and operational clarity.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-surface-container-low p-4 rounded border border-surface-variant flex items-center space-x-3">
+                        <span class="material-symbols-outlined text-primary-container">verified_user</span>
+                        <span class="font-label-lg text-on-background">Verification Systems</span>
+                    </div>
+                    <div class="bg-surface-container-low p-4 rounded border border-surface-variant flex items-center space-x-3">
+                        <span class="material-symbols-outlined text-primary-container">fact_check</span>
+                        <span class="font-label-lg text-on-background">Milestone Workflows</span>
+                    </div>
+                    <div class="bg-surface-container-low p-4 rounded border border-surface-variant flex items-center space-x-3">
+                        <span class="material-symbols-outlined text-primary-container">payments</span>
+                        <span class="font-label-lg text-on-background">Structured Payments</span>
+                    </div>
+                    <div class="bg-surface-container-low p-4 rounded border border-surface-variant flex items-center space-x-3">
+                        <span class="material-symbols-outlined text-primary-container">gavel</span>
+                        <span class="font-label-lg text-on-background">Dispute Procedures</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BTS Ecosystem System -->
+            <div class="bg-surface-container-low p-lg rounded-xl border border-primary-container/30 relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-10">
+                    <span class="material-symbols-outlined text-8xl text-primary-container">toll</span>
+                </div>
+                <h2 class="font-display-md text-display-md text-on-background mb-4 uppercase tracking-tight relative z-10 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary-container">toll</span> BTS Ecosystem System
+                </h2>
+                <p class="font-body-md text-body-md text-secondary mb-6 relative z-10">
+                    Bitstack includes an internal utility system called BTS. <strong>BTS is NOT a public cryptocurrency or speculative token.</strong> It is an internal ecosystem utility mechanism designed to support participation and rewards.
+                </p>
+                <ul class="space-y-3 relative z-10 mb-6">
+                    <li class="flex items-start">
+                        <span class="material-symbols-outlined text-on-surface-variant mr-2 text-sm mt-0.5">info</span>
+                        <span class="text-on-background font-body-sm">Value only inside the Bitstack ecosystem</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="material-symbols-outlined text-on-surface-variant mr-2 text-sm mt-0.5">info</span>
+                        <span class="text-on-background font-body-sm">Not publicly tradable or exchangeable for foreign currencies</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="material-symbols-outlined text-on-surface-variant mr-2 text-sm mt-0.5">info</span>
+                        <span class="text-on-background font-body-sm">Redeemable only in TND according to platform rules</span>
+                    </li>
+                </ul>
+                <a href="/token" class="inline-flex items-center text-primary-container font-button text-button hover:underline relative z-10">
+                    Learn about BTS <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Vision & Philosophy -->
+<section class="max-w-container-max mx-auto px-gutter py-xl flex flex-col items-center text-center transition-colors duration-300">
+    <span class="material-symbols-outlined text-4xl text-primary-container mb-6">visibility</span>
+    <h2 class="font-display-md text-display-md text-on-background mb-6 uppercase tracking-tight max-w-3xl">Platform Vision</h2>
+    <p class="font-body-lg text-body-lg text-secondary max-w-4xl mb-12">
+        Bitstack aims to become a central ecosystem where learning, earning, mentoring, collaboration, and professional growth happen naturally inside one connected platform. We are reducing the gap between education, skill development, and real-world opportunity.
+    </p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full text-left">
+        <div class="bg-surface-container-low p-8 rounded-lg border border-surface-variant">
+            <h3 class="font-h3 text-h3 text-on-background mb-4 uppercase tracking-widest text-sm">User Experience</h3>
+            <p class="font-body-md text-body-md text-secondary">
+                Minimal and professional. Focused on clarity, simplicity, trust, and structured workflows. Prioritizing action-driven navigation, role clarity, reduced friction, and transparent interactions.
+            </p>
+        </div>
+        <div class="bg-surface-container-low p-8 rounded-lg border border-surface-variant">
+            <h3 class="font-h3 text-h3 text-on-background mb-4 uppercase tracking-widest text-sm">Positioning</h3>
+            <p class="font-body-md text-body-md text-secondary">
+                Not only a tutoring platform. Not only a freelance marketplace. Not only a content-sharing platform. Bitstack is a structured ecosystem where knowledge, opportunity, collaboration, and growth exist together.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Final Identity Statement CTA -->
+<section class="w-full px-margin py-24 flex flex-col items-center justify-center text-center border-t border-surface-variant bg-surface-container-highest transition-colors duration-300">
+    <div class="max-w-4xl mx-auto flex flex-col items-center">
+        <div class="w-16 h-16 bg-primary-container/20 rounded-full flex items-center justify-center mb-8">
+            <span class="material-symbols-outlined text-primary-container text-3xl">rocket_launch</span>
+        </div>
+        <h2 class="text-on-background font-display-md text-display-md mb-8 tracking-tight leading-tight">
+            Bitstack is a professional ecosystem where people can learn faster, share expertise, earn through knowledge, collaborate on real projects, and build meaningful experience.
+        </h2>
+        <a href="/join" class="bg-primary-container text-on-primary-container font-button text-button h-[56px] px-xl flex items-center justify-center rounded uppercase tracking-widest hover:opacity-80 transition-opacity duration-300 hover:scale-105 active:scale-95 transform">
+            Join the Ecosystem
+        </a>
+    </div>
+</section>
+{% endblock %}

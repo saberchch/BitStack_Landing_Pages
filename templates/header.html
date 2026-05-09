@@ -1,0 +1,27 @@
+<header class="bg-surface-container-lowest font-sans tracking-tight text-sm uppercase font-bold docked full-width top-0 border-b border-surface-variant flat no shadows sticky z-50 transition-colors duration-300">
+    <div class="flex justify-between items-center h-20 px-8 max-w-7xl mx-auto w-full">
+        <a class="text-2xl font-black text-on-background tracking-tighter hover:opacity-80 transition-opacity" href="{{ url_for('index') }}">
+            Bitstack
+        </a>
+        <nav class="hidden md:flex space-x-6">
+            <a class="text-secondary hover:text-on-background hover:bg-surface-container transition-colors duration-200 py-2 px-1 rounded" href="/learners">Learn</a>
+            <a class="text-secondary hover:text-on-background hover:bg-surface-container transition-colors duration-200 py-2 px-1 rounded" href="/mentors">Earn</a>
+            <a class="text-secondary hover:text-on-background hover:bg-surface-container transition-colors duration-200 py-2 px-1 rounded" href="/freelancers">Freelance</a>
+            <a class="text-secondary hover:text-on-background hover:bg-surface-container transition-colors duration-200 py-2 px-1 rounded" href="/institutes">Institutes</a>
+            <a class="text-secondary hover:text-on-background hover:bg-surface-container transition-colors duration-200 py-2 px-1 rounded" href="/clients">Clients</a>
+            <a class="text-secondary hover:text-on-background hover:bg-surface-container transition-colors duration-200 py-2 px-1 rounded" href="/library">Library</a>
+            <a class="text-primary-container font-bold hover:text-on-background hover:bg-surface-container transition-colors duration-200 py-2 px-1 rounded flex items-center gap-1" href="/token">
+                <span class="material-symbols-outlined text-sm">toll</span> BTS Token
+            </a>
+        </nav>
+        <div class="flex items-center space-x-6">
+            <button onclick="toggleTheme()" class="text-secondary hover:text-on-background transition-colors" title="Toggle Theme">
+                <span class="material-symbols-outlined">light_mode</span>
+            </button>
+            <a class="text-secondary hover:text-on-background transition-colors hidden sm:block" href="/signin">Sign In</a>
+            <a class="bg-primary-container text-on-primary-container font-button text-button px-6 py-3 rounded scale-95 active:scale-90 transition-transform" href="/join">
+                Join Now
+            </a>
+        </div>
+    </div>
+</header>

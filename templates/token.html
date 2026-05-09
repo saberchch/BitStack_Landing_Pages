@@ -1,0 +1,190 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Hero Section -->
+<section class="relative pt-xl pb-xl px-8 overflow-hidden transition-colors duration-300">
+<div class="max-w-7xl mx-auto text-center relative z-10">
+<div class="inline-flex items-center px-3 py-1 rounded-full border border-outline-variant bg-surface-container-low mb-lg transition-colors duration-300">
+<span class="material-symbols-outlined text-[16px] mr-2 text-primary-container">verified_user</span>
+<span class="font-label-md text-label-md uppercase text-on-surface-variant">Ecosystem Utility System</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-background mb-md max-w-4xl mx-auto">
+                    The Engine of Participation
+                </h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto mb-lg">
+                    The BTS system is an internal ecosystem utility mechanism designed to support participation, rewards, ecosystem activity, and platform operations.
+                </p>
+<div class="flex justify-center space-x-4">
+<button onclick="window.location.href='/freelancers'" class="bg-primary-container text-on-primary-container font-button text-button px-8 py-4 rounded-lg flex items-center hover:opacity-90 transition-opacity">
+                        Explore Utility
+                        <span class="material-symbols-outlined ml-2">arrow_forward</span>
+</button>
+<button onclick="window.location.href='/app/documentation'" class="border border-outline text-on-surface font-button text-button px-8 py-4 rounded-lg hover:bg-surface-container-low transition-colors duration-300">
+                        View Documentation
+                    </button>
+</div>
+</div>
+<!-- Aesthetic visual element -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-container opacity-[0.03] rounded-full blur-[120px] -z-10"></div>
+</section>
+<!-- BTS Characteristics (The Utility Framework) -->
+<section class="py-xl bg-surface-container-lowest px-8 transition-colors duration-300">
+<div class="max-w-7xl mx-auto">
+<div class="mb-lg">
+<h2 class="font-h1 text-h1 mb-sm text-on-background">The Utility Framework</h2>
+<div class="w-16 h-1 bg-primary-container"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Card 1 -->
+<div class="p-lg bg-surface border border-outline-variant rounded-lg hover:border-outline transition-colors duration-300 flex flex-col h-full">
+<span class="material-symbols-outlined text-primary-container text-3xl mb-md">school</span>
+<h3 class="font-h3 text-h3 mb-sm text-on-background">Learn & Earn</h3>
+<p class="font-body-sm text-body-sm text-secondary flex-grow">
+                            Use BTS to book personalized mentoring sessions. Earn BTS by sharing your knowledge, tutoring peers, and uploading high-quality resources to the Library.
+                        </p>
+</div>
+<!-- Card 2 -->
+<div class="p-lg bg-surface border border-outline-variant rounded-lg hover:border-outline transition-colors duration-300 flex flex-col h-full">
+<span class="material-symbols-outlined text-primary-container text-3xl mb-md">work</span>
+<h3 class="font-h3 text-h3 mb-sm text-on-background">Freelance Escrow</h3>
+<p class="font-body-sm text-body-sm text-secondary flex-grow">
+                            Clients post project budgets in BTS. Funds are held securely in escrow and only released to freelancers when project milestones are successfully approved.
+                        </p>
+</div>
+<!-- Card 3 -->
+<div class="p-lg bg-surface border border-outline-variant rounded-lg hover:border-outline transition-colors duration-300 flex flex-col h-full">
+<span class="material-symbols-outlined text-primary-container text-3xl mb-md">shield</span>
+<h3 class="font-h3 text-h3 mb-sm text-on-background">Stable Utility</h3>
+<p class="font-body-sm text-body-sm text-secondary flex-grow">
+                            BTS is strictly an internal accounting mechanism. It is not a speculative cryptocurrency, protecting users from market volatility and outside trading.
+                        </p>
+</div>
+<!-- Card 4 -->
+<div class="p-lg bg-surface border border-outline-variant rounded-lg hover:border-outline transition-colors duration-300 flex flex-col h-full">
+<span class="material-symbols-outlined text-primary-container text-3xl mb-md">account_balance</span>
+<h3 class="font-h3 text-h3 mb-sm text-on-background">Local Redemption</h3>
+<p class="font-body-sm text-body-sm text-secondary flex-grow">
+                            Verified students and freelancers can redeem their earned BTS directly into Tunisian Dinar (TND) through our secure, compliant local payment gateway.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Redemption Logic Section -->
+<section class="py-xl px-8 overflow-hidden transition-colors duration-300">
+<div class="max-w-7xl mx-auto">
+<div class="bg-surface-container-highest text-on-background rounded-xl p-lg md:p-xl flex flex-col md:flex-row items-center gap-lg transition-colors duration-300 border border-outline-variant">
+<div class="flex-1">
+<h2 class="font-display-sm text-display-sm mb-md text-primary-container">Strict Redemption Protocol</h2>
+<p class="font-body-lg text-body-lg text-secondary mb-lg">
+                            Bitstack operates on a localized economic model. To ensure compliance and focus on local growth, BTS conversion is subject to rigorous verification.
+                        </p>
+<div class="space-y-4">
+<div class="flex items-start space-x-3">
+<span class="material-symbols-outlined text-primary-container">check_circle</span>
+<p class="font-body-md text-body-md">Exclusively redeemable in <span class="text-on-background font-bold">Tunisian Dinar (TND)</span>.</p>
+</div>
+<div class="flex items-start space-x-3">
+<span class="material-symbols-outlined text-error">cancel</span>
+<p class="font-body-md text-body-md">Zero support for <span class="text-secondary opacity-70">USD, EUR, or Cryptocurrency</span> conversion.</p>
+</div>
+<div class="flex items-start space-x-3">
+<span class="material-symbols-outlined text-primary-container">verified</span>
+<p class="font-body-md text-body-md">Requires <span class="text-on-background font-bold">Verified Professional Identity</span> and local banking details.</p>
+</div>
+</div>
+</div>
+<div class="flex-1 w-full flex justify-center">
+<div class="bg-surface p-lg rounded-lg border border-outline-variant w-full max-w-md transition-colors duration-300">
+<div class="flex justify-between items-center mb-lg">
+<span class="font-label-md text-label-md text-secondary">CURRENT BALANCE</span>
+<span class="material-symbols-outlined text-primary-container">payments</span>
+</div>
+<div class="text-[42px] font-black tracking-tighter mb-lg text-on-background">4,250.00 <span class="text-primary-container text-2xl">BTS</span></div>
+<div class="h-px bg-outline-variant mb-lg"></div>
+<div class="flex justify-between items-center mb-sm">
+<span class="font-body-sm text-body-sm text-secondary">Equivalent Value</span>
+<span class="font-h3 text-h3 text-on-background">425.000 TND</span>
+</div>
+<button onclick="window.location.href='/app/verification'" class="w-full bg-primary-container text-on-primary-container py-3 rounded font-button text-button mt-md hover:opacity-90 transition-opacity">
+                                Initiate Verification
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Purpose Section (Bento Style) -->
+<section class="py-xl bg-surface px-8 transition-colors duration-300">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-xl">
+<h2 class="font-h1 text-h1 mb-sm text-on-background">The Logic of Activity</h2>
+<p class="font-body-md text-body-md text-secondary">Why we built the BTS utility layer.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Large Box -->
+<div class="col-span-12 md:col-span-8 p-lg bg-surface-container-low border border-outline-variant rounded-lg flex flex-col justify-end min-h-[320px] transition-colors duration-300">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-md">trophy</span>
+<h3 class="font-h2 text-h2 mb-sm text-on-background">Reward Contribution</h3>
+<p class="font-body-lg text-body-lg text-secondary max-w-xl">
+                            The ecosystem thrives on high-quality interactions. BTS allows us to programmatically reward mentors and contributors who maintain the platform's standard of excellence.
+                        </p>
+</div>
+<!-- Small Box -->
+<div class="col-span-12 md:col-span-4 p-lg bg-primary-container text-on-primary-container rounded-lg flex flex-col justify-between">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">hub</span>
+<div>
+<h3 class="font-h3 text-h3 mb-sm">Unified Standard</h3>
+<p class="font-body-sm text-body-sm">
+                                Standardizes value exchange seamlessly across mentoring, teaching, and freelance projects within the platform.
+                            </p>
+</div>
+</div>
+<!-- Small Box 2 -->
+<div class="col-span-12 md:col-span-4 p-lg bg-surface border border-outline-variant rounded-lg transition-colors duration-300">
+<span class="material-symbols-outlined text-primary-container text-3xl mb-md">sync</span>
+<h3 class="font-h3 text-h3 mb-sm text-on-background">Frictionless Flow</h3>
+<p class="font-body-sm text-body-sm text-secondary">
+                            Enables seamless micro-transactions for peer-to-peer tutoring, resource sharing, and structured project milestones.
+                        </p>
+</div>
+<!-- Medium Box -->
+<div class="col-span-12 md:col-span-8 p-lg bg-surface-container-high border border-outline-variant rounded-lg flex items-center gap-lg transition-colors duration-300">
+<div class="flex-shrink-0">
+<span class="material-symbols-outlined text-primary-container text-5xl">diversity_3</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 mb-sm text-on-background">Equitable Participation</h3>
+<p class="font-body-md text-body-md text-secondary">
+                                Ensuring that every user has a path to participate in the local digital economy, whether by learning to earn, or by bringing verified skills to the table.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-xl px-8 border-t border-outline-variant transition-colors duration-300">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="font-h1 text-h1 mb-md text-on-background">Ready to participate?</h2>
+<p class="font-body-lg text-body-lg text-secondary mb-lg">
+                    Join the Bitstack community today and start building your BTS balance through meaningful contributions to the ecosystem.
+                </p>
+<div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+<div class="flex items-center space-x-2 text-primary-container font-bold">
+<span class="material-symbols-outlined">security</span>
+<span>Platform-Specific</span>
+</div>
+<div class="w-1 h-1 bg-outline-variant rounded-full hidden sm:block"></div>
+<div class="flex items-center space-x-2 text-primary-container font-bold">
+<span class="material-symbols-outlined">shield_person</span>
+<span>Verified Use Only</span>
+</div>
+<div class="w-1 h-1 bg-outline-variant rounded-full hidden sm:block"></div>
+<div class="flex items-center space-x-2 text-primary-container font-bold">
+<span class="material-symbols-outlined">account_balance</span>
+<span>TND Redeemed</span>
+</div>
+</div>
+</div>
+</section>
+{% endblock %}

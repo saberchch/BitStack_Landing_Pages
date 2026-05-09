@@ -1,0 +1,276 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="w-full transition-colors duration-300">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-gutter py-xl">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-6 pr-0 md:pr-xl">
+<h1 class="font-display-lg text-display-lg text-on-background mb-md">Find skilled people <br/><span class="text-primary-container">to build your project.</span></h1>
+<p class="font-body-lg text-body-lg text-secondary mb-lg">Access the Bitstack community to find verified talent. Post projects, collaborate through organized workflows, and settle rewards securely in BTS.</p>
+<div class="flex flex-col sm:flex-row gap-md">
+<button onclick="window.location.href='/join'" class="bg-primary-container text-on-primary-container font-button text-button px-lg py-md rounded-lg text-center shadow-sm hover:opacity-90 transition-opacity uppercase tracking-widest">Post a Project</button>
+<button onclick="window.location.href='/freelancers'" class="border border-outline-variant text-on-background bg-surface font-button text-button px-lg py-md rounded-lg text-center hover:bg-surface-container-low transition-colors uppercase tracking-widest">Partner with Us</button>
+</div>
+</div>
+<div class="md:col-span-6 mt-xl md:mt-0 relative hidden md:block">
+<div class="aspect-[4/3] w-full rounded-xl overflow-hidden border border-outline-variant bg-surface-container-lowest shadow-sm flex flex-col relative transition-colors duration-300">
+<!-- Top bar -->
+<div class="h-10 border-b border-outline-variant flex items-center px-4 bg-surface-container-low justify-between">
+<div class="flex gap-2">
+<div class="w-3 h-3 rounded-full bg-surface-variant"></div>
+<div class="w-3 h-3 rounded-full bg-surface-variant"></div>
+<div class="w-3 h-3 rounded-full bg-surface-variant"></div>
+</div>
+<div class="h-4 w-32 bg-surface-variant rounded"></div>
+</div>
+<!-- Main content -->
+<div class="flex flex-1">
+<!-- Sidebar -->
+<div class="w-1/4 border-r border-outline-variant bg-surface-container-low p-4 flex flex-col gap-3">
+<div class="h-3 w-16 bg-surface-variant rounded mb-2"></div>
+<div class="h-6 w-full bg-primary-container/20 rounded border border-primary-container/30"></div>
+<div class="h-6 w-full bg-surface-variant rounded"></div>
+<div class="h-6 w-5/6 bg-surface-variant rounded"></div>
+</div>
+<!-- Board -->
+<div class="flex-1 bg-surface p-4 flex gap-4 overflow-hidden">
+<!-- Column 1 -->
+<div class="flex-1 flex flex-col gap-3">
+<div class="h-4 w-20 bg-surface-variant rounded"></div>
+<div class="h-20 w-full bg-surface-container-lowest border border-outline-variant rounded shadow-sm p-3 flex flex-col justify-between hover:border-outline transition-colors">
+<div class="h-3 w-3/4 bg-surface-variant rounded"></div>
+<div class="flex justify-between items-center">
+<div class="h-4 w-4 rounded-full bg-primary-container"></div>
+<div class="h-2 w-8 bg-surface-variant rounded"></div>
+</div>
+</div>
+<div class="h-20 w-full bg-surface-container-lowest border border-outline-variant rounded shadow-sm p-3 flex flex-col justify-between hover:border-outline transition-colors">
+<div class="h-3 w-5/6 bg-surface-variant rounded"></div>
+<div class="flex justify-between items-center">
+<div class="h-4 w-4 rounded-full bg-tertiary-container"></div>
+<div class="h-2 w-8 bg-surface-variant rounded"></div>
+</div>
+</div>
+</div>
+<!-- Column 2 -->
+<div class="flex-1 flex flex-col gap-3">
+<div class="h-4 w-24 bg-surface-variant rounded"></div>
+<div class="h-24 w-full bg-surface-container-lowest border border-outline-variant rounded shadow-sm p-3 flex flex-col justify-between hover:border-outline transition-colors">
+<div class="flex flex-col gap-2">
+<div class="h-3 w-full bg-surface-variant rounded"></div>
+<div class="h-3 w-2/3 bg-surface-variant rounded"></div>
+</div>
+<div class="flex justify-between items-center mt-2">
+<div class="flex -space-x-1">
+<div class="h-4 w-4 rounded-full bg-secondary-container border border-surface"></div>
+<div class="h-4 w-4 rounded-full bg-primary-container border border-surface"></div>
+</div>
+<div class="h-2 w-8 bg-surface-variant rounded"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Trust / Features Bento Grid -->
+<section class="bg-surface-container-low py-xl border-t border-b border-surface-variant transition-colors duration-300">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="mb-lg text-center md:text-left">
+<h2 class="font-h2 text-h2 text-on-background">Structured for Reliability</h2>
+<p class="font-body-md text-body-md text-secondary mt-base">A transparent environment designed for successful collaboration.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Feature Card 1 -->
+<div class="bg-surface border border-surface-variant rounded-xl p-md flex flex-col hover:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)] transition-shadow hover:border-outline group">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center mb-md border border-outline-variant">
+<span class="material-symbols-outlined text-on-background group-hover:text-primary-container transition-colors" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-background mb-base group-hover:text-primary-container transition-colors">Verified Community</h3>
+<p class="font-body-sm text-body-sm text-secondary flex-grow">Connect with capable students and professionals from our verified ecosystem. Find the right skill set for your project requirements.</p>
+</div>
+<!-- Feature Card 2 -->
+<div class="bg-surface border border-surface-variant rounded-xl p-md flex flex-col hover:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)] transition-shadow hover:border-outline group">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center mb-md border border-outline-variant">
+<span class="material-symbols-outlined text-on-background group-hover:text-primary-container transition-colors" style="font-variation-settings: 'FILL' 1;">monitoring</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-background mb-base group-hover:text-primary-container transition-colors">Transparent Delivery</h3>
+<p class="font-body-sm text-body-sm text-secondary flex-grow">Track milestones and project progression through our structured dashboard. Maintain clarity on timelines and deliverables.</p>
+</div>
+<!-- Feature Card 3 -->
+<div class="bg-surface border border-surface-variant rounded-xl p-md flex flex-col hover:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)] transition-shadow hover:border-outline group">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center mb-md border border-outline-variant">
+<span class="material-symbols-outlined text-on-background group-hover:text-primary-container transition-colors" style="font-variation-settings: 'FILL' 1;">toll</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-background mb-base group-hover:text-primary-container transition-colors">Secure Rewards</h3>
+<p class="font-body-sm text-body-sm text-secondary flex-grow">Project budgets are held in secure BTS escrow and only released upon milestone approval. All interactions follow our strict ecosystem rules.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- How It Works (Progress Flow) -->
+<section class="max-w-container-max mx-auto px-gutter py-xl transition-colors duration-300">
+<div class="text-center mb-xl">
+<h2 class="font-h2 text-h2 text-on-background">The Collaboration Protocol</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter relative">
+<!-- Decorative Progress Line (Desktop Only) -->
+<div class="hidden md:block absolute top-[24px] left-[10%] right-[10%] h-[2px] bg-surface-variant z-0"></div>
+<div class="hidden md:block absolute top-[24px] left-[10%] w-[25%] h-[2px] bg-primary-container z-0"></div>
+<!-- Step 1 -->
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full bg-surface border-2 border-primary-container flex items-center justify-center mb-md">
+<span class="font-label-md text-label-md text-primary-container">01</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-background mb-base">Define</h3>
+<p class="font-body-sm text-body-sm text-secondary">Post your project requirements, defining the scope and the BTS reward allocated.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex flex-col items-center text-center mt-lg md:mt-0">
+<div class="w-12 h-12 rounded-full bg-surface border border-outline-variant flex items-center justify-center mb-md hover:border-primary-container transition-colors">
+<span class="font-label-md text-label-md text-secondary">02</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-background mb-base">Select</h3>
+<p class="font-body-sm text-body-sm text-secondary">Review proposals from interested community members and select the right fit.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 flex flex-col items-center text-center mt-lg md:mt-0">
+<div class="w-12 h-12 rounded-full bg-surface border border-outline-variant flex items-center justify-center mb-md hover:border-primary-container transition-colors">
+<span class="font-label-md text-label-md text-secondary">03</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-background mb-base">Execute</h3>
+<p class="font-body-sm text-body-sm text-secondary">Initiate development and track progress within our structured environment.</p>
+</div>
+<!-- Step 4 -->
+<div class="relative z-10 flex flex-col items-center text-center mt-lg md:mt-0">
+<div class="w-12 h-12 rounded-full bg-surface border border-outline-variant flex items-center justify-center mb-md hover:border-primary-container transition-colors">
+<span class="font-label-md text-label-md text-secondary">04</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-background mb-base">Approve</h3>
+<p class="font-body-sm text-body-sm text-secondary">Review milestones, approve deliverables, and release BTS rewards.</p>
+</div>
+</div>
+</section>
+
+<!-- Why Hire from the Bitstack Ecosystem -->
+<section class="max-w-container-max mx-auto px-gutter py-xl transition-colors duration-300 w-full">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
+    <div class="space-y-md order-2 md:order-1">
+        <h2 class="font-display-sm text-display-sm text-on-background">Why hire from the Bitstack Ecosystem?</h2>
+        <p class="font-body-md text-body-md text-secondary">
+            When you post a project on Bitstack, you aren't just hiring a freelancer. You are tapping into a curated community of highly motivated students, alumni, and professionals who have a verifiable track record within the platform.
+        </p>
+        <div class="flex flex-col gap-sm pt-sm">
+            <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary-container mt-1">school</span>
+                <div>
+                    <h4 class="font-label-bold text-label-bold text-on-background uppercase tracking-widest mb-1">Motivated Talent</h4>
+                    <p class="font-body-sm text-body-sm text-secondary">Work with ambitious individuals who are actively applying their academic knowledge to real-world problems.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary-container mt-1">history</span>
+                <div>
+                    <h4 class="font-label-bold text-label-bold text-on-background uppercase tracking-widest mb-1">Verifiable History</h4>
+                    <p class="font-body-sm text-body-sm text-secondary">Every candidate has a public profile displaying their previous completed milestones and peer mentoring experience.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary-container mt-1">handshake</span>
+                <div>
+                    <h4 class="font-label-bold text-label-bold text-on-background uppercase tracking-widest mb-1">Cost-Effective Collaboration</h4>
+                    <p class="font-body-sm text-body-sm text-secondary">By rewarding talent directly with BTS, you avoid heavy agency overheads while supporting the community.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-surface border border-surface-variant rounded-xl p-lg flex flex-col gap-md shadow-sm order-1 md:order-2">
+        <h3 class="font-h3 text-h3 text-on-background border-b border-surface-variant pb-sm">The BTS Escrow System</h3>
+        <p class="font-body-sm text-body-sm text-secondary mb-2">Our built-in escrow mechanism protects both you and the freelancer.</p>
+        <div class="space-y-4 relative">
+            <div class="absolute left-4 top-4 bottom-4 w-0.5 bg-outline-variant z-0"></div>
+            <div class="flex items-start gap-3 relative z-10">
+                <div class="w-8 h-8 rounded-full bg-surface border-2 border-primary-container flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span class="material-symbols-outlined text-[16px] text-primary-container">lock</span>
+                </div>
+                <div>
+                    <p class="font-label-bold text-label-bold text-on-background">Fund Project</p>
+                    <p class="font-body-sm text-body-sm text-secondary">You allocate the BTS budget securely into the project escrow.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3 relative z-10">
+                <div class="w-8 h-8 rounded-full bg-surface border-2 border-primary-container flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span class="material-symbols-outlined text-[16px] text-primary-container">build</span>
+                </div>
+                <div>
+                    <p class="font-label-bold text-label-bold text-on-background">Freelancer Builds</p>
+                    <p class="font-body-sm text-body-sm text-secondary">Work begins with the guarantee that the reward is secured.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3 relative z-10">
+                <div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span class="material-symbols-outlined text-[16px] text-on-primary-container">toll</span>
+                </div>
+                <div>
+                    <p class="font-label-bold text-label-bold text-on-background">Approve & Release</p>
+                    <p class="font-body-sm text-body-sm text-secondary">Upon your final approval, the BTS is instantly released.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- What Kind of Work Gets Done Here? -->
+<section class="bg-surface-container-lowest border-y border-surface-variant py-xl transition-colors duration-300 w-full mb-xl">
+<div class="max-w-container-max mx-auto px-gutter">
+<h2 class="font-h2 text-h2 text-on-background text-center mb-xl">What gets built on Bitstack?</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-lg">
+    <div class="flex flex-col gap-sm border border-outline-variant p-md rounded bg-surface hover:border-primary-container transition-colors">
+        <span class="material-symbols-outlined text-primary-container text-3xl">web</span>
+        <h3 class="font-h3 text-h3 text-on-background">Web MVPs</h3>
+        <p class="font-body-sm text-body-sm text-secondary">
+            Need a prototype for your startup idea? Have our top-tier students build functional frontends and responsive dashboards.
+        </p>
+    </div>
+    <div class="flex flex-col gap-sm border border-outline-variant p-md rounded bg-surface hover:border-primary-container transition-colors">
+        <span class="material-symbols-outlined text-primary-container text-3xl">database</span>
+        <h3 class="font-h3 text-h3 text-on-background">Data Analysis</h3>
+        <p class="font-body-sm text-body-sm text-secondary">
+            Hire analytical minds to clean messy datasets, perform statistical analysis, and create visualization scripts using Python or R.
+        </p>
+    </div>
+    <div class="flex flex-col gap-sm border border-outline-variant p-md rounded bg-surface hover:border-primary-container transition-colors">
+        <span class="material-symbols-outlined text-primary-container text-3xl">bug_report</span>
+        <h3 class="font-h3 text-h3 text-on-background">Code Refactoring</h3>
+        <p class="font-body-sm text-body-sm text-secondary">
+            Have a messy codebase? Delegate bug fixing, documentation writing, and codebase optimization to capable peers.
+        </p>
+    </div>
+    <div class="flex flex-col gap-sm border border-outline-variant p-md rounded bg-surface hover:border-primary-container transition-colors">
+        <span class="material-symbols-outlined text-primary-container text-3xl">science</span>
+        <h3 class="font-h3 text-h3 text-on-background">Research Assist</h3>
+        <p class="font-body-sm text-body-sm text-secondary">
+            Need literature reviews, survey data processing, or academic formatting? Connect with students who excel in structured research.
+        </p>
+    </div>
+</div>
+</div>
+</section>
+
+<!-- Call to Action Banner -->
+<section class="max-w-container-max mx-auto px-gutter mb-xl transition-colors duration-300">
+<div class="bg-surface-container-low border border-surface-variant rounded-xl p-xl flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-lg">
+<div>
+<h2 class="font-display-sm text-display-sm text-on-background mb-base">Ready to collaborate?</h2>
+<p class="font-body-lg text-body-lg text-secondary">Post your project today and connect with the community.</p>
+</div>
+<button onclick="window.location.href='/join'" class="bg-primary-container text-on-primary-container font-label-bold text-label-bold uppercase tracking-widest px-xl py-md rounded-lg shadow-sm hover:opacity-90 transition-opacity whitespace-nowrap">Post a Project</button>
+</div>
+</section>
+</div>
+{% endblock %}

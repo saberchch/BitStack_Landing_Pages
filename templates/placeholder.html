@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="flex-grow flex flex-col items-center justify-center text-center px-4 py-20 min-h-[500px] bg-surface transition-colors duration-300">
+    <span class="material-symbols-outlined text-primary-container text-6xl mb-6">construction</span>
+    <h1 class="font-display-sm text-display-sm text-on-background mb-4">Coming Soon</h1>
+    <p class="font-body-lg text-body-lg text-secondary max-w-2xl mb-8">
+        The page for <strong>/{{ path }}</strong> is currently under construction and will be available soon.
+    </p>
+    <a href="{{ url_for('index') }}" class="bg-surface-container text-on-background font-button text-button px-6 py-3 rounded border border-surface-variant hover:bg-surface-variant transition-colors">
+        Return to Home
+    </a>
+</section>
+{% endblock %}

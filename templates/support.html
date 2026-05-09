@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}Support - Bitstack{% endblock %}
+
+{% block content %}
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin py-xl flex flex-col gap-xl transition-colors duration-300">
+    <!-- Page Header -->
+    <section class="flex flex-col gap-md max-w-2xl">
+        <h1 class="font-display-xl text-display-xl text-on-background tracking-tighter uppercase">Support</h1>
+        <p class="font-body-lg text-body-lg text-secondary">How can we help you achieve your financial goals today?</p>
+    </section>
+    
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+        <!-- Contact Form Area -->
+        <section class="md:col-span-7 flex flex-col gap-lg">
+            <div class="border border-surface-variant bg-surface-container-low p-margin flex flex-col gap-md rounded-lg shadow-sm">
+                <h2 class="font-h2 text-h2 text-on-background border-b border-surface-variant pb-base uppercase tracking-tight">Send a Message</h2>
+                <form class="flex flex-col gap-md mt-sm" action="#" method="POST" onsubmit="event.preventDefault();">
+                    <div class="flex flex-col gap-xs">
+                        <label class="font-label-bold text-label-bold text-secondary uppercase tracking-wider" for="name">Name</label>
+                        <input class="bg-surface border border-surface-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container rounded text-on-background font-body-md text-body-md p-sm transition-colors w-full outline-none" id="name" placeholder="Full Name" type="text" required/>
+                    </div>
+                    <div class="flex flex-col gap-xs">
+                        <label class="font-label-bold text-label-bold text-secondary uppercase tracking-wider" for="email">Email Address</label>
+                        <input class="bg-surface border border-surface-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container rounded text-on-background font-body-md text-body-md p-sm transition-colors w-full outline-none" id="email" placeholder="name@company.com" type="email" required/>
+                    </div>
+                    <div class="flex flex-col gap-xs">
+                        <label class="font-label-bold text-label-bold text-secondary uppercase tracking-wider" for="topic">Topic</label>
+                        <select class="bg-surface border border-surface-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container rounded text-on-background font-body-md text-body-md p-sm transition-colors appearance-none w-full outline-none" id="topic" required>
+                            <option value="account">Account Management</option>
+                            <option value="billing">Billing &amp; Transfers</option>
+                            <option value="technical">Technical Support</option>
+                            <option value="general">General Inquiry</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col gap-xs">
+                        <label class="font-label-bold text-label-bold text-secondary uppercase tracking-wider" for="message">Message</label>
+                        <textarea class="bg-surface border border-surface-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container rounded text-on-background font-body-md text-body-md p-sm transition-colors resize-none w-full outline-none" id="message" placeholder="Describe your issue in detail..." rows="5" required></textarea>
+                    </div>
+                    <button class="h-[56px] w-full bg-primary-container text-on-primary-container font-button text-button mt-md hover:opacity-90 transition-opacity rounded uppercase tracking-widest" type="submit">
+                        Submit Request
+                    </button>
+                </form>
+            </div>
+        </section>
+        
+        <!-- FAQ Side Column -->
+        <section class="md:col-span-5 flex flex-col gap-lg">
+            <div class="flex flex-col gap-md">
+                <h2 class="font-h2 text-h2 text-on-background border-b border-surface-variant pb-base uppercase tracking-tight">Frequently Asked</h2>
+                <div class="flex flex-col gap-md mt-sm">
+                    <div class="flex flex-col gap-sm border-b border-surface-variant pb-md">
+                        <h3 class="font-h3 text-h3 text-primary-container">How long do transfers take?</h3>
+                        <p class="font-body-sm text-body-sm text-secondary">Standard transfers process within 1-2 business days. Premium tier accounts have access to instant liquidity options subject to standard risk checks.</p>
+                    </div>
+                    <div class="flex flex-col gap-sm border-b border-surface-variant pb-md">
+                        <h3 class="font-h3 text-h3 text-primary-container">How do I verify my identity?</h3>
+                        <p class="font-body-sm text-body-sm text-secondary">Navigate to Settings &gt; Profile Verification. You will need a government-issued ID and a proof of address document dated within the last 90 days.</p>
+                    </div>
+                    <div class="flex flex-col gap-sm border-b border-surface-variant pb-md">
+                        <h3 class="font-h3 text-h3 text-primary-container">Are there withdrawal limits?</h3>
+                        <p class="font-body-sm text-body-sm text-secondary">Base tier accounts have a daily withdrawal limit of $10,000. This limit scales based on account verification level and historical volume.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Direct Contact Alternative -->
+            <div class="border border-surface-variant bg-surface-container-low p-md flex flex-col gap-sm mt-auto rounded-lg shadow-sm">
+                <h3 class="font-h3 text-h3 text-on-background uppercase tracking-tight">Urgent Matters</h3>
+                <p class="font-body-sm text-body-sm text-secondary">For immediate assistance regarding frozen funds or security breaches, utilize our secure hotline.</p>
+                <a class="font-button text-button text-primary-container mt-xs flex items-center gap-sm w-max hover:opacity-80 transition-opacity uppercase tracking-wider" href="tel:1-800-000-0000">
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">call</span>
+                    1-800-000-0000
+                </a>
+            </div>
+        </section>
+    </div>
+</main>
+{% endblock %}
