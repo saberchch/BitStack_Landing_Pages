@@ -1,7 +1,8 @@
 <header class="bg-surface-container-lowest font-sans tracking-tight text-sm uppercase font-bold docked full-width top-0 border-b border-surface-variant flat no shadows sticky z-50 transition-colors duration-300">
     <div class="flex justify-between items-center h-20 px-8 max-w-7xl mx-auto w-full">
-        <a class="text-2xl font-black text-on-background tracking-tighter hover:opacity-80 transition-opacity" href="{{ url_for('index') }}">
-            Bitstack
+        <a class="flex items-center gap-3 hover:opacity-80 transition-opacity" href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Bitstack" class="h-12 block dark:hidden">
+            <img src="{{ url_for('static', filename='img/logo-white.svg') }}" alt="Bitstack" class="h-12 hidden dark:block">
         </a>
         <nav class="hidden md:flex space-x-6">
             <a class="text-secondary hover:text-on-background hover:bg-surface-container transition-colors duration-200 py-2 px-1 rounded" href="/learners">Learn</a>
@@ -11,7 +12,7 @@
             <a class="text-secondary hover:text-on-background hover:bg-surface-container transition-colors duration-200 py-2 px-1 rounded" href="/clients">Clients</a>
             <a class="text-secondary hover:text-on-background hover:bg-surface-container transition-colors duration-200 py-2 px-1 rounded" href="/library">Library</a>
             <a class="text-primary-container font-bold hover:text-on-background hover:bg-surface-container transition-colors duration-200 py-2 px-1 rounded flex items-center gap-1" href="/token">
-                <span class="material-symbols-outlined text-sm">toll</span> BTS Token
+                <img src="{{ url_for('static', filename='img/favicon.svg') }}" class="inline-block w-[1.2em] h-[1.2em] -mt-1" alt="BTS"> BTS Token
             </a>
         </nav>
         <div class="flex items-center space-x-6">
