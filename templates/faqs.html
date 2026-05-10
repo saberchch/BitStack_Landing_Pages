@@ -1,0 +1,475 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="w-full bg-slate-50">
+    <!-- BEGIN: HeroSection -->
+    <section class="py-16 lg:py-24 overflow-hidden relative bg-white border-b border-gray-100">
+        <!-- Abstract gradient background -->
+        <div class="absolute right-0 top-0 w-2/3 h-full bg-gradient-to-l from-indigo-50 to-transparent pointer-events-none"></div>
+        
+        <div class="container-wide grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+            <!-- Content Side -->
+            <div data-purpose="hero-content">
+                <span class="inline-block px-3 py-1 bg-indigo-50 text-indigo-600 text-sm font-bold rounded-full mb-6 uppercase tracking-wider">+ FAQS</span>
+                <h1 class="text-5xl lg:text-7xl font-extrabold text-slate-900 mb-6 leading-tight">Frequently Asked Questions</h1>
+                <p class="text-2xl font-bold text-bts-gold mb-4">Find clear answers about using Bitstacks.</p>
+                <p class="text-slate-600 text-xl leading-relaxed max-w-lg mb-10">
+                    Get quick guidance on accounts, learning, mentoring, freelance projects, clients, BTS Credits, library resources, payments, and platform support.
+                </p>
+                <!-- Search Bar -->
+                <div class="relative max-w-md mb-8">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                        <svg class="h-5 w-5 text-slate-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                    </div>
+                    <input class="block w-full pl-11 pr-4 py-3.5 border border-gray-200 rounded-xl focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 text-base text-slate-900 placeholder-slate-400 bg-slate-50 outline-none transition-all" placeholder="Search questions, topics, services..." type="text"/>
+                </div>
+                <!-- Hero Buttons -->
+                <div class="flex flex-wrap gap-4">
+                    <a href="{{ url_for('support') }}" class="bg-bts-gold text-white px-8 py-3.5 rounded-lg font-bold flex items-center gap-2 hover:bg-bts-gold-hover transition-all shadow-lg shadow-bts-gold/20">
+                        Contact Support <span>→</span>
+                    </a>
+                    <a href="{{ url_for('help_center') }}" class="border border-gray-200 text-slate-700 bg-white px-8 py-3.5 rounded-lg font-bold flex items-center gap-2 hover:bg-slate-50 transition-all">
+                        Back to Help Center <span>→</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Illustration Side -->
+            <div class="hidden lg:flex justify-center relative" data-purpose="hero-illustration">
+                <div class="relative w-72 h-72">
+                    <div class="absolute inset-0 bg-indigo-50 rounded-full opacity-40 animate-pulse"></div>
+                    <div class="absolute inset-4 border-2 border-indigo-100 rounded-full"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <svg class="w-32 h-32 text-indigo-200" fill="currentColor" viewbox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path>
+                        </svg>
+                    </div>
+                    <!-- Decorative floating elements -->
+                    <div class="absolute -bottom-10 -right-10 w-16 h-16 bg-blue-50 rounded-full border border-blue-100 flex items-center justify-center animate-bounce shadow-sm">
+                        <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <div class="absolute top-10 -left-10 w-12 h-12 bg-amber-50 rounded-full border border-amber-100 flex items-center justify-center animate-pulse shadow-sm">
+                        <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END: HeroSection -->
+
+    <!-- BEGIN: FAQNavigation -->
+    <section class="py-6 border-b border-gray-100 bg-white sticky top-16 z-40">
+        <div class="container-wide overflow-x-auto no-scrollbar">
+            <div class="flex space-x-2 min-w-max pb-2" id="faq-categories">
+                <button data-target="All" class="faq-cat-btn px-6 py-2.5 bg-indigo-50 text-indigo-600 font-bold rounded-full text-base transition-colors">All</button>
+                <button data-target="Account" class="faq-cat-btn px-6 py-2.5 text-slate-600 hover:bg-slate-50 rounded-full font-bold text-base transition-colors">Account</button>
+                <button data-target="Learning & Mentoring" class="faq-cat-btn px-6 py-2.5 text-slate-600 hover:bg-slate-50 rounded-full font-bold text-base transition-colors">Learning &amp; Mentoring</button>
+                <button data-target="Freelance" class="faq-cat-btn px-6 py-2.5 text-slate-600 hover:bg-slate-50 rounded-full font-bold text-base transition-colors">Freelance</button>
+                <button data-target="Clients" class="faq-cat-btn px-6 py-2.5 text-slate-600 hover:bg-slate-50 rounded-full font-bold text-base transition-colors">Clients</button>
+                <button data-target="BTS Credits" class="faq-cat-btn px-6 py-2.5 text-slate-600 hover:bg-slate-50 rounded-full font-bold text-base transition-colors">BTS Credits</button>
+                <button data-target="Library" class="faq-cat-btn px-6 py-2.5 text-slate-600 hover:bg-slate-50 rounded-full font-bold text-base transition-colors">Library</button>
+                <button data-target="Support" class="faq-cat-btn px-6 py-2.5 text-slate-600 hover:bg-slate-50 rounded-full font-bold text-base transition-colors">Support</button>
+            </div>
+        </div>
+    </section>
+    <!-- END: FAQNavigation -->
+
+    <!-- BEGIN: FAQList -->
+    <section class="py-16 lg:py-24">
+        <div class="container-wide space-y-6" id="faq-list">
+            
+            <!-- Category: Account -->
+            <details data-category="Account" class="category-block group bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:border-bts-gold transition-colors">
+                <summary class="flex items-center justify-between p-6 lg:p-8 cursor-pointer list-none outline-none">
+                    <div class="flex items-center gap-6">
+                        <div class="w-16 h-16 bg-indigo-50 flex items-center justify-center rounded-2xl text-indigo-600 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-extrabold text-2xl text-slate-900 mb-1">1. Account</h3>
+                            <p class="text-base text-slate-500 max-w-md">Learn how to create and manage your account, update your profile, roles, login issues, and account security.</p>
+                        </div>
+                    </div>
+                    <div class="hidden sm:flex items-center gap-4">
+                        <span class="text-sm font-bold px-4 py-1.5 bg-indigo-50 text-indigo-600 rounded-full">
+                            {{ faqs_data.faqs | selectattr("category", "equalto", "Account") | list | length }} Questions
+                        </span>
+                        <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-open:rotate-180 group-hover:bg-bts-gold group-hover:text-white transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
+                    </div>
+                </summary>
+                <div class="px-6 lg:px-8 pb-8">
+                    <div class="border-t border-gray-100 pt-6 space-y-4">
+                        {% for faq in faqs_data.faqs if faq.category == "Account" %}
+                        <details class="group/faq bg-slate-50 rounded-2xl overflow-hidden border border-gray-100">
+                            <summary class="flex justify-between items-center p-6 lg:p-8 cursor-pointer list-none hover:bg-slate-100 transition-colors">
+                                <span class="font-bold text-xl lg:text-xl text-slate-900">{{ faq.question }}</span>
+                                <svg class="w-5 h-5 text-slate-400 group-open/faq:rotate-180 transition-transform shrink-0 ml-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                    <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                </svg>
+                            </summary>
+                            <div class="p-6 lg:p-8 pt-0 lg:pt-0 text-lg lg:text-lg text-slate-600 leading-relaxed border-t border-gray-200 mt-4">
+                                {{ faq.answer }}
+                            </div>
+                        </details>
+                        {% endfor %}
+                    </div>
+                </div>
+            </details>
+            
+            <!-- Category: Learning & Mentoring -->
+            <details data-category="Learning & Mentoring" class="category-block group bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:border-bts-gold transition-colors">
+                <summary class="flex items-center justify-between p-6 lg:p-8 cursor-pointer list-none outline-none">
+                    <div class="flex items-center gap-6">
+                        <div class="w-16 h-16 bg-purple-50 flex items-center justify-center rounded-2xl text-purple-600 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.168.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-extrabold text-2xl text-slate-900 mb-1">2. Learning &amp; Mentoring</h3>
+                            <p class="text-base text-slate-500 max-w-md">Find answers about mentors, sessions, bookings, exam preparation, learning resources, and becoming a mentor.</p>
+                        </div>
+                    </div>
+                    <div class="hidden sm:flex items-center gap-4">
+                        <span class="text-sm font-bold px-4 py-1.5 bg-purple-50 text-purple-600 rounded-full">
+                            {{ faqs_data.faqs | selectattr("category", "equalto", "Learning & Mentoring") | list | length }} Questions
+                        </span>
+                        <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-open:rotate-180 group-hover:bg-bts-gold group-hover:text-white transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
+                    </div>
+                </summary>
+                <div class="px-6 lg:px-8 pb-8">
+                    <div class="border-t border-gray-100 pt-6 space-y-4">
+                        {% for faq in faqs_data.faqs if faq.category == "Learning & Mentoring" %}
+                        <details class="group/faq bg-slate-50 rounded-2xl overflow-hidden border border-gray-100">
+                            <summary class="flex justify-between items-center p-6 lg:p-8 cursor-pointer list-none hover:bg-slate-100 transition-colors">
+                                <span class="font-bold text-xl lg:text-xl text-slate-900">{{ faq.question }}</span>
+                                <svg class="w-5 h-5 text-slate-400 group-open/faq:rotate-180 transition-transform shrink-0 ml-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                    <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                </svg>
+                            </summary>
+                            <div class="p-6 lg:p-8 pt-0 lg:pt-0 text-lg lg:text-lg text-slate-600 leading-relaxed border-t border-gray-200 mt-4">
+                                {{ faq.answer }}
+                            </div>
+                        </details>
+                        {% endfor %}
+                    </div>
+                </div>
+            </details>
+            
+            <!-- Category: Freelance -->
+            <details data-category="Freelance" class="category-block group bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:border-bts-gold transition-colors">
+                <summary class="flex items-center justify-between p-6 lg:p-8 cursor-pointer list-none outline-none">
+                    <div class="flex items-center gap-6">
+                        <div class="w-16 h-16 bg-blue-50 flex items-center justify-center rounded-2xl text-blue-600 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-extrabold text-2xl text-slate-900 mb-1">3. Freelance</h3>
+                            <p class="text-base text-slate-500 max-w-md">Learn how to find projects, submit proposals, manage work, deliver milestones, and receive rewards.</p>
+                        </div>
+                    </div>
+                    <div class="hidden sm:flex items-center gap-4">
+                        <span class="text-sm font-bold px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full">
+                            {{ faqs_data.faqs | selectattr("category", "equalto", "Freelance") | list | length }} Questions
+                        </span>
+                        <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-open:rotate-180 group-hover:bg-bts-gold group-hover:text-white transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
+                    </div>
+                </summary>
+                <div class="px-6 lg:px-8 pb-8">
+                    <div class="border-t border-gray-100 pt-6 space-y-4">
+                        {% for faq in faqs_data.faqs if faq.category == "Freelance" %}
+                        <details class="group/faq bg-slate-50 rounded-2xl overflow-hidden border border-gray-100">
+                            <summary class="flex justify-between items-center p-6 lg:p-8 cursor-pointer list-none hover:bg-slate-100 transition-colors">
+                                <span class="font-bold text-xl lg:text-xl text-slate-900">{{ faq.question }}</span>
+                                <svg class="w-5 h-5 text-slate-400 group-open/faq:rotate-180 transition-transform shrink-0 ml-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                    <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                </svg>
+                            </summary>
+                            <div class="p-6 lg:p-8 pt-0 lg:pt-0 text-lg lg:text-lg text-slate-600 leading-relaxed border-t border-gray-200 mt-4">
+                                {{ faq.answer }}
+                            </div>
+                        </details>
+                        {% endfor %}
+                    </div>
+                </div>
+            </details>
+            
+            <!-- Category: Clients -->
+            <details data-category="Clients" class="category-block group bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:border-bts-gold transition-colors">
+                <summary class="flex items-center justify-between p-6 lg:p-8 cursor-pointer list-none outline-none">
+                    <div class="flex items-center gap-6">
+                        <div class="w-16 h-16 bg-pink-50 flex items-center justify-center rounded-2xl text-pink-600 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-extrabold text-2xl text-slate-900 mb-1">4. Clients</h3>
+                            <p class="text-base text-slate-500 max-w-md">Find answers about posting projects, selecting freelancers, approvals, deliverables, and dispute resolution.</p>
+                        </div>
+                    </div>
+                    <div class="hidden sm:flex items-center gap-4">
+                        <span class="text-sm font-bold px-4 py-1.5 bg-pink-50 text-pink-600 rounded-full">
+                            {{ faqs_data.faqs | selectattr("category", "equalto", "Clients") | list | length }} Questions
+                        </span>
+                        <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-open:rotate-180 group-hover:bg-bts-gold group-hover:text-white transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
+                    </div>
+                </summary>
+                <div class="px-6 lg:px-8 pb-8">
+                    <div class="border-t border-gray-100 pt-6 space-y-4">
+                        {% for faq in faqs_data.faqs if faq.category == "Clients" %}
+                        <details class="group/faq bg-slate-50 rounded-2xl overflow-hidden border border-gray-100">
+                            <summary class="flex justify-between items-center p-6 lg:p-8 cursor-pointer list-none hover:bg-slate-100 transition-colors">
+                                <span class="font-bold text-xl lg:text-xl text-slate-900">{{ faq.question }}</span>
+                                <svg class="w-5 h-5 text-slate-400 group-open/faq:rotate-180 transition-transform shrink-0 ml-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                    <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                </svg>
+                            </summary>
+                            <div class="p-6 lg:p-8 pt-0 lg:pt-0 text-lg lg:text-lg text-slate-600 leading-relaxed border-t border-gray-200 mt-4">
+                                {{ faq.answer }}
+                            </div>
+                        </details>
+                        {% endfor %}
+                    </div>
+                </div>
+            </details>
+            
+            <!-- Category: BTS Credits -->
+            <details data-category="BTS Credits" class="category-block group bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:border-bts-gold transition-colors">
+                <summary class="flex items-center justify-between p-6 lg:p-8 cursor-pointer list-none outline-none">
+                    <div class="flex items-center gap-6">
+                        <div class="w-16 h-16 bg-amber-50 flex items-center justify-center rounded-2xl text-amber-500 group-hover:scale-110 transition-transform p-3">
+                            <img src="{{ url_for('static', filename='img/favicon.svg') }}" class="w-full h-full object-contain opacity-80" alt="BTS Token" />
+                        </div>
+                        <div>
+                            <h3 class="font-extrabold text-2xl text-slate-900 mb-1">5. BTS Credits</h3>
+                            <p class="text-base text-slate-500 max-w-md">Understand BTS Credits, how they work, usage, refunds, transfers, and important platform policies.</p>
+                        </div>
+                    </div>
+                    <div class="hidden sm:flex items-center gap-4">
+                        <span class="text-sm font-bold px-4 py-1.5 bg-amber-50 text-amber-600 rounded-full">
+                            {{ faqs_data.faqs | selectattr("category", "equalto", "BTS Credits") | list | length }} Questions
+                        </span>
+                        <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-open:rotate-180 group-hover:bg-bts-gold group-hover:text-white transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
+                    </div>
+                </summary>
+                <div class="px-6 lg:px-8 pb-8">
+                    <div class="border-t border-gray-100 pt-6 space-y-4">
+                        {% for faq in faqs_data.faqs if faq.category == "BTS Credits" %}
+                        <details class="group/faq bg-slate-50 rounded-2xl overflow-hidden border border-gray-100">
+                            <summary class="flex justify-between items-center p-6 lg:p-8 cursor-pointer list-none hover:bg-slate-100 transition-colors">
+                                <span class="font-bold text-xl lg:text-xl text-slate-900">{{ faq.question }}</span>
+                                <svg class="w-5 h-5 text-slate-400 group-open/faq:rotate-180 transition-transform shrink-0 ml-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                    <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                </svg>
+                            </summary>
+                            <div class="p-6 lg:p-8 pt-0 lg:pt-0 text-lg lg:text-lg text-slate-600 leading-relaxed border-t border-gray-200 mt-4">
+                                {{ faq.answer }}
+                            </div>
+                        </details>
+                        {% endfor %}
+                    </div>
+                </div>
+            </details>
+            
+            <!-- Category: Library -->
+            <details data-category="Library" class="category-block group bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:border-bts-gold transition-colors">
+                <summary class="flex items-center justify-between p-6 lg:p-8 cursor-pointer list-none outline-none">
+                    <div class="flex items-center gap-6">
+                        <div class="w-16 h-16 bg-emerald-50 flex items-center justify-center rounded-2xl text-emerald-600 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-extrabold text-2xl text-slate-900 mb-1">6. Library</h3>
+                            <p class="text-base text-slate-500 max-w-md">Learn about library resources, uploads, downloads, content rules, and contributor guidelines.</p>
+                        </div>
+                    </div>
+                    <div class="hidden sm:flex items-center gap-4">
+                        <span class="text-sm font-bold px-4 py-1.5 bg-emerald-50 text-emerald-600 rounded-full">
+                            {{ faqs_data.faqs | selectattr("category", "equalto", "Library") | list | length }} Questions
+                        </span>
+                        <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-open:rotate-180 group-hover:bg-bts-gold group-hover:text-white transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
+                    </div>
+                </summary>
+                <div class="px-6 lg:px-8 pb-8">
+                    <div class="border-t border-gray-100 pt-6 space-y-4">
+                        {% for faq in faqs_data.faqs if faq.category == "Library" %}
+                        <details class="group/faq bg-slate-50 rounded-2xl overflow-hidden border border-gray-100">
+                            <summary class="flex justify-between items-center p-6 lg:p-8 cursor-pointer list-none hover:bg-slate-100 transition-colors">
+                                <span class="font-bold text-xl lg:text-xl text-slate-900">{{ faq.question }}</span>
+                                <svg class="w-5 h-5 text-slate-400 group-open/faq:rotate-180 transition-transform shrink-0 ml-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                    <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                </svg>
+                            </summary>
+                            <div class="p-6 lg:p-8 pt-0 lg:pt-0 text-lg lg:text-lg text-slate-600 leading-relaxed border-t border-gray-200 mt-4">
+                                {{ faq.answer }}
+                            </div>
+                        </details>
+                        {% endfor %}
+                    </div>
+                </div>
+            </details>
+            
+            <!-- Category: Support -->
+            <details data-category="Support" class="category-block group bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:border-bts-gold transition-colors">
+                <summary class="flex items-center justify-between p-6 lg:p-8 cursor-pointer list-none outline-none">
+                    <div class="flex items-center gap-6">
+                        <div class="w-16 h-16 bg-teal-50 flex items-center justify-center rounded-2xl text-teal-600 group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-extrabold text-2xl text-slate-900 mb-1">7. Support</h3>
+                            <p class="text-base text-slate-500 max-w-md">Get help with support requests, response time, issue reporting, and important support guidelines.</p>
+                        </div>
+                    </div>
+                    <div class="hidden sm:flex items-center gap-4">
+                        <span class="text-sm font-bold px-4 py-1.5 bg-teal-50 text-teal-600 rounded-full">
+                            {{ faqs_data.faqs | selectattr("category", "equalto", "Support") | list | length }} Questions
+                        </span>
+                        <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-open:rotate-180 group-hover:bg-bts-gold group-hover:text-white transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
+                    </div>
+                </summary>
+                <div class="px-6 lg:px-8 pb-8">
+                    <div class="border-t border-gray-100 pt-6 space-y-4">
+                        {% for faq in faqs_data.faqs if faq.category == "Support" %}
+                        <details class="group/faq bg-slate-50 rounded-2xl overflow-hidden border border-gray-100">
+                            <summary class="flex justify-between items-center p-6 lg:p-8 cursor-pointer list-none hover:bg-slate-100 transition-colors">
+                                <span class="font-bold text-xl lg:text-xl text-slate-900">{{ faq.question }}</span>
+                                <svg class="w-5 h-5 text-slate-400 group-open/faq:rotate-180 transition-transform shrink-0 ml-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                    <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                </svg>
+                            </summary>
+                            <div class="p-6 lg:p-8 pt-0 lg:pt-0 text-lg lg:text-lg text-slate-600 leading-relaxed border-t border-gray-200 mt-4">
+                                {{ faq.answer }}
+                            </div>
+                        </details>
+                        {% endfor %}
+                    </div>
+                </div>
+            </details>
+        </div>
+    </section>
+    <!-- END: FAQList -->
+
+    <!-- BEGIN: ContactCTA -->
+    <section class="py-16 px-6 mb-8">
+        <div class="container-wide max-w-5xl bg-white border border-gray-100 rounded-3xl p-10 lg:p-12 shadow-sm flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+            <!-- Decorative Background -->
+            <div class="absolute inset-0 bg-indigo-50/50 pointer-events-none"></div>
+            <div class="absolute bottom-0 right-0 w-64 h-64 bg-bts-gold/5 blur-3xl rounded-full pointer-events-none"></div>
+            
+            <div class="flex items-center gap-8 relative z-10">
+                <!-- Envelope Icon -->
+                <div class="hidden sm:block relative">
+                    <div class="w-24 h-20 bg-white border border-gray-100 shadow-md rounded-2xl flex items-center justify-center">
+                        <svg class="w-10 h-10 text-slate-300" fill="currentColor" viewbox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+                        <div class="absolute -top-2 -right-2 bg-bts-gold text-white w-8 h-8 rounded-full flex items-center justify-center font-bold shadow-sm">!</div>
+                    </div>
+                </div>
+                <div class="max-w-md text-center sm:text-left">
+                    <h2 class="text-4xl font-extrabold text-slate-900 mb-2">Still need help?</h2>
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        Contact Bitstacks support for account issues, learning services, freelance projects, BTS Credits, library resources, payments, disputes, and platform questions.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="flex flex-col items-center relative z-10 w-full md:w-auto">
+                <a href="{{ url_for('support') }}" class="w-full md:w-auto bg-slate-900 text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-slate-800 transition-all shadow-xl shadow-slate-900/20 whitespace-nowrap">
+                    Contact Support <span>→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- END: ContactCTA -->
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const buttons = document.querySelectorAll('.faq-cat-btn');
+        const categories = document.querySelectorAll('.category-block');
+        
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active styling from all buttons
+                buttons.forEach(b => {
+                    b.classList.remove('bg-indigo-50', 'text-indigo-600');
+                    b.classList.add('text-slate-600', 'hover:bg-slate-50');
+                });
+                
+                // Add active styling to clicked button
+                btn.classList.add('bg-indigo-50', 'text-indigo-600');
+                btn.classList.remove('text-slate-600', 'hover:bg-slate-50');
+                
+                const target = btn.getAttribute('data-target');
+                
+                categories.forEach(cat => {
+                    if (target === 'All') {
+                        cat.style.display = 'block';
+                        cat.removeAttribute('open');
+                    } else {
+                        if (cat.getAttribute('data-category') === target) {
+                            cat.style.display = 'block';
+                            cat.setAttribute('open', ''); // Auto-expand selected category
+                        } else {
+                            cat.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+        
+        // Search functionality
+        const searchInput = document.querySelector('input[placeholder*="Search"]');
+        const faqs = document.querySelectorAll('.group\\/faq');
+        
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase();
+                
+                if (term.length > 0) {
+                    // Make sure "All" button is visually selected
+                    buttons.forEach(b => {
+                        b.classList.remove('bg-indigo-50', 'text-indigo-600');
+                        b.classList.add('text-slate-600', 'hover:bg-slate-50');
+                    });
+                    buttons[0].classList.add('bg-indigo-50', 'text-indigo-600');
+                    
+                    // Open all categories to show matching faqs
+                    categories.forEach(cat => {
+                        cat.style.display = 'block';
+                        cat.setAttribute('open', '');
+                    });
+                    
+                    faqs.forEach(faq => {
+                        const text = faq.textContent.toLowerCase();
+                        if (text.includes(term)) {
+                            faq.style.display = 'block';
+                            faq.setAttribute('open', ''); // Auto-expand matching faqs
+                        } else {
+                            faq.style.display = 'none';
+                        }
+                    });
+                } else {
+                    // Reset to default state
+                    buttons[0].click();
+                    
+                    faqs.forEach(faq => {
+                        faq.style.display = 'block';
+                        faq.removeAttribute('open');
+                    });
+                }
+            });
+        }
+    });
+</script>
+{% endblock %}

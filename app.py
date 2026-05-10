@@ -1,4 +1,6 @@
 # pyrefly: ignore [missing-import]
+import os
+import json
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -42,6 +44,19 @@ def signin():
 @app.route('/join')
 def join():
     return render_template('join.html')
+
+@app.route('/faqs')
+def faqs():
+    faqs_path = os.path.join(app.static_folder, 'FAQs', 'FAQs.json')
+    faqs_data = {}
+    if os.path.exists(faqs_path):
+        with open(faqs_path, 'r', encoding='utf-8') as f:
+            faqs_data = json.load(f)
+    return render_template('faqs.html', faqs_data=faqs_data)
+
+@app.route('/help')
+def help_center():
+    return render_template('help_center.html')
 
 @app.route('/support')
 def support():

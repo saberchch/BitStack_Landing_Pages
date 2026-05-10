@@ -1,187 +1,340 @@
 {% extends 'base.html' %}
 {% block content %}
-<!-- Hero Section -->
-<section class="py-xl px-gutter max-w-container-max mx-auto text-center flex flex-col items-center justify-center min-h-[614px] transition-colors duration-300">
-    <span class="inline-block py-1 px-3 bg-surface-variant text-on-surface-variant font-label-md text-label-md rounded uppercase tracking-widest mb-md border border-outline-variant transition-colors duration-300">For Experts & Peers</span>
-    <h1 class="font-display-lg text-display-lg text-on-background max-w-4xl mx-auto tracking-tight">
-        Share your expertise. <br/> Help others. <span class="text-primary-container">Earn through knowledge.</span>
-    </h1>
-    <p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto mt-md">
-        Mentors, teachers, and skilled users can monetize their expertise. Offer mentoring sessions, teach university modules, provide coaching, and earn BTS through structured platform workflows.
-    </p>
-    <div class="flex gap-md mt-lg justify-center">
-        <button onclick="window.location.href='/join'" class="bg-primary-container text-on-primary-container font-button text-button px-8 py-4 rounded hover:opacity-90 transition-opacity">
-            Become a Mentor
-        </button>
-        <button onclick="window.location.href='/token'" class="border border-outline-variant text-on-background font-button text-button px-8 py-4 rounded hover:bg-surface-variant transition-colors duration-300">
-            Learn about BTS
-        </button>
-    </div>
-</section>
-
-<!-- Features Grid -->
-<section class="px-8 py-xl max-w-container-max mx-auto border-t border-surface-variant transition-colors duration-300">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-        <!-- Card 1 -->
-        <div class="border border-outline-variant p-md flex flex-col gap-sm bg-surface-container-low hover:border-outline transition-colors duration-300 rounded">
-            <span class="material-symbols-outlined text-4xl text-primary-container mb-xs" style="font-variation-settings: 'FILL' 1;">view_module</span>
-            <h3 class="font-h3 text-h3 text-on-background">Create Impact</h3>
-            <p class="font-body-md text-body-md text-secondary">Share your knowledge where it's needed most. Help university students and peers grasp complex concepts and progress in their academic journeys.</p>
-        </div>
-        <!-- Card 2 -->
-        <div class="border border-outline-variant p-md flex flex-col gap-sm bg-surface-container-low hover:border-outline transition-colors duration-300 rounded">
-            <span class="material-symbols-outlined text-4xl text-primary-container mb-xs" style="font-variation-settings: 'FILL' 1;">groups</span>
-            <h3 class="font-h3 text-h3 text-on-background">Guide Students</h3>
-            <p class="font-body-md text-body-md text-secondary">Engage directly with a driven community. Utilize our mentorship channels to provide 1-on-1 guidance, project reviews, and exam preparation.</p>
-        </div>
-        <!-- Card 3 -->
-        <div class="border border-outline-variant p-md flex flex-col gap-sm bg-surface-container-low hover:border-outline transition-colors duration-300 rounded">
-            <img src="{{ url_for('static', filename='img/favicon.svg') }}" class="inline-block w-[1.2em] h-[1.2em] -mt-1" alt="BTS">
-            <h3 class="font-h3 text-h3 text-on-background">Earn BTS</h3>
-            <p class="font-body-md text-body-md text-secondary">Your time is valuable. Earn BTS tokens for successful mentoring sessions, which can be redeemed for TND following our ecosystem rules.</p>
-        </div>
-    </div>
-</section>
-
-<!-- Value Proposition Bento Grid -->
-<section class="py-xl bg-surface-container-highest border-y border-outline-variant transition-colors duration-300">
-    <div class="max-w-container-max mx-auto px-gutter">
-        <div class="mb-lg text-center">
-            <h2 class="font-h1 text-h1 text-on-background">The Mentoring Experience</h2>
-            <p class="font-body-md text-body-md text-secondary mt-base">Designed to make helping others simple and rewarding.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-            <!-- Feature Card 1 -->
-            <div class="col-span-1 md:col-span-4 bg-surface border border-outline-variant rounded p-md flex flex-col h-full hover:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)] transition-colors duration-300">
-                <div class="w-12 h-12 bg-surface-variant rounded flex items-center justify-center mb-md border border-outline-variant">
-                    <span class="material-symbols-outlined text-on-background">calendar_month</span>
+    <!-- BEGIN: HeroSection -->
+    <section class="py-16 lg:py-24 bg-white overflow-hidden">
+        <div class="container-wide grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Hero Text -->
+            <div class="space-y-8" data-purpose="hero-text-content">
+                <div class="flex items-center gap-2 mb-6">
+                    <span class="text-sm font-bold text-bts-gold bg-amber-50 px-3 py-1 rounded-full uppercase tracking-wider">
+                        FOR MENTORS
+                    </span>
                 </div>
-                <h3 class="font-h3 text-h3 text-on-background mb-sm">Flexible Scheduling</h3>
-                <p class="font-body-md text-body-md text-secondary flex-grow">
-                    You control your availability. Set the times you are free to mentor, accept session requests that fit your schedule, and manage your commitments easily.
+                <h1 class="text-5xl lg:text-7xl font-extrabold text-slate-900 leading-[1.1] mb-6">
+                    Teach. Guide.<br />Grow Together.
+                </h1>
+                <p class="text-xl text-slate-600 mb-10 max-w-lg leading-relaxed">
+                    Share your expertise, mentor learners, and earn BTS credits while building your profile and impact.
                 </p>
-            </div>
-            <!-- Feature Card 2 -->
-            <div class="col-span-1 md:col-span-4 bg-surface border border-outline-variant rounded p-md flex flex-col h-full hover:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)] transition-colors duration-300">
-                <div class="w-12 h-12 bg-primary-container rounded flex items-center justify-center mb-md">
-                    <img src="{{ url_for('static', filename='img/favicon.svg') }}" class="inline-block w-[1.2em] h-[1.2em] -mt-1" alt="BTS">
+                <ul class="space-y-4 mb-10">
+                    <li class="flex items-center gap-3 text-base font-medium text-slate-700">
+                        <svg class="w-5 h-5 text-bts-gold" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                        Connect with motivated learners
+                    </li>
+                    <li class="flex items-center gap-3 text-base font-medium text-slate-700">
+                        <svg class="w-5 h-5 text-bts-gold" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                        Earn credits for sessions and contributions
+                    </li>
+                    <li class="flex items-center gap-3 text-base font-medium text-slate-700">
+                        <svg class="w-5 h-5 text-bts-gold" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                        Build your reputation and grow your community
+                    </li>
+                </ul>
+                <div class="flex flex-wrap gap-4">
+                    <button class="bg-bts-gold hover:bg-bts-gold-hover text-white px-8 py-3.5 rounded-lg font-bold flex items-center gap-2 transition-all">
+                        Become a Mentor
+                        <span>→</span>
+                    </button>
+                    <button class="border border-slate-200 text-slate-600 px-8 py-3.5 rounded-lg font-bold hover:bg-slate-50 transition-all">
+                        Explore Mentorship
+                    </button>
                 </div>
-                <h3 class="font-h3 text-h3 text-on-background mb-sm">Clear Rewards</h3>
-                <p class="font-body-md text-body-md text-secondary flex-grow">
-                    Set your session rate in BTS. Once a session is booked and completed, your BTS is securely credited to your ecosystem balance.
-                </p>
             </div>
-            <!-- Feature Card 3 -->
-            <div class="col-span-1 md:col-span-4 bg-surface border border-outline-variant rounded p-md flex flex-col h-full hover:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.05)] transition-colors duration-300">
-                <div class="w-12 h-12 bg-surface-variant rounded flex items-center justify-center mb-md border border-outline-variant">
-                    <span class="material-symbols-outlined text-on-background">verified_user</span>
+            <!-- Hero Dashboard Mockup -->
+            <div class="relative" data-purpose="dashboard-preview">
+                <img alt="Mentor Dashboard Preview" class="w-full rounded-3xl shadow-2xl border border-gray-100 object-cover"
+                    src="{{ url_for('static', filename='img/Earn dashbord.png') }}" />
+                <!-- Decorative dots -->
+                <div class="absolute -top-10 -right-10 w-24 h-24 grid grid-cols-4 gap-2 opacity-20">
+                    <div class="w-2 h-2 bg-bts-gold rounded-full"></div>
+                    <div class="w-2 h-2 bg-bts-gold rounded-full"></div>
+                    <div class="w-2 h-2 bg-bts-gold rounded-full"></div>
+                    <div class="w-2 h-2 bg-bts-gold rounded-full"></div>
+                    <div class="w-2 h-2 bg-bts-gold rounded-full"></div>
+                    <div class="w-2 h-2 bg-bts-gold rounded-full"></div>
+                    <div class="w-2 h-2 bg-bts-gold rounded-full"></div>
+                    <div class="w-2 h-2 bg-bts-gold rounded-full"></div>
+                    <div class="w-2 h-2 bg-bts-gold rounded-full"></div>
+                    <div class="w-2 h-2 bg-bts-gold rounded-full"></div>
+                    <div class="w-2 h-2 bg-bts-gold rounded-full"></div>
+                    <div class="w-2 h-2 bg-bts-gold rounded-full"></div>
                 </div>
-                <h3 class="font-h3 text-h3 text-on-background mb-sm">Verified Community</h3>
-                <p class="font-body-md text-body-md text-secondary flex-grow">
-                    Engage with verified learners and peers. Our platform ensures you are helping real individuals who are actively seeking to improve their understanding.
-                </p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    <!-- END: HeroSection -->
 
-<!-- Data/Metrics Section -->
-<section class="px-8 py-xl max-w-container-max mx-auto flex flex-col md:flex-row gap-lg items-center transition-colors duration-300 border-b border-surface-variant">
-    <div class="flex-1 space-y-md">
-        <h2 class="font-display-sm text-display-sm text-on-background">Track your impact.</h2>
-        <p class="font-body-md text-body-md text-secondary">A simple overview of your contributions. Your dashboard provides a clear look at how many peers you've helped and the BTS you've earned.</p>
-        <div class="space-y-sm pt-xs">
-            <div class="flex items-center gap-sm">
-                <div class="w-1.5 h-1.5 bg-primary-container"></div>
-                <span class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest">Session History</span>
+    <!-- BEGIN: QuickStats -->
+    <section class="border-y border-gray-100 bg-bts-light-gray py-12">
+        <div class="container-wide grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 text-center">
+            <div class="space-y-1">
+                <div class="text-3xl font-bold text-slate-900">2,000+</div>
+                <div class="text-sm uppercase tracking-wider text-slate-500 font-semibold">Expert Mentors</div>
             </div>
-            <div class="flex items-center gap-sm">
-                <div class="w-1.5 h-1.5 bg-primary-container"></div>
-                <span class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest">BTS Balance Tracking</span>
+            <div class="space-y-1">
+                <div class="text-3xl font-bold text-slate-900">10K+</div>
+                <div class="text-sm uppercase tracking-wider text-slate-500 font-semibold">Learners Guided</div>
             </div>
-        </div>
-    </div>
-    <div class="flex-1 w-full border border-outline-variant rounded p-md bg-surface-container-low transition-colors duration-300">
-        <div class="flex justify-between items-end border-b border-surface-variant pb-sm mb-md">
-            <span class="font-label-bold text-label-bold text-secondary uppercase">Current Balance</span>
-            <span class="font-display-sm text-display-sm text-primary-container flex items-center gap-1">4,280 <img src="{{ url_for('static', filename='img/favicon.svg') }}" class="inline-block w-[1.2em] h-[1.2em] -mt-1" alt="BTS"></span>
-        </div>
-        <div class="space-y-4">
-            <div>
-                <div class="flex justify-between text-xs font-label-bold text-label-bold text-secondary mb-2">
-                    <span>Students Helped</span>
-                    <span>142</span>
-                </div>
-                <div class="h-1 bg-surface-variant w-full rounded">
-                    <div class="h-full bg-primary-container w-[70%] rounded"></div>
-                </div>
+            <div class="space-y-1">
+                <div class="text-3xl font-bold text-slate-900">50K+</div>
+                <div class="text-sm uppercase tracking-wider text-slate-500 font-semibold">Sessions</div>
             </div>
-            <div>
-                <div class="flex justify-between text-xs font-label-bold text-label-bold text-secondary mb-2">
-                    <span>Hours Mentored</span>
-                    <span>56</span>
-                </div>
-                <div class="h-1 bg-surface-variant w-full rounded">
-                    <div class="h-full bg-primary-container w-[45%] rounded"></div>
-                </div>
+            <div class="space-y-1">
+                <div class="text-3xl font-bold text-slate-900">4.9/5</div>
+                <div class="text-sm uppercase tracking-wider text-slate-500 font-semibold">Average Rating</div>
+            </div>
+            <div class="space-y-1">
+                <div class="text-3xl font-bold text-slate-900">Global</div>
+                <div class="text-sm uppercase tracking-wider text-slate-500 font-semibold">Reach</div>
+            </div>
+            <div class="space-y-1">
+                <div class="text-3xl font-bold text-slate-900">Flexible</div>
+                <div class="text-sm uppercase tracking-wider text-slate-500 font-semibold">Schedules</div>
+            </div>
+            <div class="space-y-1">
+                <div class="text-3xl font-bold text-slate-900">Secure</div>
+                <div class="text-sm uppercase tracking-wider text-slate-500 font-semibold">BTS Paid</div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    <!-- END: QuickStats -->
 
-<!-- Social Proof -->
-<section class="py-xl px-gutter max-w-container-max mx-auto border-t border-surface-variant transition-colors duration-300">
-    <div class="bg-inverse-surface text-inverse-on-surface border border-outline-variant rounded p-xl flex flex-col md:flex-row items-center gap-xl transition-colors duration-300">
-        <div class="md:w-1/2">
-            <span class="material-symbols-outlined text-primary-container text-5xl mb-sm" style="font-variation-settings: 'FILL' 1;">format_quote</span>
-            <p class="font-display-sm text-display-sm tracking-tight mb-md">
-                "Bitstack allowed me to share what I learned last semester with juniors. The platform handles the scheduling and BTS rewards, so I can just focus on helping them understand the material."
-            </p>
-            <div>
-                <p class="font-button text-button text-inverse-on-surface uppercase tracking-widest">Omar B.</p>
-                <p class="font-body-sm text-body-sm text-tertiary">Senior Engineering Student & Mentor</p>
+    <!-- BEGIN: EmpowerSection -->
+    <section class="py-24 bg-white">
+        <div class="container-wide">
+            <div class="grid lg:grid-cols-2 gap-20">
+                <div>
+                    <h2 class="text-4xl font-bold text-slate-900 mb-4">Empower Learners.<br />Earn &amp; Grow.</h2>
+                    <p class="text-slate-600 max-w-sm mb-12">
+                        Join a vibrant community of mentors and make a real impact while growing your personal brand and earning rewards.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Feature Card -->
+                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                            <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                    <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04M12 21.432a11.955 11.955 0 01-8.618-3.04A11.955 11.955 0 012.944 12c0-1.127.155-2.22.443-3.253a11.955 11.955 0 018.618-3.04m0 0a11.955 11.955 0 018.618 3.04c.288 1.033.443 2.126.443 3.253 0 1.127-.155 2.22-.443 3.253z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                </svg>
+                            </div>
+                            <h4 class="font-bold text-base mb-2 text-slate-800">Share Expertise</h4>
+                            <p class="text-sm text-slate-500 leading-relaxed">Teach what you love and help learners achieve their goals.</p>
+                        </div>
+                        <!-- Feature Card -->
+                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                            <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                    <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                </svg>
+                            </div>
+                            <h4 class="font-bold text-base mb-2 text-slate-800">Earn Rewards</h4>
+                            <p class="text-sm text-slate-500 leading-relaxed">Earn BTS credits for every session, resource, and contribution.</p>
+                        </div>
+                        <!-- Feature Card -->
+                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                            <div class="w-12 h-12 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                    <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                </svg>
+                            </div>
+                            <h4 class="font-bold text-base mb-2 text-slate-800">Build Your Brand</h4>
+                            <p class="text-sm text-slate-500 leading-relaxed">Grow your profile, get recognized, and expand your reach.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Quote Block -->
+                <div class="bg-slate-50 p-12 rounded-3xl border border-gray-100 shadow-sm relative overflow-hidden flex flex-col justify-center">
+                    <span class="absolute top-8 left-8 text-6xl text-bts-gold font-serif opacity-20">"</span>
+                    <div class="relative z-10 pl-8 border-l-4 border-bts-gold">
+                        <h3 class="text-4xl italic font-bold text-slate-800 mb-6 leading-snug">
+                            Teaching is the greatest act of optimism.
+                        </h3>
+                        <p class="font-bold text-slate-800 mb-8">— Colleen Wilcox</p>
+                        <p class="text-base text-slate-600 leading-relaxed max-w-sm">
+                            Every session you take has the potential to transform a learner's journey. Be the reason someone grows.
+                        </p>
+                    </div>
+                    <!-- Decorative dots -->
+                    <div class="absolute bottom-8 right-8 grid grid-cols-4 gap-2 opacity-10 text-bts-gold">
+                        <div class="w-2 h-2 bg-current rounded-full"></div><div class="w-2 h-2 bg-current rounded-full"></div><div class="w-2 h-2 bg-current rounded-full"></div><div class="w-2 h-2 bg-current rounded-full"></div>
+                        <div class="w-2 h-2 bg-current rounded-full"></div><div class="w-2 h-2 bg-current rounded-full"></div><div class="w-2 h-2 bg-current rounded-full"></div><div class="w-2 h-2 bg-current rounded-full"></div>
+                        <div class="w-2 h-2 bg-current rounded-full"></div><div class="w-2 h-2 bg-current rounded-full"></div><div class="w-2 h-2 bg-current rounded-full"></div><div class="w-2 h-2 bg-current rounded-full"></div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="md:w-1/2 w-full rounded bg-surface-container-highest border border-outline-variant border-dashed p-lg flex flex-col justify-center gap-4 relative transition-colors duration-300">
-            <div class="flex items-center gap-md">
-                <div class="w-12 h-12 rounded bg-surface flex items-center justify-center text-primary-container border border-outline-variant">
-                    <span class="material-symbols-outlined">event_available</span>
-                </div>
-                <div>
-                    <p class="font-button text-button text-on-background mb-1">1. Session Booked</p>
-                    <p class="font-body-sm text-body-sm text-secondary">Learner schedules via your calendar link.</p>
-                </div>
-            </div>
-            <div class="w-0.5 h-8 bg-outline-variant ml-6"></div>
-            <div class="flex items-center gap-md">
-                <div class="w-12 h-12 rounded bg-surface flex items-center justify-center text-primary-container border border-outline-variant">
-                    <span class="material-symbols-outlined">lock</span>
-                </div>
-                <div>
-                    <p class="font-button text-button text-on-background mb-1">2. BTS Secured</p>
-                    <p class="font-body-sm text-body-sm text-secondary">BTS is held safely in escrow during the session.</p>
-                </div>
-            </div>
-            <div class="w-0.5 h-8 bg-outline-variant ml-6"></div>
-            <div class="flex items-center gap-md">
-                <div class="w-12 h-12 rounded bg-primary-container flex items-center justify-center text-on-primary-container">
-                    <img src="{{ url_for('static', filename='img/favicon.svg') }}" class="inline-block w-[1.2em] h-[1.2em] -mt-1" alt="BTS">
-                </div>
-                <div>
-                    <p class="font-button text-button text-on-background mb-1">3. Reward Issued</p>
-                    <p class="font-body-sm text-body-sm text-secondary">BTS added to your balance immediately after completion.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
+    <!-- END: EmpowerSection -->
 
-<!-- Final CTA -->
-<section class="py-xl text-center px-gutter border-t border-surface-variant transition-colors duration-300 bg-surface-container-lowest">
-    <h2 class="font-display-sm text-display-sm text-on-background mb-sm">Ready to share your knowledge?</h2>
-    <p class="font-body-md text-body-md text-secondary mb-lg max-w-xl mx-auto">Join the mentor network, help your peers, and earn BTS for your contributions.</p>
-    <button onclick="window.location.href='/join'" class="bg-primary-container text-on-primary-container font-button text-button px-10 py-4 rounded hover:opacity-90 transition-opacity">
-        Start Mentoring
-    </button>
-</section>
+    <!-- BEGIN: HowMentoringWorks -->
+    <section class="py-24 bg-bts-light-gray border-y border-gray-100">
+        <div class="container-wide text-center">
+            <h2 class="text-4xl font-bold text-slate-900 mb-3">How Mentoring Works</h2>
+            <p class="text-slate-600 mb-16 text-xl">Simple steps to start mentoring and making an impact.</p>
+            <div class="flex flex-col md:flex-row justify-between items-start gap-8 relative">
+                <!-- Line Decor -->
+                <div class="hidden md:block absolute top-10 left-[10%] right-[10%] h-[2px] bg-gray-200 z-0"></div>
+
+                <!-- Step 1 -->
+                <div class="flex-1 text-center relative z-10 px-4">
+                    <div class="w-20 h-20 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6 relative shadow-sm border border-white">
+                        <span class="absolute -top-1 -right-1 w-8 h-8 bg-bts-gold text-white text-base font-bold rounded-full flex items-center justify-center shadow-sm">1</span>
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">Create Your Profile</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Set up your mentor profile and highlight your skills and experience.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="flex-1 text-center relative z-10 px-4">
+                    <div class="w-20 h-20 bg-amber-50 text-amber-600 rounded-full flex items-center justify-center mx-auto mb-6 relative shadow-sm border border-white">
+                        <span class="absolute -top-1 -right-1 w-8 h-8 bg-bts-gold text-white text-base font-bold rounded-full flex items-center justify-center shadow-sm">2</span>
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">Get Discovered</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Learners find you based on your expertise and interests.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="flex-1 text-center relative z-10 px-4">
+                    <div class="w-20 h-20 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 relative shadow-sm border border-white">
+                        <span class="absolute -top-1 -right-1 w-8 h-8 bg-bts-gold text-white text-base font-bold rounded-full flex items-center justify-center shadow-sm">3</span>
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">Conduct Sessions</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Host 1-on-1 or group sessions and guide learners.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="flex-1 text-center relative z-10 px-4">
+                    <div class="w-20 h-20 bg-purple-50 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 relative shadow-sm border border-white">
+                        <span class="absolute -top-1 -right-1 w-8 h-8 bg-bts-gold text-white text-base font-bold rounded-full flex items-center justify-center shadow-sm">4</span>
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">Earn &amp; Grow</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Earn BTS credits, get rated, and grow your mentorship journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END: HowMentoringWorks -->
+
+    <!-- BEGIN: WhyMentorSection -->
+    <section class="py-24 bg-white">
+        <div class="container-wide text-center">
+            <h2 class="text-4xl font-bold text-slate-900 mb-16">Why Mentor on Bitstacks?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <!-- Benefit 1 -->
+                <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:border-indigo-100 hover:shadow-md transition-all text-left">
+                    <div class="text-indigo-600 mb-6 bg-indigo-50 w-12 h-12 flex items-center justify-center rounded-xl">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-base text-slate-800 mb-3">Verified Learners</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Connect with serious learners who are ready to learn.</p>
+                </div>
+                <!-- Benefit 2 -->
+                <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:border-orange-100 hover:shadow-md transition-all text-left">
+                    <div class="text-orange-600 mb-6 bg-orange-50 w-12 h-12 flex items-center justify-center rounded-xl">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-base text-slate-800 mb-3">Smart Matching</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Get matched with learners based on your expertise and availability.</p>
+                </div>
+                <!-- Benefit 3 -->
+                <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:border-blue-100 hover:shadow-md transition-all text-left">
+                    <div class="text-blue-600 mb-6 bg-blue-50 w-12 h-12 flex items-center justify-center rounded-xl">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-base text-slate-800 mb-3">Flexible &amp; Remote</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Teach from anywhere and set your own schedule.</p>
+                </div>
+                <!-- Benefit 4 -->
+                <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:border-purple-100 hover:shadow-md transition-all text-left">
+                    <div class="text-purple-600 mb-6 bg-purple-50 w-12 h-12 flex items-center justify-center rounded-xl">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-base text-slate-800 mb-3">Impact &amp; Recognition</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Make a difference and get recognized in the community.</p>
+                </div>
+                <!-- Benefit 5 -->
+                <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:border-amber-100 hover:shadow-md transition-all text-left">
+                    <div class="text-amber-600 mb-6 bg-amber-50 w-12 h-12 flex items-center justify-center rounded-xl">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04M12 21.432a11.955 11.955 0 01-8.618-3.04A11.955 11.955 0 012.944 12c0-1.127.155-2.22.443-3.253a11.955 11.955 0 018.618-3.04m0 0a11.955 11.955 0 018.618 3.04c.288 1.033.443 2.126.443 3.253 0 1.127-.155 2.22-.443 3.253z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-base text-slate-800 mb-3">Secure &amp; Transparent</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">All transactions and payouts are secure and transparent.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END: WhyMentorSection -->
+
+    <!-- BEGIN: FinalCTA -->
+    <section class="py-24 bg-white">
+        <div class="container-wide">
+            <div class="bg-[#f8fafc] rounded-[40px] border border-slate-100 p-16 text-center relative overflow-hidden">
+                <div class="absolute top-0 left-0 p-8 opacity-10">
+                    <div class="grid grid-cols-4 gap-2">
+                        <div class="w-2 h-2 bg-indigo-600 rounded-full"></div>
+                        <div class="w-2 h-2 bg-indigo-600 rounded-full"></div>
+                        <div class="w-2 h-2 bg-indigo-600 rounded-full"></div>
+                        <div class="w-2 h-2 bg-indigo-600 rounded-full"></div>
+                        <div class="w-2 h-2 bg-indigo-600 rounded-full"></div>
+                        <div class="w-2 h-2 bg-indigo-600 rounded-full"></div>
+                        <div class="w-2 h-2 bg-indigo-600 rounded-full"></div>
+                        <div class="w-2 h-2 bg-indigo-600 rounded-full"></div>
+                        <div class="w-2 h-2 bg-indigo-600 rounded-full"></div>
+                        <div class="w-2 h-2 bg-indigo-600 rounded-full"></div>
+                        <div class="w-2 h-2 bg-indigo-600 rounded-full"></div>
+                        <div class="w-2 h-2 bg-indigo-600 rounded-full"></div>
+                    </div>
+                </div>
+                <div class="absolute bottom-0 right-0 p-8 opacity-10">
+                    <div class="grid grid-cols-4 gap-2">
+                        <div class="w-2 h-2 bg-indigo-600 rounded-full"></div>
+                        <div class="w-2 h-2 bg-indigo-600 rounded-full"></div>
+                        <div class="w-2 h-2 bg-indigo-600 rounded-full"></div>
+                        <div class="w-2 h-2 bg-indigo-600 rounded-full"></div>
+                        <div class="w-2 h-2 bg-indigo-600 rounded-full"></div>
+                        <div class="w-2 h-2 bg-indigo-600 rounded-full"></div>
+                        <div class="w-2 h-2 bg-indigo-600 rounded-full"></div>
+                        <div class="w-2 h-2 bg-indigo-600 rounded-full"></div>
+                        <div class="w-2 h-2 bg-indigo-600 rounded-full"></div>
+                        <div class="w-2 h-2 bg-indigo-600 rounded-full"></div>
+                        <div class="w-2 h-2 bg-indigo-600 rounded-full"></div>
+                        <div class="w-2 h-2 bg-indigo-600 rounded-full"></div>
+                    </div>
+                </div>
+                <div class="relative z-10 max-w-3xl mx-auto">
+                    <h2 class="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6">Ready to inspire and make an impact?</h2>
+                    <p class="text-xl text-slate-600 mb-10">Join thousands of mentors who are shaping the future on Bitstacks.</p>
+                    <button class="bg-bts-gold text-white px-12 py-4 rounded-xl font-extrabold flex items-center gap-2 mx-auto hover:bg-bts-gold-hover transition-all shadow-xl shadow-bts-gold/20">
+                        Become a Mentor
+                        <span>→</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END: FinalCTA -->
 {% endblock %}

@@ -1,0 +1,283 @@
+{
+    "page": "FAQs",
+    "url": "/faqs",
+    "hero": {
+        "title": "Frequently Asked Questions",
+        "description": "Find clear answers about using Bitstack. Get quick guidance on accounts, learning support, mentoring, freelance projects, client workflows, BTS Credits, library resources, payments, and platform support.",
+        "searchPlaceholder": "Search questions, topics, services, BTS Credits, projects...",
+        "buttons": [
+            {
+                "label": "Contact Support",
+                "link": "/support"
+            },
+            {
+                "label": "Back to Support",
+                "link": "/support"
+            }
+        ]
+    },
+    "categories": [
+        {
+            "id": "all",
+            "label": "All"
+        },
+        {
+            "id": "account",
+            "label": "Account"
+        },
+        {
+            "id": "learning-mentoring",
+            "label": "Learning & Mentoring"
+        },
+        {
+            "id": "freelance",
+            "label": "Freelance"
+        },
+        {
+            "id": "clients",
+            "label": "Clients"
+        },
+        {
+            "id": "bts-credits",
+            "label": "BTS Credits"
+        },
+        {
+            "id": "library",
+            "label": "Library"
+        },
+        {
+            "id": "support",
+            "label": "Support"
+        }
+    ],
+    "faqs": [
+        {
+            "category": "Account",
+            "question": "How do I create a Bitstack account?",
+            "answer": "You can create a Bitstack account by signing up with your basic information, choosing your user role, and completing your profile. Depending on your activity, you may use Bitstack as a learner, mentor, freelancer, client, institute representative, or resource contributor."
+        },
+        {
+            "category": "Account",
+            "question": "Can one user have more than one role?",
+            "answer": "Yes. Bitstack is designed as a growth ecosystem, so users may move between roles over time. For example, a learner may later become a mentor, a freelancer, or a resource contributor after developing sufficient skills and experience."
+        },
+        {
+            "category": "Account",
+            "question": "How do I update my profile?",
+            "answer": "Go to your dashboard, open your profile settings, and update your personal information, education, skills, experience, portfolio, availability, or preferences. Keeping your profile complete improves visibility and trust across the platform."
+        },
+        {
+            "category": "Account",
+            "question": "Why should I complete my profile?",
+            "answer": "A complete profile helps other users understand who you are, what you can offer, and what type of support or service you are looking for. It is especially important for mentors, freelancers, clients, and institutes because it builds credibility."
+        },
+        {
+            "category": "Account",
+            "question": "What should I do if I cannot log in?",
+            "answer": "First, check that your email and password are correct. If the issue continues, use the password reset option. If you still cannot access your account, contact Bitstack support with your email address and a short description of the issue."
+        },
+        {
+            "category": "Account",
+            "question": "Can Bitstack suspend an account?",
+            "answer": "Yes. Bitstack may suspend or restrict accounts that violate platform rules, misuse services, provide false information, abuse payment or BTS Credit systems, upload harmful content, or create safety and trust concerns."
+        },
+        {
+            "category": "Learning & Mentoring",
+            "question": "What learning support does Bitstack provide?",
+            "answer": "Bitstack helps learners access mentors, study resources, academic guidance, project support, revision materials, and skill-based learning opportunities. The goal is to connect learners with people and resources that help them progress faster."
+        },
+        {
+            "category": "Learning & Mentoring",
+            "question": "How do I find a mentor?",
+            "answer": "Go to the Mentors section and search by subject, skill, module, academic field, professional area, or availability. You can compare mentor profiles, experience, ratings, and session details before booking."
+        },
+        {
+            "category": "Learning & Mentoring",
+            "question": "How do I book a mentoring session?",
+            "answer": "Choose a mentor, select the type of session you need, review the available time slots, and confirm the booking. If the session requires payment or BTS Credits, the platform will guide you through the confirmation process."
+        },
+        {
+            "category": "Learning & Mentoring",
+            "question": "What can I ask a mentor for help with?",
+            "answer": "You can ask for help with academic concepts, exam preparation, assignments, software tools, technical skills, project structure, career guidance, or professional development. The support should focus on understanding, learning, and skill improvement."
+        },
+        {
+            "category": "Learning & Mentoring",
+            "question": "Can mentors complete my assignment for me?",
+            "answer": "No. Bitstack should not be used for academic dishonesty. Mentors may explain concepts, review your approach, guide your thinking, and help you improve your work, but they should not complete assignments, exams, or graded work dishonestly on your behalf."
+        },
+        {
+            "category": "Learning & Mentoring",
+            "question": "Can I prepare for exams using Bitstack?",
+            "answer": "Yes. You can use Bitstack to find mentors, review modules, access notes, organize revision materials, and ask questions about difficult topics. The platform can support exam preparation through guidance and structured learning resources."
+        },
+        {
+            "category": "Learning & Mentoring",
+            "question": "Can I become a mentor later?",
+            "answer": "Yes. If you develop strong knowledge in a subject, skill, or professional area, you may apply or activate a mentor role. This allows you to help other learners while building your reputation and earning through the platform."
+        },
+        {
+            "category": "Freelance",
+            "question": "What is the Freelance section for?",
+            "answer": "The Freelance section connects skilled users with real projects. Freelancers can apply their knowledge, work with clients, deliver defined milestones, gain experience, and build a verified portfolio."
+        },
+        {
+            "category": "Freelance",
+            "question": "How do I apply for a freelance project?",
+            "answer": "Go to the Freelance section, browse available projects, read the requirements carefully, and submit a proposal. Your proposal should explain your skills, approach, timeline, and why you are suitable for the project."
+        },
+        {
+            "category": "Freelance",
+            "question": "What types of projects can be posted?",
+            "answer": "Projects may include web development, design, data analysis, technical writing, academic support tools, engineering-related tasks, digital content, research assistance, software scripts, presentations, or other professional services allowed by the platform."
+        },
+        {
+            "category": "Freelance",
+            "question": "How are freelance projects managed?",
+            "answer": "Projects should be managed using clear requirements, defined deliverables, milestones, communication, submission steps, and approval conditions. This helps both clients and freelancers understand expectations before work begins."
+        },
+        {
+            "category": "Freelance",
+            "question": "When do freelancers receive rewards?",
+            "answer": "Freelancers receive BTS Credits or platform rewards after a milestone or project is approved, according to the agreed workflow and platform rules. Rewards should only be released when the required work has been submitted and accepted."
+        },
+        {
+            "category": "Freelance",
+            "question": "What happens if a client does not approve the work?",
+            "answer": "The freelancer and client should first communicate clearly and review the agreed requirements. If the disagreement continues, Bitstack support may review the project details, milestone conditions, submitted work, and communication history."
+        },
+        {
+            "category": "Freelance",
+            "question": "How does Bitstack help build my portfolio?",
+            "answer": "Completed projects can be recorded on your profile, helping you demonstrate practical experience, technical skills, reliability, and completed work. This can help learners and freelancers build credibility over time."
+        },
+        {
+            "category": "Clients",
+            "question": "Who can use Bitstack as a client?",
+            "answer": "Clients may include individuals, startups, companies, student organizations, research groups, institutes, or professionals looking for skilled people to complete digital, technical, academic, or professional projects."
+        },
+        {
+            "category": "Clients",
+            "question": "How do clients post a project?",
+            "answer": "Clients can create a project by describing the objective, required skills, expected deliverables, timeline, budget or BTS Credit reward, and acceptance criteria. Clear project descriptions help attract better proposals."
+        },
+        {
+            "category": "Clients",
+            "question": "How do clients choose freelancers?",
+            "answer": "Clients can review freelancer profiles, skills, portfolios, previous work, ratings, proposals, and communication quality. The best choice should be based on fit, experience, reliability, and understanding of the project."
+        },
+        {
+            "category": "Clients",
+            "question": "What should a good project brief include?",
+            "answer": "A strong project brief should include: Project objective, Required deliverables, Expected timeline, Required skills or tools, Budget or BTS Credit reward, Acceptance criteria, Any files, examples, or references needed."
+        },
+        {
+            "category": "Clients",
+            "question": "How are deliverables approved?",
+            "answer": "The freelancer submits the agreed work, and the client reviews it against the project requirements. If the work meets the agreed conditions, the client approves the milestone or project, and the reward can be released."
+        },
+        {
+            "category": "Clients",
+            "question": "What if there is a disagreement?",
+            "answer": "Both sides should first communicate professionally and refer to the agreed project scope. If the issue cannot be resolved, Bitstack support may assist by reviewing the project description, milestone terms, submitted files, and communication records."
+        },
+        {
+            "category": "BTS Credits",
+            "question": "What are BTS Credits?",
+            "answer": "BTS Credits are internal platform credits used within the Bitstack ecosystem. They may be used for services, rewards, refunds, learning resources, mentoring sessions, freelance projects, and other approved platform activities."
+        },
+        {
+            "category": "BTS Credits",
+            "question": "Are BTS Credits cryptocurrency?",
+            "answer": "No. BTS Credits are not a public cryptocurrency, not a speculative token, and not publicly tradable outside Bitstack. They are internal platform credits designed to support activity inside the Bitstack ecosystem."
+        },
+        {
+            "category": "BTS Credits",
+            "question": "What can I use BTS Credits for?",
+            "answer": "Depending on platform rules, BTS Credits may be used for booking mentor sessions, accessing selected learning resources, paying for freelance project milestones, receiving refunds, receiving rewards for contributions, and participating in internal platform services."
+        },
+        {
+            "category": "BTS Credits",
+            "question": "Can I transfer BTS Credits to another user?",
+            "answer": "BTS Credits should only be used according to Bitstack rules. In the first version of the platform, it is better to avoid open user-to-user transfers unless they are part of an approved service workflow, such as project payments, mentoring payments, or refunds."
+        },
+        {
+            "category": "BTS Credits",
+            "question": "Can BTS Credits be refunded?",
+            "answer": "Refunds may be possible depending on the service status, cancellation timing, project milestone, dispute decision, or platform policy. Not every transaction is automatically refundable."
+        },
+        {
+            "category": "BTS Credits",
+            "question": "Can BTS Credits be exchanged outside the platform?",
+            "answer": "No. BTS Credits should not be presented as public money, foreign currency, cryptocurrency, or an external tradable asset. They are intended for internal use within Bitstack."
+        },
+        {
+            "category": "BTS Credits",
+            "question": "Why does Bitstack use BTS Credits?",
+            "answer": "BTS Credits help organize internal payments, rewards, refunds, and platform activity in a transparent and structured way. They make it easier to connect learning, mentoring, freelancing, and resource contribution inside one ecosystem."
+        },
+        {
+            "category": "Library",
+            "question": "What is the Bitstack Library?",
+            "answer": "The Library is a structured resource space where users can access learning materials such as notes, guides, templates, videos, slides, documents, software resources, and practical study materials."
+        },
+        {
+            "category": "Library",
+            "question": "What types of resources can be uploaded?",
+            "answer": "Users may upload resources such as course notes, study guides, templates, past-paper solutions where allowed, technical tutorials, videos or slides, project examples, and useful academic or professional documents."
+        },
+        {
+            "category": "Library",
+            "question": "Can anyone upload resources?",
+            "answer": "Resource uploads may be available to approved users depending on platform rules. Contributors should ensure that their resources are useful, accurate, appropriate, and legally shareable."
+        },
+        {
+            "category": "Library",
+            "question": "Are library resources reviewed?",
+            "answer": "Some resources may be reviewed, moderated, organized, or flagged to maintain quality and avoid inappropriate, misleading, copyrighted, or harmful content."
+        },
+        {
+            "category": "Library",
+            "question": "Can I download resources?",
+            "answer": "Downloads depend on the permissions set by Bitstack and the resource contributor. Some resources may be freely accessible, while others may require BTS Credits, account access, or specific permissions."
+        },
+        {
+            "category": "Library",
+            "question": "What content is not allowed in the Library?",
+            "answer": "Users should not upload copyrighted material without permission, private documents, exam leaks, harmful content, misleading files, offensive material, or resources that violate academic integrity or platform rules."
+        },
+        {
+            "category": "Support",
+            "question": "How do I contact Bitstack support?",
+            "answer": "You can contact support through the Support page by submitting your name, email, topic, and message. You should provide enough details so the support team can understand and respond to your issue."
+        },
+        {
+            "category": "Support",
+            "question": "What information should I include in a support request?",
+            "answer": "Include your account email, user role, issue category, relevant service or project name, transaction reference if available, screenshots if useful, and a clear explanation of the problem."
+        },
+        {
+            "category": "Support",
+            "question": "What issues can support help with?",
+            "answer": "Support can help with account access, profile issues, mentoring sessions, freelance projects, BTS Credits, library resources, payments, refunds, disputes, technical issues, and general platform questions."
+        },
+        {
+            "category": "Support",
+            "question": "How fast will support respond?",
+            "answer": "Response time depends on the type and urgency of the issue. Account access, payment, project, and security-related issues should be treated as higher priority."
+        },
+        {
+            "category": "Support",
+            "question": "What should I do for urgent issues?",
+            "answer": "For urgent account, payment, project, or access issues, use the Support page and clearly mark the issue as urgent in your message. Include all relevant details to help the team respond efficiently."
+        }
+    ],
+    "bottomCTA": {
+        "title": "Still need help?",
+        "description": "Contact Bitstack support for account issues, learning services, freelance projects, BTS Credits, library resources, payments, disputes, or platform questions.",
+        "button": {
+            "label": "Contact Support",
+            "link": "/support"
+        }
+    }
+}

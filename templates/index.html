@@ -1,403 +1,652 @@
 {% extends 'base.html' %}
 {% block content %}
-<!-- Hero Section -->
-<section class="w-full max-w-container-max mx-auto px-gutter pt-xl pb-lg flex flex-col items-center text-center">
-    <div class="inline-flex items-center space-x-2 bg-surface-container-highest px-4 py-1.5 rounded-full mb-8">
-        <span class="w-2 h-2 bg-primary-container rounded-full animate-pulse"></span>
-        <span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Learn • Earn • Freelance</span>
-    </div>
-    <h1 class="font-display-lg text-display-lg text-on-background max-w-5xl mb-6 tracking-tighter">
-        Bitstack — Learn • Earn • Freelance
-    </h1>
-    <p class="font-display-sm text-display-sm text-on-surface-variant max-w-3xl mb-8 font-light">
-        Institutes • Mentors • Freelance Projects • Resources
-    </p>
-    <p class="font-body-lg text-body-lg text-secondary max-w-2xl mb-12 uppercase tracking-widest">
-        Built for University Success • Designed for Career Growth
-    </p>
-</section>
-
-<!-- Platform Overview & Philosophy -->
-<section class="w-full bg-surface-container-lowest py-xl border-t border-b border-surface-variant transition-colors duration-300">
-    <div class="max-w-container-max mx-auto px-gutter">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-xl">
-            <div>
-                <h2 class="font-display-md text-display-md text-on-background mb-6 uppercase tracking-tight">Platform Overview</h2>
-                <p class="font-body-lg text-body-lg text-secondary mb-6 leading-relaxed">
-                    Bitstack is a modern digital ecosystem designed to connect learning, knowledge sharing, freelancing, and real-world opportunity within one unified platform.
-                </p>
-                <p class="font-body-md text-body-md text-secondary mb-6">
-                    Unlike traditional platforms that focus on only one function, Bitstack combines multiple interconnected systems into a single structured environment where users can improve skills, share expertise, earn income, collaborate on projects, and build real professional experience.
-                </p>
-                <p class="font-body-lg text-body-lg text-primary-container font-bold">
-                    It is not only a learning platform, a freelance marketplace, or a resource library. It is a complete growth ecosystem.
-                </p>
+<!-- BEGIN: HeroSection -->
+<section class="py-16 lg:py-24 bg-white overflow-hidden">
+    <div class="container-wide grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Hero Content -->
+        <div data-purpose="hero-text-content">
+            <div class="flex items-center gap-2 mb-6">
+                <span
+                    class="text-sm font-bold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full uppercase tracking-wider">LEARN
+                    • EARN • FREELANCE</span>
             </div>
-            <div class="bg-surface-container-low p-lg rounded-lg border border-surface-variant flex flex-col justify-center">
-                <h2 class="font-display-md text-display-md text-on-background mb-6 uppercase tracking-tight">Core Philosophy</h2>
-                <blockquote class="border-l-4 border-primary-container pl-6 py-2 mb-6">
-                    <p class="font-display-sm text-display-sm text-on-background italic">
-                        "Knowledge and opportunity should exist in the same ecosystem."
-                    </p>
-                </blockquote>
-                <p class="font-body-md text-body-md text-secondary leading-relaxed">
-                    The platform connects people seeking knowledge, people capable of teaching, people looking for work, and people searching for expertise. This creates a continuous cycle where users can learn, become skilled, earn, gain experience, and eventually help others grow.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Main Ecosystem Pillars -->
-<section class="w-full bg-surface-container-low transition-colors duration-300">
-    <div class="py-xl border-b border-surface-variant">
-        <div class="max-w-container-max mx-auto px-gutter text-center">
-            <h2 class="font-display-lg text-display-lg text-on-background mb-4 uppercase tracking-tight">Main Ecosystem Pillars</h2>
-            <p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto">Five interconnected systems working together to accelerate your growth.</p>
-        </div>
-    </div>
-    
-    <div class="flex flex-col">
-        <!-- 1. Learn (Text Left, Visual Right) -->
-        <div class="border-b border-surface-variant py-xl">
-            <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
-                <div class="flex flex-col items-start text-left space-y-6">
-                    <div class="flex items-center gap-4">
-                        <div class="w-16 h-16 bg-surface-container border border-outline-variant rounded-xl flex items-center justify-center text-primary-container shadow-sm">
-                            <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">school</span>
-                        </div>
-                        <span class="font-display-md text-display-md text-surface-variant opacity-50">01</span>
-                    </div>
-                    <h3 class="font-display-md text-display-md text-on-background">Learn</h3>
-                    <p class="font-body-lg text-body-lg text-secondary leading-relaxed">
-                        Structured academic and skill-based support through mentoring. Find mentors, prepare for exams, and get personalized academic guidance. It is an active support system designed to help users progress faster.
-                    </p>
-                    <a class="inline-flex items-center text-primary-container font-label-bold text-label-bold uppercase tracking-widest hover:underline underline-offset-4 mt-2" href="/learners">
-                        Explore Learning <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
-                    </a>
-                </div>
-                <div class="bg-surface-container-lowest border border-surface-variant rounded-2xl aspect-[4/3] flex flex-col items-center justify-center p-8 relative overflow-hidden group">
-                    <div class="w-full max-w-sm flex flex-col gap-4 relative z-10">
-                        <div class="h-16 w-full bg-surface border border-outline-variant rounded-lg flex items-center px-4 gap-4 shadow-sm group-hover:-translate-y-1 transition-transform">
-                            <div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-container"><span class="material-symbols-outlined text-[20px]">person</span></div>
-                            <div class="h-3 w-1/3 bg-surface-variant rounded"></div>
-                            <div class="h-6 w-16 bg-surface-container ml-auto rounded"></div>
-                        </div>
-                        <div class="h-16 w-11/12 bg-surface border border-outline-variant rounded-lg flex items-center px-4 gap-4 shadow-sm group-hover:-translate-y-1 transition-transform delay-75">
-                            <div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-container"><span class="material-symbols-outlined text-[20px]">person</span></div>
-                            <div class="h-3 w-1/2 bg-surface-variant rounded"></div>
-                            <div class="h-6 w-16 bg-surface-container ml-auto rounded"></div>
-                        </div>
-                        <div class="h-16 w-full bg-surface border border-outline-variant rounded-lg flex items-center px-4 gap-4 shadow-sm group-hover:-translate-y-1 transition-transform delay-150">
-                            <div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-container"><span class="material-symbols-outlined text-[20px]">person</span></div>
-                            <div class="h-3 w-2/5 bg-surface-variant rounded"></div>
-                            <div class="h-6 w-16 bg-surface-container ml-auto rounded"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 2. Earn (Visual Left, Text Right) -->
-        <div class="border-b border-surface-variant py-xl bg-surface-container-lowest">
-            <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
-                <div class="bg-surface-container-low border border-surface-variant rounded-2xl aspect-[4/3] flex flex-col items-center justify-center p-8 relative overflow-hidden group order-2 md:order-1">
-                    <div class="w-full max-w-sm bg-surface border border-outline-variant rounded-xl p-6 shadow-sm group-hover:border-primary-container transition-colors">
-                        <div class="flex justify-between items-center mb-6 border-b border-surface-variant pb-4">
-                            <div class="font-label-bold text-label-bold text-secondary uppercase">Current Balance</div>
-                            <div class="font-display-sm text-display-sm text-primary-container flex items-center gap-1">1,250 <img src="{{ url_for('static', filename='img/favicon.svg') }}" class="inline-block w-[1.2em] h-[1.2em] -mt-1" alt="BTS"></div>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="flex justify-between items-center">
-                                <div class="font-body-sm text-secondary">Session Complete</div>
-                                <div class="font-label-bold text-on-background">+150 BTS</div>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <div class="font-body-sm text-secondary">Module Taught</div>
-                                <div class="font-label-bold text-on-background">+300 BTS</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-col items-start text-left space-y-6 order-1 md:order-2">
-                    <div class="flex items-center gap-4">
-                        <span class="font-display-md text-display-md text-surface-variant opacity-50">02</span>
-                        <div class="w-16 h-16 bg-surface border border-outline-variant rounded-xl flex items-center justify-center text-primary-container shadow-sm">
-                            <img src="{{ url_for('static', filename='img/favicon.svg') }}" class="inline-block w-[1.2em] h-[1.2em] -mt-1" alt="BTS">
-                        </div>
-                    </div>
-                    <h3 class="font-display-md text-display-md text-on-background">Earn</h3>
-                    <p class="font-body-lg text-body-lg text-secondary leading-relaxed">
-                        Monetize your expertise. Mentors, teachers, and skilled users can offer mentoring sessions, teach modules, and earn through structured workflows. Transform knowledge into real earning opportunities in BTS.
-                    </p>
-                    <a class="inline-flex items-center text-primary-container font-label-bold text-label-bold uppercase tracking-widest hover:underline underline-offset-4 mt-2" href="/mentors">
-                        Start Earning <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- 3. Freelance (Text Left, Visual Right) -->
-        <div class="border-b border-surface-variant py-xl">
-            <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
-                <div class="flex flex-col items-start text-left space-y-6">
-                    <div class="flex items-center gap-4">
-                        <div class="w-16 h-16 bg-surface-container border border-outline-variant rounded-xl flex items-center justify-center text-primary-container shadow-sm">
-                            <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">work</span>
-                        </div>
-                        <span class="font-display-md text-display-md text-surface-variant opacity-50">03</span>
-                    </div>
-                    <h3 class="font-display-md text-display-md text-on-background">Freelance</h3>
-                    <p class="font-body-lg text-body-lg text-secondary leading-relaxed">
-                        Bridge the gap between learning and professional execution. Work on real digital projects, collaborate with clients, deliver structured milestones, and gain practical experience while building a verifiable portfolio.
-                    </p>
-                    <a class="inline-flex items-center text-primary-container font-label-bold text-label-bold uppercase tracking-widest hover:underline underline-offset-4 mt-2" href="/freelancers">
-                        View Projects <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
-                    </a>
-                </div>
-                <div class="bg-surface-container-lowest border border-surface-variant rounded-2xl aspect-[4/3] flex flex-col items-center justify-center p-8 relative overflow-hidden group">
-                    <div class="w-full max-w-sm space-y-4 relative z-10">
-                        <div class="bg-surface border border-surface-variant rounded-lg p-4 shadow-sm group-hover:-translate-x-2 transition-transform">
-                            <div class="h-3 w-1/4 bg-primary-container/50 rounded mb-2"></div>
-                            <div class="h-4 w-3/4 bg-surface-variant rounded mb-4"></div>
-                            <div class="flex justify-between items-center">
-                                <div class="h-3 w-16 bg-surface-container rounded"></div>
-                                <div class="h-6 w-20 bg-surface-variant rounded"></div>
-                            </div>
-                        </div>
-                        <div class="bg-surface border border-surface-variant rounded-lg p-4 shadow-sm ml-8 group-hover:translate-x-2 transition-transform">
-                            <div class="h-3 w-1/4 bg-primary-container/50 rounded mb-2"></div>
-                            <div class="h-4 w-2/3 bg-surface-variant rounded mb-4"></div>
-                            <div class="flex justify-between items-center">
-                                <div class="h-3 w-16 bg-surface-container rounded"></div>
-                                <div class="h-6 w-20 bg-surface-variant rounded"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 4. Institutes (Visual Left, Text Right) -->
-        <div class="border-b border-surface-variant py-xl bg-surface-container-lowest">
-            <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
-                <div class="bg-surface-container-low border border-surface-variant rounded-2xl aspect-[4/3] flex flex-col items-center justify-center p-8 relative overflow-hidden group order-2 md:order-1">
-                    <div class="w-full max-w-sm bg-surface border border-outline-variant rounded-xl overflow-hidden shadow-sm flex flex-col group-hover:border-primary-container transition-colors">
-                        <div class="h-16 bg-surface-container-low border-b border-surface-variant flex items-center px-4 gap-3">
-                            <div class="w-8 h-8 rounded bg-primary-container flex items-center justify-center text-on-primary-container font-bold">U</div>
-                            <div class="h-4 w-32 bg-surface-variant rounded"></div>
-                        </div>
-                        <div class="p-4 grid grid-cols-2 gap-3">
-                            <div class="h-16 bg-surface-container rounded border border-surface-variant"></div>
-                            <div class="h-16 bg-surface-container rounded border border-surface-variant"></div>
-                            <div class="col-span-2 h-16 bg-surface-container rounded border border-surface-variant"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-col items-start text-left space-y-6 order-1 md:order-2">
-                    <div class="flex items-center gap-4">
-                        <span class="font-display-md text-display-md text-surface-variant opacity-50">04</span>
-                        <div class="w-16 h-16 bg-surface border border-outline-variant rounded-xl flex items-center justify-center text-primary-container shadow-sm">
-                            <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">account_balance</span>
-                        </div>
-                    </div>
-                    <h3 class="font-display-md text-display-md text-on-background">Institutes</h3>
-                    <p class="font-body-lg text-body-lg text-secondary leading-relaxed">
-                        Support for educational institutes and training organizations. Present programs, share training opportunities, and directly integrate your students into a verified talent pipeline.
-                    </p>
-                    <a class="inline-flex items-center text-primary-container font-label-bold text-label-bold uppercase tracking-widest hover:underline underline-offset-4 mt-2" href="/institutes">
-                        For Institutes <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- 5. Library (Text Left, Visual Right) -->
-        <div class="py-xl">
-            <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
-                <div class="flex flex-col items-start text-left space-y-6">
-                    <div class="flex items-center gap-4">
-                        <div class="w-16 h-16 bg-surface-container border border-outline-variant rounded-xl flex items-center justify-center text-primary-container shadow-sm">
-                            <span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">local_library</span>
-                        </div>
-                        <span class="font-display-md text-display-md text-surface-variant opacity-50">05</span>
-                    </div>
-                    <h3 class="font-display-md text-display-md text-on-background">Library</h3>
-                    <p class="font-body-lg text-body-lg text-secondary leading-relaxed">
-                        A structured educational resource system. Upload, discover, organize, and access notes, templates, videos, slides, and learning documents organized by schools, levels, and modules.
-                    </p>
-                    <a class="inline-flex items-center text-primary-container font-label-bold text-label-bold uppercase tracking-widest hover:underline underline-offset-4 mt-2" href="/library">
-                        Browse Library <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
-                    </a>
-                </div>
-                <div class="bg-surface-container-lowest border border-surface-variant rounded-2xl aspect-[4/3] flex flex-col items-center justify-center p-8 relative overflow-hidden group">
-                    <div class="w-full max-w-sm grid grid-cols-2 gap-4 relative z-10">
-                        <div class="bg-surface border border-outline-variant rounded-lg p-4 shadow-sm flex flex-col gap-2 group-hover:-translate-y-1 transition-transform">
-                            <span class="material-symbols-outlined text-primary-container mb-2">description</span>
-                            <div class="h-3 w-3/4 bg-surface-variant rounded"></div>
-                            <div class="h-2 w-1/2 bg-surface-variant rounded opacity-50"></div>
-                        </div>
-                        <div class="bg-surface border border-outline-variant rounded-lg p-4 shadow-sm flex flex-col gap-2 group-hover:-translate-y-1 transition-transform delay-75">
-                            <span class="material-symbols-outlined text-primary-container mb-2">movie</span>
-                            <div class="h-3 w-2/3 bg-surface-variant rounded"></div>
-                            <div class="h-2 w-1/2 bg-surface-variant rounded opacity-50"></div>
-                        </div>
-                        <div class="bg-surface border border-outline-variant rounded-lg p-4 shadow-sm flex flex-col gap-2 group-hover:-translate-y-1 transition-transform delay-150">
-                            <span class="material-symbols-outlined text-primary-container mb-2">code</span>
-                            <div class="h-3 w-5/6 bg-surface-variant rounded"></div>
-                            <div class="h-2 w-1/3 bg-surface-variant rounded opacity-50"></div>
-                        </div>
-                        <div class="bg-surface border border-outline-variant rounded-lg p-4 shadow-sm flex flex-col gap-2 group-hover:-translate-y-1 transition-transform delay-200">
-                            <span class="material-symbols-outlined text-primary-container mb-2">folder</span>
-                            <div class="h-3 w-1/2 bg-surface-variant rounded"></div>
-                            <div class="h-2 w-3/4 bg-surface-variant rounded opacity-50"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Ecosystem Logic & Target Users -->
-<section class="max-w-container-max mx-auto px-gutter py-xl flex flex-col gap-24 transition-colors duration-300">
-    <div class="flex flex-col md:flex-row items-center gap-xl w-full">
-        <div class="md:w-1/2">
-            <h2 class="font-display-md text-display-md text-on-background mb-6 uppercase tracking-tight">Ecosystem Logic</h2>
-            <p class="font-body-lg text-body-lg text-secondary mb-6">
-                Bitstack is intentionally designed as an interconnected ecosystem rather than isolated services. This creates a self-reinforcing growth loop.
+            <h1 class="text-5xl lg:text-7xl font-extrabold text-slate-900 leading-[1.1] mb-6">
+                Bitstack — <br />
+                <span class="text-slate-800">Learn. Earn. Freelance.</span>
+            </h1>
+            <p class="text-xl text-slate-600 mb-10 max-w-lg leading-relaxed">
+                One connected ecosystem for learning, mentoring, freelancing, and career growth.
             </p>
-            <ul class="space-y-4 mb-8">
-                <li class="flex items-start">
-                    <span class="material-symbols-outlined text-primary-container mr-3">cycle</span>
-                    <span class="text-on-background font-body-md"><strong>Learners</strong> become skilled, start mentoring, and move into freelancing.</span>
-                </li>
-                <li class="flex items-start">
-                    <span class="material-symbols-outlined text-primary-container mr-3">cycle</span>
-                    <span class="text-on-background font-body-md"><strong>Mentors</strong> build reputation, access freelance opportunities, and participate globally.</span>
-                </li>
-                <li class="flex items-start">
-                    <span class="material-symbols-outlined text-primary-container mr-3">cycle</span>
-                    <span class="text-on-background font-body-md"><strong>Freelancers</strong> gain practical experience, teach others, and strengthen professional credibility.</span>
-                </li>
-            </ul>
-        </div>
-        <div class="md:w-1/2 bg-surface-container-low p-lg rounded-xl border border-surface-variant relative overflow-hidden">
-            <div class="absolute -right-10 -bottom-10 opacity-5">
-                <span class="material-symbols-outlined text-[200px]">hub</span>
+            <p class="text-base text-slate-500 mb-8 max-w-md">
+                Built for university success and designed for real-world opportunity. Bitstacks brings institutes,
+                mentors, freelance projects, and educational resources together in one structured platform.
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <a href="/learners"
+                    class="bg-bts-gold text-white px-8 py-3.5 rounded-lg font-bold flex items-center gap-2 hover:bg-bts-gold-hover transition-all">
+                    Start Learning <span>→</span>
+                </a>
+                <a href="/mentors"
+                    class="border border-bts-gold text-bts-gold px-8 py-3.5 rounded-lg font-bold flex items-center gap-2 hover:bg-yellow-50 transition-all">
+                    Start Earning <span>→</span>
+                </a>
+                <a href="/freelancers"
+                    class="border border-slate-200 text-slate-600 px-8 py-3.5 rounded-lg font-bold flex items-center gap-2 hover:bg-slate-50 transition-all">
+                    View Projects <span>→</span>
+                </a>
             </div>
-            <h3 class="font-h3 text-h3 text-on-background mb-6 relative z-10">Target Users</h3>
-            <div class="grid grid-cols-2 gap-4 relative z-10">
-                <div class="flex items-center space-x-2 text-secondary font-body-md"><span class="material-symbols-outlined text-sm">check_circle</span> <span>University Students</span></div>
-                <div class="flex items-center space-x-2 text-secondary font-body-md"><span class="material-symbols-outlined text-sm">check_circle</span> <span>Recent Graduates</span></div>
-                <div class="flex items-center space-x-2 text-secondary font-body-md"><span class="material-symbols-outlined text-sm">check_circle</span> <span>Mentors & Teachers</span></div>
-                <div class="flex items-center space-x-2 text-secondary font-body-md"><span class="material-symbols-outlined text-sm">check_circle</span> <span>Experts & Freelancers</span></div>
-                <div class="flex items-center space-x-2 text-secondary font-body-md"><span class="material-symbols-outlined text-sm">check_circle</span> <span>Project Owners</span></div>
-                <div class="flex items-center space-x-2 text-secondary font-body-md"><span class="material-symbols-outlined text-sm">check_circle</span> <span>Startups & Institutes</span></div>
+        </div>
+        <!-- Hero Dashboard Mockup -->
+        <div class="relative" data-purpose="dashboard-preview">
+            <div class="bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden">
+                <img alt="Bitstacks Dashboard Mockup" class="w-full h-auto object-cover"
+                    src="{{ url_for('static', filename='img/dashboard.jpeg') }}" />
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: StatsStrip -->
+<section class="bg-bts-light-gray py-10 border-y border-gray-100">
+    <div class="container-wide flex flex-wrap justify-between items-center gap-8 text-center sm:text-left">
+        <div class="flex items-center gap-4">
+            <div
+                class="w-10 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border border-gray-100">
+                <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                    <path
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+            </div>
+            <div>
+                <h4 class="font-bold text-slate-800">Institutes</h4>
+                <p class="text-sm text-slate-500 uppercase font-medium">Partnered</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-4">
+            <div
+                class="w-10 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border border-gray-100">
+                <svg class="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                    <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+            </div>
+            <div>
+                <h4 class="font-bold text-slate-800">Mentors</h4>
+                <p class="text-sm text-slate-500 uppercase font-medium">Verified Experts</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-4">
+            <div
+                class="w-10 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border border-gray-100">
+                <svg class="w-5 h-5 text-bts-gold" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                    <path
+                        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+            </div>
+            <div>
+                <h4 class="font-bold text-slate-800">Freelancers</h4>
+                <p class="text-sm text-slate-500 uppercase font-medium">Skilled Professionals</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-4">
+            <div
+                class="w-10 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border border-gray-100">
+                <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                    <path
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+            </div>
+            <div>
+                <h4 class="font-bold text-slate-800">Clients</h4>
+                <p class="text-sm text-slate-500 uppercase font-medium">Project Opportunities</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-4">
+            <div
+                class="w-10 h-10 flex items-center justify-center bg-white rounded-lg shadow-sm border border-gray-100">
+                <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                    <path
+                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+            </div>
+            <div>
+                <h4 class="font-bold text-slate-800">Resources</h4>
+                <p class="text-sm text-slate-500 uppercase font-medium">Curated Library</p>
             </div>
         </div>
     </div>
 </section>
-
-<!-- Trust & BTS System -->
-<section class="w-full bg-surface-container-lowest py-xl border-t border-b border-surface-variant transition-colors duration-300">
-    <div class="max-w-container-max mx-auto px-gutter">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-xl">
-            <!-- Trust & Structure -->
-            <div>
-                <h2 class="font-display-md text-display-md text-on-background mb-6 uppercase tracking-tight">Trust & Structure</h2>
-                <p class="font-body-md text-body-md text-secondary mb-8 leading-relaxed">
-                    Bitstack is designed around structured workflows and transparent systems to maintain trust, accountability, and operational clarity.
+<!-- END: StatsStrip -->
+<!-- BEGIN: PlatformOverview -->
+<section class="py-24">
+    <div class="container-wide grid lg:grid-cols-2 gap-20 items-start">
+        <div>
+            <h2 class="text-4xl font-bold text-slate-900 mb-6">Platform Overview</h2>
+            <div class="space-y-6 text-slate-600 leading-relaxed max-w-xl">
+                <p>
+                    Bitstack is a modern digital ecosystem designed to connect learning, knowledge sharing,
+                    freelancing, and real-world opportunity within one unified platform.
                 </p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="bg-surface-container-low p-4 rounded border border-surface-variant flex items-center space-x-3">
-                        <span class="material-symbols-outlined text-primary-container">verified_user</span>
-                        <span class="font-label-lg text-on-background">Verification Systems</span>
+                <p>
+                    Unlike single-purpose platforms, Bitstack combines multiple interconnected systems where users
+                    can improve skills, share expertise, earn income, collaborate on projects, and build
+                    professional experience.
+                </p>
+                <p class="text-bts-gold font-bold text-xl italic">
+                    It is not only a learning platform, a freelance marketplace, or a resource library — it is a
+                    complete growth ecosystem.
+                </p>
+            </div>
+        </div>
+        <div class="relative bg-white p-10 rounded-3xl border border-gray-100 shadow-sm"
+            data-purpose="philosophy-quote">
+            <div class="absolute -top-6 -left-6 text-bts-gold opacity-30">
+                <svg class="w-16 h-16 fill-current" viewbox="0 0 24 24">
+                    <path
+                        d="M14.017 21L14.017 18C14.017 16.8954 14.9125 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 7.55228 14.017 7V5C14.017 4.44772 14.4647 4 15.017 4H20.017C21.1216 4 22.017 4.89543 22.017 6V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM2.017 21L2.017 18C2.017 16.8954 2.91244 16 4.017 16H7.017C7.56928 16 8.017 15.5523 8.017 15V9C8.017 8.44772 7.56928 8 7.017 8H3.017C2.46472 8 2.017 7.55228 2.017 7V5C2.017 4.44772 2.46472 4 3.017 4H8.017C9.12157 4 10.017 4.89543 10.017 6V15C10.017 18.3137 7.33072 21 4.017 21H2.017Z">
+                    </path>
+                </svg>
+            </div>
+            <div class="relative z-10">
+                <h4 class="text-slate-400 uppercase text-sm font-bold tracking-widest mb-4">Core Philosophy</h4>
+                <h3 class="text-4xl font-extrabold text-slate-800 leading-snug mb-6 italic">
+                    Knowledge and opportunity should exist in the same ecosystem.
+                </h3>
+                <p class="text-slate-500 leading-relaxed">
+                    Bitstack connects people seeking knowledge, people capable of teaching, people looking for work,
+                    and people searching for expertise. This creates a continuous cycle where users learn, become
+                    skilled, earn, gain experience, and eventually help others grow.
+                </p>
+            </div>
+            <div class="absolute bottom-10 -right-4 w-32 h-20 grid grid-cols-4 gap-2 opacity-20 pointer-events-none">
+                <div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div>
+                <div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div>
+                <div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div>
+                <div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div>
+                <div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div>
+                <div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div>
+                <div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div>
+                <div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div>
+                <div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div>
+                <div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div>
+                <div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div>
+                <div class="w-1.5 h-1.5 bg-indigo-600 rounded-full"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END: PlatformOverview -->
+<!-- BEGIN: MainEcosystemPillars -->
+<section class="py-24 bg-white">
+    <div class="container-wide">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-slate-900 mb-4">Main Ecosystem Pillars</h2>
+            <p class="text-slate-500">Five interconnected systems working together to accelerate growth.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            <!-- Card 1: Learn -->
+            <div
+                class="bg-white border border-gray-100 rounded-2xl p-8 text-center flex flex-col items-center hover:shadow-lg transition-all group">
+                <div
+                    class="w-16 h-16 bg-indigo-50 rounded-2xl flex items-center justify-center mb-6 text-indigo-600 transition-colors group-hover:bg-indigo-600 group-hover:text-white">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                        <path
+                            d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-4">Learn</h3>
+                <p class="text-base text-slate-500 mb-8 leading-relaxed">Structured academic and skill-based support
+                    through mentoring, exam preparation, and personalized guidance.</p>
+                <a class="mt-auto text-bts-gold font-bold text-sm flex items-center gap-1 hover:underline"
+                    href="/learners">Explore Learning <span>→</span></a>
+            </div>
+            <!-- Card 2: Earn -->
+            <div
+                class="bg-white border border-gray-100 rounded-2xl p-8 text-center flex flex-col items-center hover:shadow-lg transition-all group">
+                <div
+                    class="w-16 h-16 bg-orange-50 rounded-2xl flex items-center justify-center mb-6 text-orange-500 transition-colors group-hover:bg-orange-500 group-hover:text-white">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                        <path
+                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-4">Earn</h3>
+                <p class="text-base text-slate-500 mb-8 leading-relaxed">Monetize expertise through mentoring,
+                    teaching, and structured learning workflows. Transform knowledge into real earning opportunities
+                    in BTS.</p>
+                <div class="mt-auto w-full">
+                    <div class="bg-slate-50 rounded-lg p-3 mb-4 flex items-center justify-between text-left">
+                        <div>
+                            <span class="text-[10px] text-slate-400 font-bold uppercase">Your Balance</span>
+                            <p class="font-bold text-slate-800">250 <span class="text-[10px]">BTS</span></p>
+                        </div>
+                        <div class="w-8 h-8 bg-bts-gold/20 rounded flex items-center justify-center text-bts-gold">
+                            <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                            </svg>
+                        </div>
                     </div>
-                    <div class="bg-surface-container-low p-4 rounded border border-surface-variant flex items-center space-x-3">
-                        <span class="material-symbols-outlined text-primary-container">fact_check</span>
-                        <span class="font-label-lg text-on-background">Milestone Workflows</span>
+                    <a class="text-bts-gold font-bold text-sm flex items-center justify-center gap-1 hover:underline"
+                        href="/mentors">Start Earning <span>→</span></a>
+                </div>
+            </div>
+            <!-- Card 3: Freelance -->
+            <div
+                class="bg-white border border-gray-100 rounded-2xl p-8 text-center flex flex-col items-center hover:shadow-lg transition-all group">
+                <div
+                    class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-blue-500 transition-colors group-hover:bg-blue-600 group-hover:text-white">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                        <path
+                            d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-4">Freelance</h3>
+                <p class="text-base text-slate-500 mb-8 leading-relaxed">Work on real digital projects, collaborate
+                    with clients, deliver milestones, and build a verifiable portfolio.</p>
+                <a class="mt-auto border border-bts-gold text-bts-gold px-6 py-2 rounded font-bold text-sm hover:bg-bts-gold hover:text-white transition-colors"
+                    href="/freelancers">View Projects <span>→</span></a>
+            </div>
+            <!-- Card 4: Institutes -->
+            <div
+                class="bg-white border border-gray-100 rounded-2xl p-8 text-center flex flex-col items-center hover:shadow-lg transition-all group">
+                <div
+                    class="w-16 h-16 bg-amber-50 rounded-2xl flex items-center justify-center mb-6 text-amber-600 transition-colors group-hover:bg-amber-600 group-hover:text-white">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                        <path
+                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-4">Institutes</h3>
+                <p class="text-base text-slate-500 mb-8 leading-relaxed">Support for educational institutes and
+                    training organizations with program visibility and access to a verified talent pipeline.</p>
+                <a class="mt-auto border border-bts-gold text-bts-gold px-6 py-2 rounded font-bold text-sm hover:bg-bts-gold hover:text-white transition-colors"
+                    href="/institutes">For Institutes <span>→</span></a>
+            </div>
+            <!-- Card 5: Library -->
+            <div
+                class="bg-white border border-gray-100 rounded-2xl p-8 text-center flex flex-col items-center hover:shadow-lg transition-all group">
+                <div
+                    class="w-16 h-16 bg-purple-50 rounded-2xl flex items-center justify-center mb-6 text-purple-600 transition-colors group-hover:bg-purple-600 group-hover:text-white">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                        <path
+                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-4">Library</h3>
+                <p class="text-base text-slate-500 mb-8 leading-relaxed">A structured educational resource system for
+                    notes, templates, videos, slides, code, and learning documents organized by school, level, and
+                    module.</p>
+                <a class="mt-auto bg-bts-gold text-white px-6 py-2 rounded font-bold text-sm hover:bg-bts-gold-hover transition-colors"
+                    href="/library">Browse Library <span>→</span></a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END: MainEcosystemPillars -->
+<!-- BEGIN: EcosystemLogic -->
+<section class="py-24 bg-bts-light-gray">
+    <div class="container-wide">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-slate-900 mb-4">Ecosystem Logic</h2>
+            <p class="text-slate-500 max-w-2xl mx-auto">Bitstack is intentionally designed as an interconnected
+                ecosystem rather than isolated services. This creates a self-reinforcing growth loop.</p>
+        </div>
+        <div class="flex flex-col lg:flex-row items-center justify-center gap-4 max-w-5xl mx-auto">
+            <!-- Step 1 -->
+            <div class="flex-1 bg-white p-6 rounded-2xl border border-gray-100 flex items-center gap-5 w-full">
+                <div
+                    class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 shrink-0">
+                    <svg class="w-8 h-8" fill="currentColor" viewbox="0 0 24 24">
+                        <path
+                            d="M12 12a5 5 0 110-10 5 5 0 010 10zm0-2a3 3 0 100-6 3 3 0 000 6zm9 11a1 1 0 01-2 0v-2a3 3 0 00-3-3H8a3 3 0 00-3 3v2a1 1 0 01-2 0v-2a5 5 0 015-5h8a5 5 0 015 5v2z">
+                        </path>
+                    </svg>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2 mb-1">
+                        <span
+                            class="w-6 h-6 bg-indigo-600 text-white rounded-full flex items-center justify-center text-sm font-bold">1</span>
+                        <h4 class="font-bold text-slate-800">Learners</h4>
                     </div>
-                    <div class="bg-surface-container-low p-4 rounded border border-surface-variant flex items-center space-x-3">
-                        <span class="material-symbols-outlined text-primary-container">payments</span>
-                        <span class="font-label-lg text-on-background">Structured Payments</span>
+                    <p class="text-sm text-slate-500">Become skilled, start mentoring, and move into freelancing.
+                    </p>
+                </div>
+            </div>
+            <div class="hidden lg:block text-slate-300">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                    <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                    </path>
+                </svg>
+            </div>
+            <!-- Step 2 -->
+            <div
+                class="flex-1 bg-white p-6 rounded-2xl border border-gray-100 flex items-center gap-5 w-full ring-2 ring-bts-gold ring-offset-4">
+                <div
+                    class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 shrink-0">
+                    <svg class="w-8 h-8" fill="currentColor" viewbox="0 0 24 24">
+                        <path
+                            d="M12 12a5 5 0 110-10 5 5 0 010 10zm0-2a3 3 0 100-6 3 3 0 000 6zm0 11a9 9 0 110-18 9 9 0 010 18zm0-2a7 7 0 100-14 7 7 0 000 14z">
+                        </path>
+                    </svg>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2 mb-1">
+                        <span
+                            class="w-6 h-6 bg-bts-gold text-white rounded-full flex items-center justify-center text-sm font-bold">2</span>
+                        <h4 class="font-bold text-slate-800">Mentors</h4>
                     </div>
-                    <div class="bg-surface-container-low p-4 rounded border border-surface-variant flex items-center space-x-3">
-                        <span class="material-symbols-outlined text-primary-container">gavel</span>
-                        <span class="font-label-lg text-on-background">Dispute Procedures</span>
+                    <p class="text-sm text-slate-500">Build reputation, access freelance opportunities, and
+                        participate globally.</p>
+                </div>
+            </div>
+            <div class="hidden lg:block text-slate-300">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                    <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                    </path>
+                </svg>
+            </div>
+            <!-- Step 3 -->
+            <div class="flex-1 bg-white p-6 rounded-2xl border border-gray-100 flex items-center gap-5 w-full">
+                <div
+                    class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 shrink-0">
+                    <svg class="w-8 h-8" fill="currentColor" viewbox="0 0 24 24">
+                        <path
+                            d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                        </path>
+                    </svg>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2 mb-1">
+                        <span
+                            class="w-6 h-6 bg-purple-600 text-white rounded-full flex items-center justify-center text-sm font-bold">3</span>
+                        <h4 class="font-bold text-slate-800">Freelancers</h4>
+                    </div>
+                    <p class="text-sm text-slate-500">Gain practical experience, teach others, and strengthen
+                        professional credibility.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END: EcosystemLogic -->
+<!-- BEGIN: GridSections -->
+<section class="py-24">
+    <div class="container-wide grid lg:grid-cols-2 gap-12">
+        <!-- Target Users -->
+        <div>
+            <h3 class="text-3xl font-bold text-slate-900 mb-8">Target Users</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-white border border-gray-100 rounded-xl p-5 flex items-center gap-3">
+                    <div class="text-bts-gold">
+                        <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20">
+                            <path clip-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <span class="font-semibold text-slate-700 text-base">University Students</span>
+                </div>
+                <div class="bg-white border border-gray-100 rounded-xl p-5 flex items-center gap-3">
+                    <div class="text-bts-gold">
+                        <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20">
+                            <path clip-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <span class="font-semibold text-slate-700 text-base">Experts &amp; Freelancers</span>
+                </div>
+                <div class="bg-white border border-gray-100 rounded-xl p-5 flex items-center gap-3">
+                    <div class="text-bts-gold">
+                        <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20">
+                            <path clip-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <span class="font-semibold text-slate-700 text-base">Recent Graduates</span>
+                </div>
+                <div class="bg-white border border-gray-100 rounded-xl p-5 flex items-center gap-3">
+                    <div class="text-bts-gold">
+                        <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20">
+                            <path clip-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <span class="font-semibold text-slate-700 text-base">Project Owners</span>
+                </div>
+                <div class="bg-white border border-gray-100 rounded-xl p-5 flex items-center gap-3">
+                    <div class="text-bts-gold">
+                        <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20">
+                            <path clip-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <span class="font-semibold text-slate-700 text-base">Mentors &amp; Teachers</span>
+                </div>
+                <div class="bg-white border border-gray-100 rounded-xl p-5 flex items-center gap-3">
+                    <div class="text-bts-gold">
+                        <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20">
+                            <path clip-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <span class="font-semibold text-slate-700 text-base">Startups &amp; Institutes</span>
+                </div>
+            </div>
+        </div>
+        <!-- Trust & Structure -->
+        <div>
+            <h3 class="text-3xl font-bold text-slate-900 mb-8">Trust &amp; Structure</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div class="bg-white border border-gray-100 rounded-xl p-6 text-center hover:shadow-md transition-all">
+                    <div class="text-slate-800 mb-3 flex justify-center">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <p class="text-sm font-bold text-slate-600 uppercase">Verification Systems</p>
+                </div>
+                <div class="bg-white border border-gray-100 rounded-xl p-6 text-center hover:shadow-md transition-all">
+                    <div class="text-slate-800 mb-3 flex justify-center">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M4 6h16M4 12h16M4 18h7" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <p class="text-sm font-bold text-slate-600 uppercase">Milestone Workflows</p>
+                </div>
+                <div class="bg-white border border-gray-100 rounded-xl p-6 text-center hover:shadow-md transition-all">
+                    <div class="text-slate-800 mb-3 flex justify-center">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path
+                                d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <p class="text-sm font-bold text-slate-600 uppercase">Structured Payments</p>
+                </div>
+                <div class="bg-white border border-gray-100 rounded-xl p-6 text-center hover:shadow-md transition-all">
+                    <div class="text-slate-800 mb-3 flex justify-center">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path
+                                d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <p class="text-sm font-bold text-slate-600 uppercase">Dispute Procedures</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END: GridSections -->
+<!-- BEGIN: BTSEcosystemSystem -->
+<section class="py-16 bg-white">
+    <div class="container-wide">
+        <div class="bg-[#fffbeb] border border-bts-gold/20 rounded-3xl p-8 lg:p-12">
+            <div class="grid lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-5 flex items-start gap-6">
+                    <div
+                        class="w-20 h-20 bg-bts-gold rounded-2xl flex items-center justify-center shrink-0 shadow-lg shadow-bts-gold/20">
+                        <svg class="w-12 h-12 text-white" fill="currentColor" viewbox="0 0 24 24">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="text-4xl font-extrabold text-slate-900 mb-3">BTS Ecosystem System</h2>
+                        <p class="text-slate-600 text-base leading-relaxed">
+                            Bitstack includes an internal utility system called BTS. BTS is not a public
+                            cryptocurrency or speculative token. It is an internal ecosystem utility designed to
+                            support participation and rewards.
+                        </p>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-5 h-5 bg-slate-200 rounded-full flex items-center justify-center text-slate-600 text-[10px]">
+                            i</div>
+                        <p class="text-sm font-semibold text-slate-700">Value only inside the Bitstack ecosystem</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-5 h-5 bg-slate-200 rounded-full flex items-center justify-center text-slate-600 text-[10px]">
+                            i</div>
+                        <p class="text-sm font-semibold text-slate-700">Not publicly tradable or exchangeable for
+                            foreign currencies</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-5 h-5 bg-slate-200 rounded-full flex items-center justify-center text-slate-600 text-[10px]">
+                            i</div>
+                        <p class="text-sm font-semibold text-slate-700">Redeemable only in TND according to platform
+                            rules</p>
+                    </div>
+                </div>
+                <div class="lg:col-span-2">
+                    <a class="block text-center border border-bts-gold text-bts-gold font-bold text-base py-3 rounded-xl hover:bg-bts-gold hover:text-white transition-all"
+                        href="/token">
+                        Learn about BTS →
+                    </a>
+                </div>
+            </div>
+            <div class="mt-12 flex justify-center">
+                <div
+                    class="bg-white px-10 py-4 rounded-2xl shadow-sm border border-bts-gold/10 flex items-center gap-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-bts-gold/20 rounded-lg flex items-center justify-center text-bts-gold">
+                            <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                            </svg>
+                        </div>
+                        <span class="text-2xl font-extrabold text-slate-800">1 BTS = 1 TND</span>
+                    </div>
+                    <p class="text-slate-500 font-medium text-base border-l border-slate-100 pl-6">for platform
+                        purchases, rewards, and internal credits.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END: BTSEcosystemSystem -->
+<!-- BEGIN: PlatformVision -->
+<section class="py-24 bg-white">
+    <div class="container-wide">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-4xl font-bold text-slate-900 mb-6">Platform Vision</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    Bitstack aims to become a central ecosystem where learning, earning, mentoring, collaboration,
+                    and professional growth happen naturally inside one connected platform. It reduces the gap
+                    between education, skill development, and real-world opportunity.
+                </p>
+            </div>
+            <div class="space-y-6">
+                <div class="bg-bts-light-gray p-8 rounded-2xl flex gap-6">
+                    <div
+                        class="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-600 shrink-0">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path
+                                d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-2">User Experience</h4>
+                        <p class="text-base text-slate-500 leading-relaxed">Minimal and professional. Focused on
+                            clarity, simplicity, trust, and structured workflows. Prioritizing action-driven
+                            navigation, role clarity, reduced friction, and transparent interactions.</p>
+                    </div>
+                </div>
+                <div class="bg-bts-light-gray p-8 rounded-2xl flex gap-6">
+                    <div
+                        class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 shrink-0">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-2">Positioning</h4>
+                        <p class="text-base text-slate-500 leading-relaxed">Not only a tutoring platform. Not only a
+                            freelance marketplace. Not only a content-sharing platform. Bitstack is a structured
+                            ecosystem where knowledge, opportunity, collaboration, and growth exist together.</p>
                     </div>
                 </div>
             </div>
-
-            <!-- BTS Ecosystem System -->
-            <div class="bg-surface-container-low p-lg rounded-xl border border-primary-container/30 relative overflow-hidden">
-                <div class="absolute top-0 right-0 p-4 opacity-10">
-                    <img src="{{ url_for('static', filename='img/favicon.svg') }}" class="inline-block w-[1.2em] h-[1.2em] -mt-1" alt="BTS">
-                </div>
-                <h2 class="font-display-md text-display-md text-on-background mb-4 uppercase tracking-tight relative z-10 flex items-center gap-2">
-                    <img src="{{ url_for('static', filename='img/favicon.svg') }}" class="inline-block w-[1.2em] h-[1.2em] -mt-1" alt="BTS"> BTS Ecosystem System
+        </div>
+    </div>
+</section>
+<!-- END: PlatformVision -->
+<!-- BEGIN: CallToAction -->
+<section class="py-16">
+    <div class="container-wide">
+        <div class="bg-[#f8fafc] rounded-[40px] border border-slate-100 p-12 text-center relative overflow-hidden">
+            <!-- Abstract Decors -->
+            <div class="absolute top-10 left-10 text-slate-200">
+                <svg class="w-12 h-12" fill="currentColor" viewbox="0 0 24 24">
+                    <path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2-6.3-4.6-6.3 4.6 2.3-7.2-6-4.4h7.6z"></path>
+                </svg>
+            </div>
+            <div class="absolute bottom-10 right-10 grid grid-cols-4 gap-2 opacity-20">
+                <div class="w-2 h-2 bg-indigo-400 rounded-full"></div>
+                <div class="w-2 h-2 bg-indigo-400 rounded-full"></div>
+                <div class="w-2 h-2 bg-indigo-400 rounded-full"></div>
+                <div class="w-2 h-2 bg-indigo-400 rounded-full"></div>
+                <div class="w-2 h-2 bg-indigo-400 rounded-full"></div>
+                <div class="w-2 h-2 bg-indigo-400 rounded-full"></div>
+                <div class="w-2 h-2 bg-indigo-400 rounded-full"></div>
+                <div class="w-2 h-2 bg-indigo-400 rounded-full"></div>
+            </div>
+            <div class="relative z-10 max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold text-slate-800 mb-8 leading-snug">
+                    Bitstack is a professional ecosystem where people can learn faster, share expertise, <span
+                        class="italic font-extrabold text-slate-900 underline decoration-bts-gold decoration-4 underline-offset-4">earn
+                        through knowledge</span>, collaborate on real projects, and build meaningful experience.
                 </h2>
-                <p class="font-body-md text-body-md text-secondary mb-6 relative z-10">
-                    Bitstack includes an internal utility system called BTS. <strong>BTS is NOT a public cryptocurrency or speculative token.</strong> It is an internal ecosystem utility mechanism designed to support participation and rewards.
-                </p>
-                <ul class="space-y-3 relative z-10 mb-6">
-                    <li class="flex items-start">
-                        <span class="material-symbols-outlined text-on-surface-variant mr-2 text-sm mt-0.5">info</span>
-                        <span class="text-on-background font-body-sm">Value only inside the Bitstack ecosystem</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="material-symbols-outlined text-on-surface-variant mr-2 text-sm mt-0.5">info</span>
-                        <span class="text-on-background font-body-sm">Not publicly tradable or exchangeable for foreign currencies</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="material-symbols-outlined text-on-surface-variant mr-2 text-sm mt-0.5">info</span>
-                        <span class="text-on-background font-body-sm">Redeemable only in TND according to platform rules</span>
-                    </li>
-                </ul>
-                <a href="/token" class="inline-flex items-center text-primary-container font-button text-button hover:underline relative z-10">
-                    Learn about BTS <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+                <a href="/join"
+                    class="bg-bts-gold hover:bg-bts-gold-hover text-white px-12 py-4 rounded-2xl font-extrabold text-xl flex items-center gap-3 mx-auto transition-all shadow-xl shadow-bts-gold/20">
+                    Join the Ecosystem <span>→</span>
                 </a>
             </div>
         </div>
     </div>
 </section>
-
-<!-- Vision & Philosophy -->
-<section class="max-w-container-max mx-auto px-gutter py-xl flex flex-col items-center text-center transition-colors duration-300">
-    <span class="material-symbols-outlined text-4xl text-primary-container mb-6">visibility</span>
-    <h2 class="font-display-md text-display-md text-on-background mb-6 uppercase tracking-tight max-w-3xl">Platform Vision</h2>
-    <p class="font-body-lg text-body-lg text-secondary max-w-4xl mb-12">
-        Bitstack aims to become a central ecosystem where learning, earning, mentoring, collaboration, and professional growth happen naturally inside one connected platform. We are reducing the gap between education, skill development, and real-world opportunity.
-    </p>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full text-left">
-        <div class="bg-surface-container-low p-8 rounded-lg border border-surface-variant">
-            <h3 class="font-h3 text-h3 text-on-background mb-4 uppercase tracking-widest text-sm">User Experience</h3>
-            <p class="font-body-md text-body-md text-secondary">
-                Minimal and professional. Focused on clarity, simplicity, trust, and structured workflows. Prioritizing action-driven navigation, role clarity, reduced friction, and transparent interactions.
-            </p>
-        </div>
-        <div class="bg-surface-container-low p-8 rounded-lg border border-surface-variant">
-            <h3 class="font-h3 text-h3 text-on-background mb-4 uppercase tracking-widest text-sm">Positioning</h3>
-            <p class="font-body-md text-body-md text-secondary">
-                Not only a tutoring platform. Not only a freelance marketplace. Not only a content-sharing platform. Bitstack is a structured ecosystem where knowledge, opportunity, collaboration, and growth exist together.
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- Final Identity Statement CTA -->
-<section class="w-full px-margin py-24 flex flex-col items-center justify-center text-center border-t border-surface-variant bg-surface-container-highest transition-colors duration-300">
-    <div class="max-w-4xl mx-auto flex flex-col items-center">
-        <div class="w-16 h-16 bg-primary-container/20 rounded-full flex items-center justify-center mb-8">
-            <span class="material-symbols-outlined text-primary-container text-3xl">rocket_launch</span>
-        </div>
-        <h2 class="text-on-background font-display-md text-display-md mb-8 tracking-tight leading-tight">
-            Bitstack is a professional ecosystem where people can learn faster, share expertise, earn through knowledge, collaborate on real projects, and build meaningful experience.
-        </h2>
-        <a href="/join" class="bg-primary-container text-on-primary-container font-button text-button h-[56px] px-xl flex items-center justify-center rounded uppercase tracking-widest hover:opacity-80 transition-opacity duration-300 hover:scale-105 active:scale-95 transform">
-            Join the Ecosystem
-        </a>
-    </div>
-</section>
+<!-- END: CallToAction -->
 {% endblock %}

@@ -1,28 +1,24 @@
-<header class="bg-surface-container-lowest font-sans tracking-tight text-sm uppercase font-bold docked full-width top-0 border-b border-surface-variant flat no shadows sticky z-50 transition-colors duration-300">
-    <div class="flex justify-between items-center h-20 px-8 max-w-7xl mx-auto w-full">
-        <a class="flex items-center gap-3 hover:opacity-80 transition-opacity" href="{{ url_for('index') }}">
-            <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Bitstack" class="h-12 block dark:hidden">
-            <img src="{{ url_for('static', filename='img/logo-white.svg') }}" alt="Bitstack" class="h-12 hidden dark:block">
+<header class="sticky top-0 z-50 bg-white border-b border-gray-100">
+    <nav class="container-wide h-20 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2" data-purpose="logo">
+            <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Bitstacks" class="h-16">
         </a>
-        <nav class="hidden md:flex space-x-6">
-            <a class="text-secondary hover:text-on-background hover:bg-surface-container transition-colors duration-200 py-2 px-1 rounded" href="/learners">Learn</a>
-            <a class="text-secondary hover:text-on-background hover:bg-surface-container transition-colors duration-200 py-2 px-1 rounded" href="/mentors">Earn</a>
-            <a class="text-secondary hover:text-on-background hover:bg-surface-container transition-colors duration-200 py-2 px-1 rounded" href="/freelancers">Freelance</a>
-            <a class="text-secondary hover:text-on-background hover:bg-surface-container transition-colors duration-200 py-2 px-1 rounded" href="/institutes">Institutes</a>
-            <a class="text-secondary hover:text-on-background hover:bg-surface-container transition-colors duration-200 py-2 px-1 rounded" href="/clients">Clients</a>
-            <a class="text-secondary hover:text-on-background hover:bg-surface-container transition-colors duration-200 py-2 px-1 rounded" href="/library">Library</a>
-            <a class="text-primary-container font-bold hover:text-on-background hover:bg-surface-container transition-colors duration-200 py-2 px-1 rounded flex items-center gap-1" href="/token">
-                <img src="{{ url_for('static', filename='img/favicon.svg') }}" class="inline-block w-[1.2em] h-[1.2em] -mt-1" alt="BTS"> BTS Token
-            </a>
-        </nav>
-        <div class="flex items-center space-x-6">
-            <button onclick="toggleTheme()" class="text-secondary hover:text-on-background transition-colors" title="Toggle Theme">
-                <span class="material-symbols-outlined">light_mode</span>
-            </button>
-            <a class="text-secondary hover:text-on-background transition-colors hidden sm:block" href="/signin">Sign In</a>
-            <a class="bg-primary-container text-on-primary-container font-button text-button px-6 py-3 rounded scale-95 active:scale-90 transition-transform" href="/join">
-                Join Now
-            </a>
+        <!-- Navigation Links -->
+        <div class="hidden lg:flex items-center gap-6 text-lg font-medium text-gray-600">
+            <a class="hover:text-bts-gold transition-colors" href="/learners">Learn</a>
+            <a class="hover:text-bts-gold transition-colors" href="/mentors">Earn</a>
+            <a class="hover:text-bts-gold transition-colors" href="/freelancers">Freelance</a>
+            <a class="hover:text-bts-gold transition-colors" href="/institutes">Institutes</a>
+            <a class="hover:text-bts-gold transition-colors" href="/clients">Clients</a>
+            <a class="hover:text-bts-gold transition-colors" href="/library">Library</a>
+            <a class="hover:text-bts-gold transition-colors" href="/token">BTS Credits</a>
         </div>
-    </div>
+        <!-- Auth Buttons -->
+        <div class="flex items-center gap-4">
+            <a class="text-lg font-semibold text-gray-700 px-4 hover:text-bts-gold transition-colors" href="/signin">Sign In</a>
+            <a class="bg-bts-gold hover:bg-bts-gold-hover text-white px-6 py-2.5 rounded-lg text-lg font-bold transition-all"
+                href="/join">Join Now</a>
+        </div>
+    </nav>
 </header>

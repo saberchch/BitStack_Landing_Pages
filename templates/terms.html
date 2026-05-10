@@ -3,183 +3,499 @@
 {% block title %}Terms of Service - Bitstack{% endblock %}
 
 {% block content %}
-<main class="flex-grow w-full max-w-container-max mx-auto px-gutter py-xl transition-colors duration-300">
+<main class="w-full bg-slate-50 pb-24">
     <!-- Hero Section -->
-    <section class="py-xl border-b border-surface-variant">
-        <div class="max-w-3xl">
-            <span class="text-primary-container font-label-md uppercase tracking-widest mb-4 block">Legal Framework</span>
-            <h1 class="font-display-lg text-display-lg mb-6 text-on-background uppercase tracking-tight">Terms of Service</h1>
-            <p class="font-body-lg text-body-lg text-secondary mb-8">Clear rules for using the Bitstack ecosystem. These Terms explain how the platform works and the responsibilities shared by all members of our community.</p>
-            <div class="bg-surface-container-low p-gutter rounded-lg border border-surface-variant shadow-sm">
-                <p class="font-body-md text-on-background m-0 italic">"Bitstack is a bridge between academic excellence and professional opportunity. By using this platform, you agree to uphold the standards of integrity and collaboration defined herein."</p>
+    <section class="py-16 lg:py-24 border-b border-gray-100 bg-white relative overflow-hidden">
+        <!-- Abstract gradient background -->
+        <div class="absolute right-0 top-0 w-2/3 h-full bg-gradient-to-l from-indigo-50 to-transparent pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="space-y-6">
+                <div class="flex items-center gap-2 text-slate-500 text-sm font-bold tracking-wider uppercase">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                    <span>Legal</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                    <span class="text-indigo-600">Terms of Service</span>
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-extrabold text-slate-900 leading-tight tracking-tight">Terms of Service</h1>
+                <p class="text-2xl font-bold text-bts-gold">Clear rules for a trusted ecosystem.</p>
+                <p class="text-slate-600 text-xl max-w-xl leading-relaxed">
+                    Bitstack provides a structured platform for learning, mentoring, freelancing, institutional services, resource sharing, and BTS Credits. These Terms define how users may access, use, and participate in the Bitstack ecosystem.
+                </p>
+                <a href="{{ url_for('support') }}" class="inline-flex items-center gap-2 px-8 py-3.5 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-600/20">
+                    Contact Support 
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                </a>
+            </div>
+            <div class="relative flex justify-center items-center">
+                <div class="absolute inset-0 bg-indigo-100 rounded-full blur-3xl opacity-50"></div>
+                <img class="relative z-10 w-full max-w-md drop-shadow-2xl" alt="Terms of Service Illustration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZmylcuNUQVo3lZe9CkpAjDaFZLjjnI27JV-yWIHCv8dFmOTh1Y2OABbof3Xk3LNk2jU5NpBxESpXD7oLGC0_2MEsN8BCKXp-wmfOzlmVLEm0RCBUkExJODvOfXnBnlBelN7JDPXoohPQ9EligSj_-d2soH34_u901uNEdEJqctLhU_Z0y2V8HbJG3oS2yAuEgQeqCFiSc832r1YrLWRsG3tX6mYdhMyXIoKS4i67sq_gvaUPva8QwAYlCxkogXCf62-feKZ1EOOo"/>
             </div>
         </div>
     </section>
 
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-xl py-xl">
-        <!-- Sidebar Navigation -->
-        <aside class="lg:col-span-3 sticky top-32 h-fit hidden lg:block">
-            <nav class="flex flex-col space-y-4">
-                <a class="text-primary-container font-bold font-label-md uppercase border-l-2 border-primary-container pl-4" href="#platform-role">Platform Role</a>
-                <a class="text-secondary font-label-md uppercase hover:text-primary-container transition-colors pl-4 border-l-2 border-transparent" href="#user-accounts">User Accounts</a>
-                <a class="text-secondary font-label-md uppercase hover:text-primary-container transition-colors pl-4 border-l-2 border-transparent" href="#services">Services</a>
-                <a class="text-secondary font-label-md uppercase hover:text-primary-container transition-colors pl-4 border-l-2 border-transparent" href="#payments">Payments &amp; BTS</a>
-                <a class="text-secondary font-label-md uppercase hover:text-primary-container transition-colors pl-4 border-l-2 border-transparent" href="#integrity">Academic Integrity</a>
-                <a class="text-secondary font-label-md uppercase hover:text-primary-container transition-colors pl-4 border-l-2 border-transparent" href="#projects">Projects &amp; Milestones</a>
-                <a class="text-secondary font-label-md uppercase hover:text-primary-container transition-colors pl-4 border-l-2 border-transparent" href="#responsibility">Responsibility</a>
-            </nav>
-        </aside>
-
-        <!-- Content Area -->
-        <article class="lg:col-span-9">
-            <!-- Section 2: Platform Role -->
-            <section id="platform-role" class="mb-xl pt-xl border-t border-surface-variant first:border-t-0 first:pt-0">
-                <h2 class="font-h1 text-h1 text-on-background mb-6 uppercase tracking-tight">What Bitstack Provides</h2>
-                <p class="text-secondary mb-6">Bitstack is a curated marketplace and ecosystem designed to facilitate mentorship, freelance collaboration, and professional development. We provide the digital infrastructure, communication tools, and payment processing necessary for these interactions.</p>
-                <div class="p-6 bg-surface-container-low border-l-4 border-primary-container my-8 rounded-r shadow-sm">
-                    <p class="font-bold text-on-background mb-2">Legal Clarification:</p>
-                    <p class="text-body-sm text-secondary m-0 uppercase tracking-tight">Bitstack is NOT a university, accredited educational institution, employer, or banking entity. We do not issue academic degrees or provide direct employment contracts.</p>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+        <!-- Update Banner -->
+        <div class="bg-white rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4 mb-12 border border-gray-100 shadow-sm">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center">
+                    <svg class="w-5 h-5 text-bts-gold" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
                 </div>
-            </section>
+                <p class="text-base text-slate-700">Last updated: <span class="font-extrabold text-slate-900">May 15, 2026</span></p>
+            </div>
+            <div class="h-px w-12 bg-gray-200 hidden md:block"></div>
+            <p class="text-slate-500 text-base text-center md:text-left">
+                These terms apply to all Bitstack users, including learners, mentors, freelancers, clients, institutes, and contributors.
+            </p>
+        </div>
 
-            <!-- Section 3: User Accounts -->
-            <section id="user-accounts" class="mb-xl pt-xl border-t border-surface-variant">
-                <h2 class="font-h1 text-h1 text-on-background mb-6 uppercase tracking-tight">User Accounts</h2>
-                <p class="text-secondary mb-4">To access the full suite of Bitstack services, you must register for an account. You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate, current, and complete.</p>
-                <p class="text-secondary">You are responsible for safeguarding your password and for any activities or actions under your account. Bitstack cannot and will not be liable for any loss or damage arising from your failure to comply with the above requirements.</p>
-            </section>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <!-- Sidebar Navigation -->
+            <aside class="lg:col-span-3">
+                <div class="sticky top-24 space-y-6">
+                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">Terms Sections</h3>
+                    <nav class="space-y-1 max-h-[60vh] overflow-y-auto no-scrollbar" id="terms-nav">
+                        <a href="#section-1" class="flex items-center gap-3 p-3 bg-indigo-50 text-indigo-600 font-bold rounded-r-lg border-l-4 border-indigo-600 transition-colors">
+                            <span class="w-6 text-center text-sm">1</span> Introduction
+                        </a>
+                        <a href="#section-2" class="flex items-center gap-3 p-3 text-slate-600 hover:bg-slate-50 rounded-r-lg border-l-4 border-transparent transition-colors">
+                            <span class="w-6 text-center text-sm font-bold">2</span> Platform Purpose
+                        </a>
+                        <a href="#section-3" class="flex items-center gap-3 p-3 text-slate-600 hover:bg-slate-50 rounded-r-lg border-l-4 border-transparent transition-colors">
+                            <span class="w-6 text-center text-sm font-bold">3</span> User Accounts
+                        </a>
+                        <a href="#section-4" class="flex items-center gap-3 p-3 text-slate-600 hover:bg-slate-50 rounded-r-lg border-l-4 border-transparent transition-colors">
+                            <span class="w-6 text-center text-sm font-bold">4</span> User Roles
+                        </a>
+                        <a href="#section-5" class="flex items-center gap-3 p-3 text-slate-600 hover:bg-slate-50 rounded-r-lg border-l-4 border-transparent transition-colors">
+                            <span class="w-6 text-center text-sm font-bold">5</span> Mentoring Services
+                        </a>
+                        <a href="#section-6" class="flex items-center gap-3 p-3 text-slate-600 hover:bg-slate-50 rounded-r-lg border-l-4 border-transparent transition-colors">
+                            <span class="w-6 text-center text-sm font-bold">6</span> Freelance Projects
+                        </a>
+                        <a href="#section-7" class="flex items-center gap-3 p-3 text-slate-600 hover:bg-slate-50 rounded-r-lg border-l-4 border-transparent transition-colors">
+                            <span class="w-6 text-center text-sm font-bold">7</span> BTS Credits
+                        </a>
+                        <a href="#section-8" class="flex items-center gap-3 p-3 text-slate-600 hover:bg-slate-50 rounded-r-lg border-l-4 border-transparent transition-colors">
+                            <span class="w-6 text-center text-sm font-bold">8</span> Payments & Refunds
+                        </a>
+                        <a href="#section-9" class="flex items-center gap-3 p-3 text-slate-600 hover:bg-slate-50 rounded-r-lg border-l-4 border-transparent transition-colors">
+                            <span class="w-6 text-center text-sm font-bold">9</span> User Content
+                        </a>
+                        <a href="#section-10" class="flex items-center gap-3 p-3 text-slate-600 hover:bg-slate-50 rounded-r-lg border-l-4 border-transparent transition-colors">
+                            <span class="w-6 text-center text-sm font-bold">10</span> Acceptable Use
+                        </a>
+                        <a href="#section-11" class="flex items-center gap-3 p-3 text-slate-600 hover:bg-slate-50 rounded-r-lg border-l-4 border-transparent transition-colors">
+                            <span class="w-6 text-center text-sm font-bold">11</span> Verification & Trust
+                        </a>
+                        <a href="#section-12" class="flex items-center gap-3 p-3 text-slate-600 hover:bg-slate-50 rounded-r-lg border-l-4 border-transparent transition-colors">
+                            <span class="w-6 text-center text-sm font-bold">12</span> Disputes
+                        </a>
+                        <a href="#section-13" class="flex items-center gap-3 p-3 text-slate-600 hover:bg-slate-50 rounded-r-lg border-l-4 border-transparent transition-colors">
+                            <span class="w-6 text-center text-sm font-bold">13</span> Availability
+                        </a>
+                        <a href="#section-14" class="flex items-center gap-3 p-3 text-slate-600 hover:bg-slate-50 rounded-r-lg border-l-4 border-transparent transition-colors">
+                            <span class="w-6 text-center text-sm font-bold">14</span> Responsibility
+                        </a>
+                        <a href="#section-15" class="flex items-center gap-3 p-3 text-slate-600 hover:bg-slate-50 rounded-r-lg border-l-4 border-transparent transition-colors">
+                            <span class="w-6 text-center text-sm font-bold">15</span> Suspension
+                        </a>
+                        <a href="#section-16" class="flex items-center gap-3 p-3 text-slate-600 hover:bg-slate-50 rounded-r-lg border-l-4 border-transparent transition-colors">
+                            <span class="w-6 text-center text-sm font-bold">16</span> Updates
+                        </a>
+                        <a href="#section-17" class="flex items-center gap-3 p-3 text-slate-600 hover:bg-slate-50 rounded-r-lg border-l-4 border-transparent transition-colors">
+                            <span class="w-6 text-center text-sm font-bold">17</span> Contact
+                        </a>
+                    </nav>
 
-            <!-- Section 4: Platform Services -->
-            <section id="services" class="mb-xl pt-xl border-t border-surface-variant">
-                <h2 class="font-h1 text-h1 text-on-background mb-6 uppercase tracking-tight">Platform Services</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                    <div class="p-gutter border border-surface-variant bg-surface-container-low hover:border-primary-container transition-all rounded-lg shadow-sm">
-                        <span class="material-symbols-outlined text-primary-container mb-4" style="font-variation-settings: 'FILL' 1;">school</span>
-                        <h3 class="font-h3 text-h3 mt-0 text-on-background">Learn</h3>
-                        <p class="text-body-sm text-secondary">Access to mentored paths, workshops, and verified educational resources curated by industry experts.</p>
-                    </div>
-                    <div class="p-gutter border border-surface-variant bg-surface-container-low hover:border-primary-container transition-all rounded-lg shadow-sm">
-                        <span class="material-symbols-outlined text-primary-container mb-4" style="font-variation-settings: 'FILL' 1;">payments</span>
-                        <h3 class="font-h3 text-h3 mt-0 text-on-background">Earn</h3>
-                        <p class="text-body-sm text-secondary">Monetize your expertise by becoming a mentor or contributing high-value resources to the community library.</p>
-                    </div>
-                    <div class="p-gutter border border-surface-variant bg-surface-container-low hover:border-primary-container transition-all rounded-lg shadow-sm">
-                        <span class="material-symbols-outlined text-primary-container mb-4" style="font-variation-settings: 'FILL' 1;">work</span>
-                        <h3 class="font-h3 text-h3 mt-0 text-on-background">Freelance</h3>
-                        <p class="text-body-sm text-secondary">Connect with clients for project-based work, utilizing our milestone-driven delivery and payout system.</p>
-                    </div>
-                    <div class="p-gutter border border-surface-variant bg-surface-container-low hover:border-primary-container transition-all rounded-lg shadow-sm">
-                        <span class="material-symbols-outlined text-primary-container mb-4" style="font-variation-settings: 'FILL' 1;">account_balance</span>
-                        <h3 class="font-h3 text-h3 mt-0 text-on-background">Institutes</h3>
-                        <p class="text-body-sm text-secondary">Dedicated portals for organizations to manage talent pipelines and internal knowledge repositories.</p>
+                    <!-- Help Card -->
+                    <div class="mt-8 p-6 bg-white rounded-2xl border border-gray-100 shadow-sm text-center hidden lg:block">
+                        <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
+                        <h4 class="font-extrabold text-xl text-slate-900 mb-2">Need help?</h4>
+                        <p class="text-slate-500 text-base mb-6">Contact our support team for any questions about these terms.</p>
+                        <a href="{{ url_for('support') }}" class="w-full py-2.5 px-4 bg-slate-50 text-slate-700 font-bold rounded-lg hover:bg-slate-100 transition-colors flex items-center justify-center gap-2 border border-gray-200">
+                            Contact Support
+                        </a>
                     </div>
                 </div>
-            </section>
+            </aside>
 
-            <!-- Section 5: Payments & BTS -->
-            <section id="payments" class="mb-xl pt-xl border-t border-surface-variant">
-                <h2 class="font-h1 text-h1 text-on-background mb-6 uppercase tracking-tight">Payments &amp; BTS System</h2>
-                <p class="text-secondary mb-6">Bitstack utilizes an internal utility unit called <strong class="text-on-background">BTS</strong> to facilitate seamless transactions within the platform ecosystem. BTS is designed for functional utility and internal accounting.</p>
-                <ul class="list-disc pl-5 space-y-3 text-secondary">
-                    <li><strong class="text-on-background">Non-Speculative:</strong> BTS has a fixed internal value and is not a tradable cryptocurrency or investment vehicle.</li>
-                    <li><strong class="text-on-background">Redemption:</strong> BTS can only be redeemed for Tunisian Dinars (TND) by authorized users who have passed mandatory identity verification.</li>
-                    <li><strong class="text-on-background">Authorized Use:</strong> BTS must be used exclusively for services provided on Bitstack, such as paying for mentorship or freelance deliverables.</li>
-                </ul>
-            </section>
-
-            <!-- Section 7: Academic Integrity -->
-            <section id="integrity" class="mb-xl pt-xl border-t border-surface-variant">
-                <h2 class="font-h1 text-h1 text-error mb-6 uppercase tracking-tight">Academic Integrity</h2>
-                <p class="text-secondary mb-6">Bitstack maintains a zero-tolerance policy regarding academic dishonesty. While we encourage coaching and guidance, the following actions are strictly prohibited:</p>
-                <div class="grid grid-cols-1 gap-4 mt-4">
-                    <div class="flex items-start space-x-4 p-4 border border-[var(--color-error)] bg-surface rounded shadow-sm">
-                        <span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">gavel</span>
+            <!-- Main Content Area -->
+            <section class="lg:col-span-9 space-y-6">
+                
+                <!-- Section 1 -->
+                <div id="section-1" class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
+                    <div class="flex items-start gap-6">
+                        <div class="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-indigo-600 flex-shrink-0">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
                         <div>
-                            <h4 class="font-bold text-on-background mb-1">Prohibited: Direct Submissions</h4>
-                            <p class="text-body-sm text-secondary m-0">Mentors or Freelancers may not complete exams, graded assignments, or thesis work on behalf of a student.</p>
+                            <h2 class="text-3xl font-extrabold text-slate-900 mb-4">1. Introduction</h2>
+                            <div class="prose prose-slate max-w-none text-slate-600">
+                                <p>Welcome to Bitstack. These Terms of Service govern your access to and use of the Bitstack platform, including learning services, mentoring, freelance projects, institutional pages, resource library features, BTS Credits, communication tools, and related services.</p>
+                                <p>By creating an account or using Bitstack, you agree to follow these Terms and any additional platform rules, policies, or guidelines published by Bitstack.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="flex items-start space-x-4 p-4 border border-surface-variant bg-surface rounded shadow-sm">
-                        <span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                </div>
+
+                <!-- Section 2 -->
+                <div id="section-2" class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
+                    <div class="flex items-start gap-6">
+                        <div class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 flex-shrink-0">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
                         <div>
-                            <h4 class="font-bold text-on-background mb-1">Supported: Guidance</h4>
-                            <p class="text-body-sm text-secondary m-0">Reviewing concepts, providing feedback on drafts, and explaining complex logic is fully supported and encouraged.</p>
+                            <h2 class="text-3xl font-extrabold text-slate-900 mb-4">2. Platform Purpose</h2>
+                            <div class="prose prose-slate max-w-none text-slate-600">
+                                <p>Bitstack is a digital ecosystem designed to connect learners, mentors, freelancers, clients, institutes, and resource contributors. The platform helps users access educational support, share knowledge, collaborate on projects, build experience, and participate in structured professional opportunities.</p>
+                                <p>Bitstack is not only a learning platform, a freelance marketplace, or a resource library. It is an interconnected growth ecosystem.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
 
-            <!-- Section 8: Projects & Milestones -->
-            <section id="projects" class="mb-xl pt-xl border-t border-surface-variant">
-                <h2 class="font-h1 text-h1 text-on-background mb-6 uppercase tracking-tight">Projects &amp; Milestones</h2>
-                <p class="text-secondary mb-6">All freelance contracts on Bitstack are governed by a Milestone System. Payments are held in escrow and released only upon the explicit approval of the client or a successful dispute resolution process.</p>
-                <div class="flex flex-col space-y-2 mt-4">
-                    <div class="flex items-center justify-between p-4 bg-surface-container-low border border-surface-variant rounded shadow-sm">
-                        <span class="font-label-md uppercase text-on-background tracking-wider">1. Proposal Agreement</span>
-                        <span class="material-symbols-outlined text-secondary">arrow_forward</span>
-                    </div>
-                    <div class="flex items-center justify-between p-4 bg-surface-container-low border border-surface-variant rounded shadow-sm">
-                        <span class="font-label-md uppercase text-on-background tracking-wider">2. Escrow Funding</span>
-                        <span class="material-symbols-outlined text-secondary">arrow_forward</span>
-                    </div>
-                    <div class="flex items-center justify-between p-4 bg-surface-container-low border border-surface-variant rounded shadow-sm">
-                        <span class="font-label-md uppercase text-on-background tracking-wider">3. Deliverable Review</span>
-                        <span class="material-symbols-outlined text-secondary">arrow_forward</span>
-                    </div>
-                    <div class="flex items-center justify-between p-4 bg-primary-container/10 border border-primary-container rounded shadow-sm">
-                        <span class="font-label-md uppercase text-primary-container font-bold tracking-wider">4. Fund Release</span>
-                        <span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                <!-- Section 3 -->
+                <div id="section-3" class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
+                    <div class="flex items-start gap-6">
+                        <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 flex-shrink-0">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-slate-900 mb-4">3. User Accounts</h2>
+                            <div class="prose prose-slate max-w-none text-slate-600">
+                                <p>Users may be required to create an account to access certain services. Users are responsible for providing accurate information, protecting their login credentials, and keeping their account details up to date.</p>
+                                <p>Bitstack may suspend or restrict accounts that provide false information, violate platform rules, misuse services, or create security or trust concerns.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </section>
 
-            <!-- Section 13: Responsibility -->
-            <section id="responsibility" class="mb-xl pt-xl border-t border-surface-variant">
-                <h2 class="font-h1 text-h1 text-on-background mb-6 uppercase tracking-tight">Limitation of Responsibility</h2>
-                <p class="text-secondary mb-6">Bitstack provides the marketplace and tools for collaboration but does not guarantee specific results. Users acknowledge that Bitstack is not responsible for:</p>
-                <ul class="list-disc pl-5 space-y-2 text-secondary">
-                    <li>Academic grades or institutional performance.</li>
-                    <li>Direct employment outcomes or salary guarantees.</li>
-                    <li>The quality or accuracy of user-uploaded content or mentor advice.</li>
-                </ul>
-            </section>
-
-            <!-- Contact -->
-            <section class="mt-xl pt-lg border-t-2 border-primary-container" id="contact">
-                <h3 class="font-h2 text-h2 mt-0 text-on-background uppercase tracking-tight mb-4">Questions?</h3>
-                <p class="text-secondary">Our legal and support teams are available to clarify any aspect of these terms.</p>
-                <div class="flex flex-col md:flex-row gap-4 mt-8">
-                    <a class="flex items-center justify-center space-x-2 bg-on-background text-background px-8 py-4 rounded font-button uppercase tracking-widest hover:opacity-90 transition-opacity" href="mailto:support@bitstack.com">
-                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">mail</span>
-                        <span>support@bitstack.com</span>
-                    </a>
-                    <button class="flex items-center justify-center space-x-2 border border-outline text-on-background px-8 py-4 rounded font-button uppercase tracking-widest hover:bg-surface-container-low transition-colors" onclick="window.print()">
-                        <span class="material-symbols-outlined">download</span>
-                        <span>Download PDF</span>
-                    </button>
+                <!-- Section 4 -->
+                <div id="section-4" class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
+                    <div class="flex items-start gap-6">
+                        <div class="w-14 h-14 bg-teal-50 rounded-2xl flex items-center justify-center text-teal-600 flex-shrink-0">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-slate-900 mb-4">4. User Roles</h2>
+                            <div class="prose prose-slate max-w-none text-slate-600">
+                                <p>Bitstack may support different user roles, including:</p>
+                                <ul class="list-disc pl-5">
+                                    <li>Learners</li>
+                                    <li>Mentors</li>
+                                    <li>Freelancers</li>
+                                    <li>Clients</li>
+                                    <li>Institutes</li>
+                                    <li>Resource contributors</li>
+                                    <li>Platform administrators</li>
+                                </ul>
+                                <p>Each role may have specific permissions, responsibilities, verification requirements, and access to platform features.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Section 5 -->
+                <div id="section-5" class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
+                    <div class="flex items-start gap-6">
+                        <div class="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-600 flex-shrink-0">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.168.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-slate-900 mb-4">5. Mentoring and Learning Services</h2>
+                            <div class="prose prose-slate max-w-none text-slate-600">
+                                <p>Mentors may offer academic, technical, professional, or skill-based support through sessions, resources, or guidance. Learners are responsible for using these services ethically and for their own learning progress.</p>
+                                <p>Mentors must provide honest, respectful, and appropriate support. They must not complete academic work dishonestly on behalf of learners or encourage plagiarism, cheating, or misuse of educational services.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 6 -->
+                <div id="section-6" class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
+                    <div class="flex items-start gap-6">
+                        <div class="w-14 h-14 bg-pink-50 rounded-2xl flex items-center justify-center text-pink-600 flex-shrink-0">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-slate-900 mb-4">6. Freelance Projects</h2>
+                            <div class="prose prose-slate max-w-none text-slate-600">
+                                <p>Clients may post projects, review proposals, communicate with freelancers, and approve deliverables. Freelancers may apply to projects, deliver agreed work, and build verified experience.</p>
+                                <p>All project requirements, deadlines, deliverables, milestones, and acceptance criteria should be clearly defined before work begins. Users must communicate professionally and respect agreed project conditions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 7 -->
+                <div id="section-7" class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
+                    <div class="flex items-start gap-6">
+                        <div class="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center text-amber-500 p-2.5 flex-shrink-0">
+                            <img src="{{ url_for('static', filename='img/favicon.svg') }}" class="w-full h-full object-contain opacity-80" alt="BTS Token" />
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-slate-900 mb-4">7. BTS Credits</h2>
+                            <div class="prose prose-slate max-w-none text-slate-600">
+                                <p>BTS Credits are internal platform credits used within the Bitstack ecosystem. They may be used for services such as mentoring, learning resources, freelance projects, rewards, refunds, and internal platform transactions.</p>
+                                <p>BTS Credits are not a public cryptocurrency, not a speculative financial asset, and not publicly tradable or exchangeable outside the Bitstack platform. Their use is limited to the rules and services defined by Bitstack.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 8 -->
+                <div id="section-8" class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
+                    <div class="flex items-start gap-6">
+                        <div class="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center text-green-600 flex-shrink-0">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-slate-900 mb-4">8. Payments, Rewards, and Refunds</h2>
+                            <div class="prose prose-slate max-w-none text-slate-600">
+                                <p>Bitstack may support payments, internal credits, rewards, refunds, and settlement workflows. Certain services may require payment before access, booking, or project activation.</p>
+                                <p>Refunds, cancellations, disputes, and credit adjustments may be handled according to Bitstack’s internal policies, service status, and applicable rules.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 9 -->
+                <div id="section-9" class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
+                    <div class="flex items-start gap-6">
+                        <div class="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-indigo-600 flex-shrink-0">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1m-6 10a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-slate-900 mb-4">9. User Content and Resources</h2>
+                            <div class="prose prose-slate max-w-none text-slate-600">
+                                <p>Users may upload or share content such as notes, documents, guides, templates, videos, project files, portfolio items, or profile information.</p>
+                                <p>Users are responsible for ensuring that uploaded content is lawful, accurate, appropriate, and does not violate intellectual property rights, privacy rights, or academic integrity rules.</p>
+                                <p>Bitstack may remove content that violates these Terms or harms the safety, trust, or quality of the platform.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 10 -->
+                <div id="section-10" class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
+                    <div class="flex items-start gap-6">
+                        <div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center text-red-600 flex-shrink-0">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-slate-900 mb-4">10. Acceptable Use</h2>
+                            <div class="prose prose-slate max-w-none text-slate-600">
+                                <p>Users must not misuse Bitstack. Prohibited actions include fraud, harassment, impersonation, spam, unauthorized access, harmful content, illegal activity, payment abuse, plagiarism, and attempts to manipulate reviews, credits, rankings, or platform workflows.</p>
+                                <p>Bitstack may investigate suspicious activity and take action when needed.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 11 -->
+                <div id="section-11" class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
+                    <div class="flex items-start gap-6">
+                        <div class="w-14 h-14 bg-sky-50 rounded-2xl flex items-center justify-center text-sky-600 flex-shrink-0">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-slate-900 mb-4">11. Verification and Trust</h2>
+                            <div class="prose prose-slate max-w-none text-slate-600">
+                                <p>Bitstack may require verification for mentors, freelancers, institutes, clients, or contributors. Verification may include identity checks, academic or professional documents, experience review, portfolio review, or other trust and safety measures.</p>
+                                <p>Verification does not guarantee performance, outcome, or quality of any user-provided service.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 12 -->
+                <div id="section-12" class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
+                    <div class="flex items-start gap-6">
+                        <div class="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center text-orange-600 flex-shrink-0">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-slate-900 mb-4">12. Disputes Between Users</h2>
+                            <div class="prose prose-slate max-w-none text-slate-600">
+                                <p>Disputes may arise between learners, mentors, freelancers, clients, institutes, or contributors. Bitstack may provide communication tools, review processes, milestone records, and support channels to help resolve disputes.</p>
+                                <p>Bitstack may make administrative decisions regarding refunds, credit releases, account restrictions, or content removal when necessary.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 13 -->
+                <div id="section-13" class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
+                    <div class="flex items-start gap-6">
+                        <div class="w-14 h-14 bg-cyan-50 rounded-2xl flex items-center justify-center text-cyan-600 flex-shrink-0">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-slate-900 mb-4">13. Platform Availability</h2>
+                            <div class="prose prose-slate max-w-none text-slate-600">
+                                <p>Bitstack aims to provide reliable access to its services, but the platform may occasionally experience maintenance, updates, interruptions, technical issues, or service changes.</p>
+                                <p>Bitstack does not guarantee that all services will always be available, uninterrupted, or error-free.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 14 -->
+                <div id="section-14" class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
+                    <div class="flex items-start gap-6">
+                        <div class="w-14 h-14 bg-yellow-50 rounded-2xl flex items-center justify-center text-yellow-600 flex-shrink-0">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-slate-900 mb-4">14. Limitation of Responsibility</h2>
+                            <div class="prose prose-slate max-w-none text-slate-600">
+                                <p>Bitstack provides a platform that connects users and supports structured workflows. Bitstack is not responsible for every user action, service outcome, learning result, project result, or third-party interaction.</p>
+                                <p>Users participate in services at their own responsibility and must evaluate the suitability of mentors, freelancers, clients, institutes, resources, and opportunities.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 15 -->
+                <div id="section-15" class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
+                    <div class="flex items-start gap-6">
+                        <div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center text-red-600 flex-shrink-0">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-slate-900 mb-4">15. Account Suspension or Termination</h2>
+                            <div class="prose prose-slate max-w-none text-slate-600">
+                                <p>Bitstack may suspend, restrict, or terminate accounts that violate these Terms, harm other users, misuse services, create security risks, or damage the integrity of the ecosystem.</p>
+                                <p>Users may also request account closure, subject to any pending obligations, transactions, disputes, or legal requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 16 -->
+                <div id="section-16" class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
+                    <div class="flex items-start gap-6">
+                        <div class="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-indigo-600 flex-shrink-0">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-slate-900 mb-4">16. Updates to These Terms</h2>
+                            <div class="prose prose-slate max-w-none text-slate-600">
+                                <p>Bitstack may update these Terms of Service from time to time. Updated terms will be published on this page. Continued use of the platform after updates means the user accepts the revised Terms.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 17 -->
+                <div id="section-17" class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm">
+                    <div class="flex items-start gap-6">
+                        <div class="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-600 flex-shrink-0">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-slate-900 mb-4">17. Contact</h2>
+                            <div class="prose prose-slate max-w-none text-slate-600">
+                                <p>For questions about these Terms, users may contact Bitstack through the Contact or Help Center page.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </section>
-        </article>
+        </div>
+
+        <!-- Bottom CTA -->
+        <section class="mt-16 bg-slate-900 rounded-3xl p-10 lg:p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden shadow-xl">
+            <!-- Decorative Background -->
+            <div class="absolute inset-0 bg-indigo-900/20 pointer-events-none"></div>
+            <div class="absolute bottom-0 right-0 w-64 h-64 bg-bts-gold/10 blur-3xl rounded-full pointer-events-none"></div>
+            
+            <div class="flex items-center gap-8 relative z-10">
+                <div class="w-16 h-16 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center text-white border border-white/20 flex-shrink-0">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-extrabold text-white mb-2">Need clarification about platform rules?</h3>
+                    <p class="text-slate-300 text-base max-w-lg">Contact Bitstack support for help with accounts, services, BTS Credits, disputes, or platform policies.</p>
+                </div>
+            </div>
+            
+            <button onclick="window.location.href='{{ url_for('support') }}'" class="w-full md:w-auto px-8 py-4 bg-bts-gold text-white font-bold rounded-xl hover:bg-bts-gold-hover active:scale-95 transition-all relative z-10 flex items-center justify-center gap-2 whitespace-nowrap shadow-lg shadow-bts-gold/20">
+                Contact Support <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            </button>
+        </section>
     </div>
 </main>
 
-<!-- Simple script for smooth scrolling the sidebar -->
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const links = document.querySelectorAll('aside a');
+        const links = document.querySelectorAll('#terms-nav a');
         
         links.forEach(link => {
             link.addEventListener('click', (e) => {
                 // Remove active styling from all links
                 links.forEach(l => {
-                    l.classList.remove('text-primary-container', 'font-bold', 'border-primary-container');
-                    l.classList.add('text-secondary', 'border-transparent');
+                    l.classList.remove('bg-indigo-50', 'text-indigo-600', 'border-indigo-600');
+                    l.classList.add('text-slate-600', 'border-transparent');
+                    l.querySelector('span').classList.add('font-bold');
                 });
                 
                 // Add active styling to clicked link
-                e.currentTarget.classList.add('text-primary-container', 'font-bold', 'border-primary-container');
-                e.currentTarget.classList.remove('text-secondary', 'border-transparent');
+                e.currentTarget.classList.add('bg-indigo-50', 'text-indigo-600', 'border-indigo-600');
+                e.currentTarget.classList.remove('text-slate-600', 'border-transparent');
+                e.currentTarget.querySelector('span').classList.remove('font-bold');
             });
+        });
+
+        // Add intersection observer to highlight nav based on scroll position
+        const sections = document.querySelectorAll('section[id^="section-"]');
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -80% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    const activeLink = document.querySelector(`#terms-nav a[href="#${id}"]`);
+                    
+                    if (activeLink) {
+                        links.forEach(l => {
+                            l.classList.remove('bg-indigo-50', 'text-indigo-600', 'border-indigo-600');
+                            l.classList.add('text-slate-600', 'border-transparent');
+                            l.querySelector('span').classList.add('font-bold');
+                        });
+                        activeLink.classList.add('bg-indigo-50', 'text-indigo-600', 'border-indigo-600');
+                        activeLink.classList.remove('text-slate-600', 'border-transparent');
+                        activeLink.querySelector('span').classList.remove('font-bold');
+                        
+                        // Auto scroll the nav container if needed
+                        const nav = document.getElementById('terms-nav');
+                        const linkTop = activeLink.offsetTop;
+                        const linkHeight = activeLink.offsetHeight;
+                        const navHeight = nav.offsetHeight;
+                        const navScroll = nav.scrollTop;
+                        
+                        if (linkTop < navScroll || (linkTop + linkHeight) > (navScroll + navHeight)) {
+                            nav.scrollTo({
+                                top: linkTop - (navHeight / 2) + (linkHeight / 2),
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
         });
     });
 </script>

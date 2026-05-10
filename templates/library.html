@@ -1,183 +1,375 @@
 {% extends 'base.html' %}
 {% block content %}
-<!-- Hero Section -->
-<section class="max-w-container-max mx-auto px-gutter pt-xl pb-lg md:py-xl border-b border-surface-variant transition-colors duration-300 w-full">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
-        <div class="lg:col-span-7 flex flex-col items-start space-y-md">
-            <h1 class="font-display-xl text-display-xl text-on-background tracking-tight">
-                A structured <br/><span class="text-primary-container">educational resource system.</span>
-            </h1>
-            <p class="font-body-lg text-body-lg text-secondary max-w-2xl">
-                Upload, discover, organize, and access high-quality educational materials. A unified library designed to help you find exactly what you need to succeed.
-            </p>
-            <div class="flex flex-wrap gap-sm pt-sm">
-                <button onclick="window.location.href='/join'" class="bg-primary-container text-on-primary-container font-button text-button px-md py-sm rounded border border-transparent hover:opacity-90 transition-all uppercase tracking-widest">
-                    Browse Library
-                </button>
-                <button onclick="window.location.href='/signin'" class="bg-transparent text-on-background border border-outline font-button text-button px-md py-sm rounded hover:bg-surface-container-low transition-colors uppercase tracking-widest">
-                    Upload Resource
-                </button>
-            </div>
-        </div>
-        <div class="lg:col-span-5 hidden lg:block">
-            <div class="aspect-square bg-surface-container rounded-lg border border-surface-variant overflow-hidden relative group p-md flex flex-col gap-sm transition-colors duration-300">
-                <div class="flex items-center justify-between border-b border-surface-variant pb-sm">
-                    <div class="flex items-center gap-sm">
-                        <span class="material-symbols-outlined text-primary-container">search</span>
-                        <div class="w-32 h-6 rounded bg-surface-variant"></div>
+<div class="w-full bg-white">
+    <!-- BEGIN: HeroSection -->
+    <section class="relative overflow-hidden bg-white py-16 lg:py-24">
+        <!-- Background pattern -->
+        <div class="absolute top-0 right-0 w-1/3 h-1/3 opacity-20 pointer-events-none" style="background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 20px 20px;"></div>
+        <div class="container-wide grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Hero Content -->
+            <div data-purpose="hero-text">
+                <span class="inline-block py-1 px-3 bg-indigo-50 text-indigo-600 text-sm font-bold uppercase tracking-widest rounded-md mb-6">
+                    • FOR LEARNERS
+                </span>
+                <h1 class="text-5xl lg:text-7xl font-extrabold text-slate-900 leading-[1.1] mb-6">
+                    Learn Smarter.<br />Access Anytime.
+                </h1>
+                <p class="text-xl text-slate-600 mb-10 max-w-lg leading-relaxed">
+                    Explore a curated library of notes, guides, templates, ebooks, and learning resources to boost your skills and achieve your goals.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <button class="bg-bts-gold hover:bg-bts-gold-hover text-white px-8 py-3.5 rounded-lg text-xl font-bold shadow-xl transition-all flex items-center">
+                        Explore Library
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </button>
+                    <button class="border border-slate-200 text-slate-600 px-8 py-3.5 rounded-lg text-xl font-bold hover:bg-slate-50 transition-all">
+                        Upload Resource
+                    </button>
+                </div>
+                <!-- Quick Stats -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-16">
+                    <div>
+                        <div class="flex items-center gap-2 text-bts-gold mb-1">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                            </svg>
+                            <span class="text-2xl font-extrabold text-slate-900">10K+</span>
+                        </div>
+                        <p class="text-sm font-bold text-slate-500 uppercase tracking-wider">Resources</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 text-bts-gold mb-1">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                            </svg>
+                            <span class="text-2xl font-extrabold text-slate-900">50+</span>
+                        </div>
+                        <p class="text-sm font-bold text-slate-500 uppercase tracking-wider">Categories</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 text-bts-gold mb-1">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                            </svg>
+                            <span class="text-2xl font-extrabold text-slate-900">2K+</span>
+                        </div>
+                        <p class="text-sm font-bold text-slate-500 uppercase tracking-wider">Contributors</p>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 text-bts-gold mb-1">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                            </svg>
+                            <span class="text-2xl font-extrabold text-slate-900">100K+</span>
+                        </div>
+                        <p class="text-sm font-bold text-slate-500 uppercase tracking-wider">Downloads</p>
                     </div>
                 </div>
-                <div class="flex flex-col gap-sm flex-1">
-                    <div class="w-full flex-1 rounded bg-surface-container-low border border-surface-variant p-sm flex items-start gap-4 hover:border-primary-container transition-colors">
-                        <div class="w-12 h-12 bg-primary-container/20 text-primary-container rounded flex items-center justify-center">
-                            <span class="material-symbols-outlined">picture_as_pdf</span>
+            </div>
+            <!-- Hero Dashboard Mockup -->
+            <div class="hidden lg:block relative" data-purpose="dashboard-preview">
+                <div class="bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden p-6 scale-105 origin-left">
+                    <img alt="Library Dashboard Preview" class="w-full h-auto object-cover rounded-2xl" src="{{ url_for('static', filename='img/library dashboard.png') }}" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END: HeroSection -->
+
+    <!-- BEGIN: QuickFeatures -->
+    <section class="bg-white border-y border-gray-100 py-10">
+        <div class="container-wide grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+            <div class="flex items-center gap-3">
+                <div class="p-2 bg-blue-50 text-blue-600 rounded-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                        <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-base font-bold text-slate-900">Curated Content</p>
+                    <p class="text-[10px] text-slate-500 uppercase tracking-wider font-bold">High-quality resources</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <div class="p-2 bg-purple-50 text-purple-600 rounded-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                        <path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-base font-bold text-slate-900">Learn Anytime</p>
+                    <p class="text-[10px] text-slate-500 uppercase tracking-wider font-bold">Access on any device</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <div class="p-2 bg-pink-50 text-pink-600 rounded-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                        <path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-base font-bold text-slate-900">Save &amp; Organize</p>
+                    <p class="text-[10px] text-slate-500 uppercase tracking-wider font-bold">Collections &amp; favorites</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <div class="p-2 bg-orange-50 text-orange-600 rounded-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                        <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-base font-bold text-slate-900">Download &amp; Use</p>
+                    <p class="text-[10px] text-slate-500 uppercase tracking-wider font-bold">Learn offline</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <div class="p-2 bg-indigo-50 text-indigo-600 rounded-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                        <path d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-base font-bold text-slate-900">Share Knowledge</p>
+                    <p class="text-[10px] text-slate-500 uppercase tracking-wider font-bold">Upload &amp; help others</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <div class="p-2 bg-blue-50 text-blue-600 rounded-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                        <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-base font-bold text-slate-900">Secure &amp; Trusted</p>
+                    <p class="text-[10px] text-slate-500 uppercase tracking-wider font-bold">Verified &amp; safe content</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END: QuickFeatures -->
+
+    <!-- BEGIN: ResourceTypes -->
+    <section class="py-16 lg:py-24 bg-white">
+        <div class="container-wide">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+                <div class="lg:col-span-2">
+                    <h2 class="text-4xl font-extrabold text-slate-900 mb-4">Browse by Resource Type</h2>
+                    <p class="text-xl text-slate-600 mb-12">Find the right type of content for your learning journey.</p>
+                    <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+                        <div class="bg-slate-50 border border-gray-100 p-6 rounded-2xl flex flex-col items-center text-center hover:shadow-md transition-all hover:bg-white cursor-pointer group hover:border-blue-200">
+                            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                    <path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                </svg>
+                            </div>
+                            <p class="font-bold text-slate-900 text-base mb-1">Notes</p>
+                            <p class="text-[10px] text-slate-500">Study notes and summaries</p>
                         </div>
-                        <div class="flex flex-col gap-2 flex-1">
-                            <div class="w-3/4 h-4 rounded bg-surface-variant"></div>
-                            <div class="w-1/2 h-3 rounded bg-surface-variant opacity-50"></div>
+                        <div class="bg-slate-50 border border-gray-100 p-6 rounded-2xl flex flex-col items-center text-center hover:shadow-md transition-all hover:bg-white cursor-pointer group hover:border-purple-200">
+                            <div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                    <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                </svg>
+                            </div>
+                            <p class="font-bold text-slate-900 text-base mb-1">Guides</p>
+                            <p class="text-[10px] text-slate-500">Step-by-step learning guides</p>
+                        </div>
+                        <div class="bg-slate-50 border border-gray-100 p-6 rounded-2xl flex flex-col items-center text-center hover:shadow-md transition-all hover:bg-white cursor-pointer group hover:border-indigo-200">
+                            <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                    <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                </svg>
+                            </div>
+                            <p class="font-bold text-slate-900 text-base mb-1">Ebooks</p>
+                            <p class="text-[10px] text-slate-500">In-depth ebooks and references</p>
+                        </div>
+                        <div class="bg-slate-50 border border-gray-100 p-6 rounded-2xl flex flex-col items-center text-center hover:shadow-md transition-all hover:bg-white cursor-pointer group hover:border-emerald-200">
+                            <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                    <path d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                </svg>
+                            </div>
+                            <p class="font-bold text-slate-900 text-base mb-1">Templates</p>
+                            <p class="text-[10px] text-slate-500">Useful templates and documents</p>
+                        </div>
+                        <div class="bg-slate-50 border border-gray-100 p-6 rounded-2xl flex flex-col items-center text-center hover:shadow-md transition-all hover:bg-white cursor-pointer group hover:border-pink-200">
+                            <div class="w-12 h-12 bg-pink-50 text-pink-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                    <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                </svg>
+                            </div>
+                            <p class="font-bold text-slate-900 text-base mb-1">Videos</p>
+                            <p class="text-[10px] text-slate-500">Video tutorials and lectures</p>
                         </div>
                     </div>
-                    <div class="w-full flex-1 rounded bg-surface-container-low border border-surface-variant p-sm flex items-start gap-4 hover:border-primary-container transition-colors">
-                        <div class="w-12 h-12 bg-secondary-container/20 text-secondary-container rounded flex items-center justify-center">
-                            <span class="material-symbols-outlined">smart_display</span>
-                        </div>
-                        <div class="flex flex-col gap-2 flex-1">
-                            <div class="w-2/3 h-4 rounded bg-surface-variant"></div>
-                            <div class="w-1/3 h-3 rounded bg-surface-variant opacity-50"></div>
+                </div>
+                <div class="bg-indigo-50/50 border border-indigo-100 p-10 rounded-3xl relative overflow-hidden flex flex-col justify-center shadow-sm">
+                    <div class="relative z-10">
+                        <span class="text-bts-gold text-6xl font-serif absolute -top-4 -left-4 opacity-30">“</span>
+                        <h3 class="text-3xl font-bold italic mb-6 leading-tight text-slate-900 pl-4 mt-4">
+                            "The best libraries build the best learners."
+                        </h3>
+                        <p class="font-bold text-base text-slate-900 mb-4 pl-4">— Albert Einstein</p>
+                        <p class="text-base text-slate-600 leading-relaxed pl-4">
+                            Bitstacks library brings quality learning resources to your fingertips, helping you learn, grow, and succeed.
+                        </p>
+                    </div>
+                    <!-- Decorative dots -->
+                    <div class="absolute -bottom-8 -right-8 opacity-20" style="background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 20px 20px; width: 120px; height: 120px;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END: ResourceTypes -->
+
+    <!-- BEGIN: HowItWorks -->
+    <section class="py-16 lg:py-24 bg-bts-light-gray border-y border-gray-100">
+        <div class="container-wide text-center">
+            <h2 class="text-4xl font-extrabold text-slate-900 mb-4">How the Library Works</h2>
+            <p class="text-xl text-slate-600 mb-16">Simple steps to find, use, and share knowledge.</p>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 relative px-0 lg:px-12">
+                <!-- Step Connectors (Desktop) -->
+                <div class="hidden md:block absolute top-12 left-[15%] right-[15%] h-px border-t-2 border-dashed border-gray-300 z-0"></div>
+                <div class="flex flex-col items-center relative z-10 w-full">
+                    <div class="w-24 h-24 bg-white shadow-sm border border-gray-100 rounded-full flex items-center justify-center relative mb-6">
+                        <div class="absolute -top-1 -right-1 w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-base border-4 border-bts-light-gray shadow-md">1</div>
+                        <div class="p-4 bg-indigo-50 text-indigo-600 rounded-full">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                            </svg>
                         </div>
                     </div>
-                    <div class="w-full flex-1 rounded bg-surface-container-low border border-surface-variant p-sm flex items-start gap-4 hover:border-primary-container transition-colors">
-                        <div class="w-12 h-12 bg-tertiary-container/20 text-tertiary-container rounded flex items-center justify-center">
-                            <span class="material-symbols-outlined">description</span>
-                        </div>
-                        <div class="flex flex-col gap-2 flex-1">
-                            <div class="w-4/5 h-4 rounded bg-surface-variant"></div>
-                            <div class="w-1/4 h-3 rounded bg-surface-variant opacity-50"></div>
+                    <h4 class="font-bold text-xl text-slate-900 mb-2">Search &amp; Discover</h4>
+                    <p class="text-base text-slate-500 px-4 leading-relaxed">Find resources by topic, category, or keyword.</p>
+                </div>
+                <div class="flex flex-col items-center relative z-10 w-full">
+                    <div class="w-24 h-24 bg-white shadow-sm border border-gray-100 rounded-full flex items-center justify-center relative mb-6">
+                        <div class="absolute -top-1 -right-1 w-8 h-8 bg-bts-gold text-white rounded-full flex items-center justify-center font-bold text-base border-4 border-bts-light-gray shadow-md">2</div>
+                        <div class="p-4 bg-amber-50 text-bts-gold rounded-full">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                            </svg>
                         </div>
                     </div>
+                    <h4 class="font-bold text-xl text-slate-900 mb-2">Explore &amp; Learn</h4>
+                    <p class="text-base text-slate-500 px-4 leading-relaxed">Read, watch, or download resources that help you grow.</p>
+                </div>
+                <div class="flex flex-col items-center relative z-10 w-full">
+                    <div class="w-24 h-24 bg-white shadow-sm border border-gray-100 rounded-full flex items-center justify-center relative mb-6">
+                        <div class="absolute -top-1 -right-1 w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-base border-4 border-bts-light-gray shadow-md">3</div>
+                        <div class="p-4 bg-indigo-50 text-indigo-600 rounded-full">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9l-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-xl text-slate-900 mb-2">Save &amp; Organize</h4>
+                    <p class="text-base text-slate-500 px-4 leading-relaxed">Add to your library, create collections, and stay organized.</p>
+                </div>
+                <div class="flex flex-col items-center relative z-10 w-full">
+                    <div class="w-24 h-24 bg-white shadow-sm border border-gray-100 rounded-full flex items-center justify-center relative mb-6">
+                        <div class="absolute -top-1 -right-1 w-8 h-8 bg-bts-gold text-white rounded-full flex items-center justify-center font-bold text-base border-4 border-bts-light-gray shadow-md">4</div>
+                        <div class="p-4 bg-amber-50 text-bts-gold rounded-full">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-xl text-slate-900 mb-2">Share &amp; Contribute</h4>
+                    <p class="text-base text-slate-500 px-4 leading-relaxed">Upload your own resources and help others learn.</p>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    <!-- END: HowItWorks -->
 
-<!-- Resource Types -->
-<section class="max-w-container-max mx-auto px-gutter py-xl transition-colors duration-300 w-full">
-    <div class="text-center mb-xl">
-        <h2 class="font-h2 text-h2 text-on-background mb-sm">Everything you need</h2>
-        <p class="font-body-md text-body-md text-secondary">A comprehensive collection of formats.</p>
-    </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
-        <div class="bg-surface-container-lowest border border-surface-variant p-md rounded-lg flex flex-col items-center text-center group hover:border-outline transition-colors">
-            <span class="material-symbols-outlined text-4xl text-primary-container mb-sm" style="font-variation-settings: 'FILL' 1;">edit_document</span>
-            <span class="font-h3 text-h3 text-on-background">Notes</span>
-        </div>
-        <div class="bg-surface-container-lowest border border-surface-variant p-md rounded-lg flex flex-col items-center text-center group hover:border-outline transition-colors">
-            <span class="material-symbols-outlined text-4xl text-primary-container mb-sm" style="font-variation-settings: 'FILL' 1;">dashboard_customize</span>
-            <span class="font-h3 text-h3 text-on-background">Templates</span>
-        </div>
-        <div class="bg-surface-container-lowest border border-surface-variant p-md rounded-lg flex flex-col items-center text-center group hover:border-outline transition-colors">
-            <span class="material-symbols-outlined text-4xl text-primary-container mb-sm" style="font-variation-settings: 'FILL' 1;">terminal</span>
-            <span class="font-h3 text-h3 text-on-background">Software</span>
-        </div>
-        <div class="bg-surface-container-lowest border border-surface-variant p-md rounded-lg flex flex-col items-center text-center group hover:border-outline transition-colors">
-            <span class="material-symbols-outlined text-4xl text-primary-container mb-sm" style="font-variation-settings: 'FILL' 1;">smart_display</span>
-            <span class="font-h3 text-h3 text-on-background">Videos</span>
-        </div>
-        <div class="bg-surface-container-lowest border border-surface-variant p-md rounded-lg flex flex-col items-center text-center group hover:border-outline transition-colors">
-            <span class="material-symbols-outlined text-4xl text-primary-container mb-sm" style="font-variation-settings: 'FILL' 1;">slideshow</span>
-            <span class="font-h3 text-h3 text-on-background">Slides</span>
-        </div>
-        <div class="bg-surface-container-lowest border border-surface-variant p-md rounded-lg flex flex-col items-center text-center group hover:border-outline transition-colors">
-            <span class="material-symbols-outlined text-4xl text-primary-container mb-sm" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
-            <span class="font-h3 text-h3 text-on-background">Exercises</span>
-        </div>
-        <div class="bg-surface-container-lowest border border-surface-variant p-md rounded-lg flex flex-col items-center text-center group hover:border-outline transition-colors">
-            <span class="material-symbols-outlined text-4xl text-primary-container mb-sm" style="font-variation-settings: 'FILL' 1;">description</span>
-            <span class="font-h3 text-h3 text-on-background">Documents</span>
-        </div>
-        <div class="bg-surface-container-lowest border border-surface-variant p-md rounded-lg flex flex-col items-center text-center group hover:border-outline transition-colors">
-            <span class="material-symbols-outlined text-4xl text-primary-container mb-sm" style="font-variation-settings: 'FILL' 1;">folder_zip</span>
-            <span class="font-h3 text-h3 text-on-background">Archives</span>
-        </div>
-    </div>
-</section>
-
-<!-- Organization Structure -->
-<section class="bg-surface-container-lowest border-y border-surface-variant py-xl transition-colors duration-300 w-full">
-    <div class="max-w-container-max mx-auto px-gutter">
-        <h2 class="font-h2 text-h2 text-on-background mb-lg">Organized Around Your Needs</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-base">
-            <div class="bg-surface-container-low border border-surface-variant p-lg rounded-xl flex items-start gap-md hover:border-primary-container transition-colors group">
-                <div class="w-12 h-12 bg-surface-container rounded-lg border border-outline-variant flex items-center justify-center text-on-background">
-                    <span class="material-symbols-outlined">account_balance</span>
-                </div>
-                <div>
-                    <h3 class="font-h3 text-h3 text-on-background mb-2 group-hover:text-primary-container transition-colors">Schools & Universities</h3>
-                    <p class="font-body-md text-body-md text-secondary">Navigate resources structured by academic institutions. Find materials tailored to specific university programs.</p>
-                </div>
+    <!-- BEGIN: ValueSection -->
+    <section class="py-16 lg:py-24 bg-white">
+        <div class="container-wide">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold text-slate-900 mb-4">Why Use Bitstacks Library?</h2>
             </div>
-
-            <div class="bg-surface-container-low border border-surface-variant p-lg rounded-xl flex items-start gap-md hover:border-primary-container transition-colors group">
-                <div class="w-12 h-12 bg-surface-container rounded-lg border border-outline-variant flex items-center justify-center text-on-background">
-                    <span class="material-symbols-outlined">layers</span>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <div class="bg-white border border-gray-100 p-8 rounded-2xl hover:shadow-md transition-all hover:border-indigo-100 group">
+                    <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-xl mb-2">Wide Collection</h3>
+                    <p class="text-base text-slate-500 leading-relaxed">Access thousands of high-quality resources.</p>
                 </div>
-                <div>
-                    <h3 class="font-h3 text-h3 text-on-background mb-2 group-hover:text-primary-container transition-colors">Academic Levels</h3>
-                    <p class="font-body-md text-body-md text-secondary">Filter content by difficulty and academic year, ensuring you engage with the right level of complexity.</p>
+                <div class="bg-white border border-gray-100 p-8 rounded-2xl hover:shadow-md transition-all hover:border-blue-100 group">
+                    <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-xl mb-2">Trusted Content</h3>
+                    <p class="text-base text-slate-500 leading-relaxed">Verified and reviewed for reliability.</p>
                 </div>
-            </div>
-
-            <div class="bg-surface-container-low border border-surface-variant p-lg rounded-xl flex items-start gap-md hover:border-primary-container transition-colors group">
-                <div class="w-12 h-12 bg-surface-container rounded-lg border border-outline-variant flex items-center justify-center text-on-background">
-                    <span class="material-symbols-outlined">view_module</span>
+                <div class="bg-white border border-gray-100 p-8 rounded-2xl hover:shadow-md transition-all hover:border-purple-100 group">
+                    <div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-xl mb-2">Easy Access</h3>
+                    <p class="text-base text-slate-500 leading-relaxed">Learn anytime, anywhere.</p>
                 </div>
-                <div>
-                    <h3 class="font-h3 text-h3 text-on-background mb-2 group-hover:text-primary-container transition-colors">Specific Modules</h3>
-                    <p class="font-body-md text-body-md text-secondary">Drill down into individual modules and courses to find targeted study materials, notes, and past exams.</p>
+                <div class="bg-white border border-gray-100 p-8 rounded-2xl hover:shadow-md transition-all hover:border-pink-100 group">
+                    <div class="w-12 h-12 bg-pink-50 text-pink-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-xl mb-2">Organized Learning</h3>
+                    <p class="text-base text-slate-500 leading-relaxed">Save, organize, and revisit what matters.</p>
                 </div>
-            </div>
-
-            <div class="bg-surface-container-low border border-surface-variant p-lg rounded-xl flex items-start gap-md hover:border-primary-container transition-colors group">
-                <div class="w-12 h-12 bg-surface-container rounded-lg border border-outline-variant flex items-center justify-center text-on-background">
-                    <span class="material-symbols-outlined">category</span>
+                <div class="bg-white border border-gray-100 p-8 rounded-2xl hover:shadow-md transition-all hover:border-orange-100 group">
+                    <div class="w-12 h-12 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-xl mb-2">Community Driven</h3>
+                    <p class="text-base text-slate-500 leading-relaxed">Contribute and grow together.</p>
                 </div>
-                <div>
-                    <h3 class="font-h3 text-h3 text-on-background mb-2 group-hover:text-primary-container transition-colors">Educational Categories</h3>
-                    <p class="font-body-md text-body-md text-secondary">Explore broader disciplines, skill tracks, and professional categories that go beyond standard academics.</p>
+                <div class="bg-white border border-gray-100 p-8 rounded-2xl hover:shadow-md transition-all hover:border-amber-100 group">
+                    <div class="w-12 h-12 bg-amber-50 text-bts-gold rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 20 20">
+                            <path clip-rule="evenodd" d="M10 2a1 1 0 01.894.553l1.992 3.985 4.39.638a1 1 0 01.554 1.707l-3.177 3.097.75 4.373a1 1 0 01-1.451 1.054L10 15.347l-3.962 2.083a1 1 0 01-1.451-1.054l.75-4.373-3.177-3.097a1 1 0 01.554-1.707l4.39-.638 1.992-3.985A1 1 0 0110 2z" fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-xl mb-2">BTS Credits</h3>
+                    <p class="text-base text-slate-500 leading-relaxed">Earn or use BTS Credits within the ecosystem.</p>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    <!-- END: ValueSection -->
 
-<!-- Active Engagement -->
-<section class="max-w-container-max mx-auto px-gutter py-xl transition-colors duration-300 w-full">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter text-center md:text-left">
-        <div class="flex flex-col gap-2">
-            <span class="material-symbols-outlined text-4xl text-primary-container mb-sm" style="font-variation-settings: 'FILL' 1;">cloud_upload</span>
-            <h3 class="font-h3 text-h3 text-on-background">Upload</h3>
-            <p class="font-body-md text-body-md text-secondary">Share your notes and resources with the community.</p>
+    <!-- BEGIN: CTASection -->
+    <section class="py-16 lg:py-24 bg-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 20px 20px;"></div>
+        <div class="container-wide">
+            <div class="bg-[#f8fafc] border border-slate-100 rounded-[40px] py-20 px-8 text-center relative overflow-hidden shadow-sm max-w-5xl mx-auto">
+                <div class="relative z-10">
+                    <h2 class="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">Ready to explore and expand your knowledge?</h2>
+                    <p class="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">Join thousands of learners using Bitstacks Library every day.</p>
+                    <button class="bg-bts-gold text-white px-10 py-5 rounded-xl text-2xl font-bold flex items-center justify-center gap-3 mx-auto hover:bg-bts-gold-hover transition-all shadow-xl shadow-bts-gold/20">
+                        Explore Library
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </div>
-        <div class="flex flex-col gap-2">
-            <span class="material-symbols-outlined text-4xl text-primary-container mb-sm" style="font-variation-settings: 'FILL' 1;">explore</span>
-            <h3 class="font-h3 text-h3 text-on-background">Discover</h3>
-            <p class="font-body-md text-body-md text-secondary">Find exactly what you need with powerful search and filters.</p>
-        </div>
-        <div class="flex flex-col gap-2">
-            <span class="material-symbols-outlined text-4xl text-primary-container mb-sm" style="font-variation-settings: 'FILL' 1;">library_books</span>
-            <h3 class="font-h3 text-h3 text-on-background">Access</h3>
-            <p class="font-body-md text-body-md text-secondary">Seamlessly view, download, or save resources for later.</p>
-        </div>
-    </div>
-</section>
-
-<!-- Final CTA -->
-<section class="py-xl text-center px-gutter border-t border-surface-variant transition-colors duration-300 bg-surface-container-lowest">
-    <h2 class="font-display-sm text-display-sm text-on-background mb-sm">Start exploring the library</h2>
-    <p class="font-body-md text-body-md text-secondary mb-lg max-w-xl mx-auto">Join the ecosystem to access premium educational materials and accelerate your learning.</p>
-    <button onclick="window.location.href='/join'" class="bg-primary-container text-on-primary-container font-button text-button px-10 py-4 rounded hover:opacity-90 transition-opacity uppercase tracking-widest">
-        Enter Library
-    </button>
-</section>
+    </section>
+    <!-- END: CTASection -->
+</div>
 {% endblock %}

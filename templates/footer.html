@@ -1,32 +1,81 @@
-<footer class="bg-surface-container-low font-sans text-xs uppercase tracking-widest w-full border-t mt-20 border-surface-variant flat no shadows transition-colors duration-300">
-    <div class="max-w-7xl mx-auto px-12 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
-        <div class="col-span-1 md:col-span-4 mb-8 flex flex-col space-y-3">
-            <div class="flex items-center gap-3">
-                <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Bitstack Logo" class="h-10 block dark:hidden">
-                <img src="{{ url_for('static', filename='img/logo-white.svg') }}" alt="Bitstack Logo" class="h-10 hidden dark:block">
+<footer class="bg-bts-navy text-white pt-20 pb-10 mt-auto">
+    <div class="container-wide">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 mb-20">
+            <!-- Brand Info -->
+            <div class="lg:col-span-2">
+                <div class="flex items-center gap-2 mb-6" data-purpose="footer-logo">
+                    <img src="{{ url_for('static', filename='img/logo-white.svg') }}" alt="Bitstacks" class="h-16">
+                </div>
+                <p class="text-slate-400 text-lg mb-8 leading-relaxed max-w-xs">
+                    Institutes • Mentors • Freelance Projects • Resources
+                </p>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center hover:border-bts-gold transition-colors text-slate-400 hover:text-bts-gold"
+                        href="#">X</a>
+                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center hover:border-bts-gold transition-colors text-slate-400 hover:text-bts-gold"
+                        href="#">In</a>
+                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center hover:border-bts-gold transition-colors text-slate-400 hover:text-bts-gold"
+                        href="#">Ig</a>
+                    <a class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center hover:border-bts-gold transition-colors text-slate-400 hover:text-bts-gold"
+                        href="#">Yt</a>
+                </div>
             </div>
-            <span class="text-secondary normal-case tracking-normal">Institutes • Mentors • Freelance Projects • Resources</span>
+            <!-- Links Columns -->
+            <div>
+                <h5 class="font-bold text-lg mb-6 uppercase tracking-wider">Platform</h5>
+                <ul class="space-y-4 text-lg text-slate-400">
+                    <li><a class="hover:text-white transition-colors" href="/learners">Learn</a></li>
+                    <li><a class="hover:text-white transition-colors" href="/mentors">Earn</a></li>
+                    <li><a class="hover:text-white transition-colors" href="/freelancers">Freelance</a></li>
+                    <li><a class="hover:text-white transition-colors" href="/institutes">Institutes</a></li>
+                    <li><a class="hover:text-white transition-colors" href="/clients">Clients</a></li>
+                    <li><a class="hover:text-white transition-colors" href="/library">Library</a></li>
+                    <li><a class="hover:text-white transition-colors" href="/token">BTS Credits</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold text-lg mb-6 uppercase tracking-wider">Company</h5>
+                <ul class="space-y-4 text-lg text-slate-400">
+                    <li><a class="hover:text-white transition-colors" href="#">About Us</a></li>
+                    <li><a class="hover:text-white transition-colors" href="#">Careers</a></li>
+                    <li><a class="hover:text-white transition-colors" href="#">News &amp; Updates</a></li>
+                    <li><a class="hover:text-white transition-colors" href="{{ url_for('support') }}">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold text-lg mb-6 uppercase tracking-wider">Legal</h5>
+                <ul class="space-y-4 text-lg text-slate-400">
+                    <li><a class="hover:text-white transition-colors" href="{{ url_for('privacy') }}">Privacy Policy</a>
+                    </li>
+                    <li><a class="hover:text-white transition-colors" href="{{ url_for('terms') }}">Terms of Service</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold text-lg mb-6 uppercase tracking-wider">Support</h5>
+                <ul class="space-y-4 text-lg text-slate-400">
+                    <li><a class="hover:text-white transition-colors" href="{{ url_for('help_center') }}">Help
+                            Center</a></li>
+                    <li><a class="hover:text-white transition-colors" href="{{ url_for('faqs') }}">FAQs</a></li>
+                    <li><a class="hover:text-white transition-colors" href="#">Guides</a></li>
+                    <li><a class="hover:text-white transition-colors" href="#">Community</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="flex flex-col space-y-4">
-            <a class="text-secondary hover:text-primary-container underline-offset-4 hover:underline transition-all opacity-80 hover:opacity-100" href="/learners">Learn</a>
-            <a class="text-secondary hover:text-primary-container underline-offset-4 hover:underline transition-all opacity-80 hover:opacity-100" href="/mentors">Earn</a>
-        </div>
-        <div class="flex flex-col space-y-4">
-            <a class="text-secondary hover:text-primary-container underline-offset-4 hover:underline transition-all opacity-80 hover:opacity-100" href="/freelancers">Freelance</a>
-            <a class="text-secondary hover:text-primary-container underline-offset-4 hover:underline transition-all opacity-80 hover:opacity-100" href="/institutes">Institutes</a>
-            <a class="text-secondary hover:text-primary-container underline-offset-4 hover:underline transition-all opacity-80 hover:opacity-100" href="/clients">Clients</a>
-        </div>
-        <div class="flex flex-col space-y-4">
-            <a class="text-secondary hover:text-primary-container underline-offset-4 hover:underline transition-all opacity-80 hover:opacity-100" href="/library">Library</a>
-            <a class="text-secondary hover:text-primary-container underline-offset-4 hover:underline transition-all opacity-80 hover:opacity-100" href="/token">BTS Token</a>
-        </div>
-        <div class="flex flex-col space-y-4">
-            <a class="text-secondary hover:text-primary-container underline-offset-4 hover:underline transition-all opacity-80 hover:opacity-100" href="/privacy">Privacy Policy</a>
-            <a class="text-secondary hover:text-primary-container underline-offset-4 hover:underline transition-all opacity-80 hover:opacity-100" href="/terms">Terms of Service</a>
-            <a class="text-secondary hover:text-primary-container underline-offset-4 hover:underline transition-all opacity-80 hover:opacity-100" href="/support">Support</a>
-        </div>
-        <div class="col-span-1 md:col-span-4 mt-8 pt-8 border-t border-surface-variant text-secondary">
-            © 2026 Bitstack. Built for University Success • Designed for Career Growth.
+        <!-- Bottom Bar -->
+        <div class="border-t border-slate-800 pt-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+            <p class="text-slate-500 text-base">© 2026 Bitstacks. Built for University Success • Designed for Career
+                Growth.</p>
+            <div class="flex flex-col sm:flex-row items-center gap-6 w-full lg:w-auto">
+                <span class="text-lg font-bold shrink-0">Stay updated</span>
+                <div class="relative w-full sm:w-80">
+                    <input
+                        class="w-full bg-white border-0 py-3 pl-4 pr-32 rounded-lg text-slate-900 text-lg focus:ring-2 focus:ring-bts-gold"
+                        placeholder="Enter your email" type="email" />
+                    <button
+                        class="absolute right-1.5 top-1.5 bg-bts-gold hover:bg-bts-gold-hover text-white px-4 py-1.5 rounded-md text-base font-bold transition-all">Subscribe</button>
+                </div>
+            </div>
         </div>
     </div>
 </footer>
