@@ -6,13 +6,13 @@
         </a>
         <!-- Navigation Links -->
         <div class="hidden lg:flex items-center gap-6 text-lg font-medium text-gray-600">
-            <a class="hover:text-bts-gold transition-colors" href="/learners">Learn</a>
-            <a class="hover:text-bts-gold transition-colors" href="/mentors">Earn</a>
-            <a class="hover:text-bts-gold transition-colors" href="/freelancers">Freelance</a>
-            <a class="hover:text-bts-gold transition-colors" href="/institutes">Institutes</a>
-            <a class="hover:text-bts-gold transition-colors" href="/clients">Clients</a>
-            <a class="hover:text-bts-gold transition-colors" href="/library">Library</a>
-            <a class="hover:text-bts-gold transition-colors" href="/token">BTS Credits</a>
+            <a class="hover:text-bts-gold transition-colors {% if request.path == '/learners' %}text-bts-gold font-bold{% endif %}" href="/learners">Learn</a>
+            <a class="hover:text-bts-gold transition-colors {% if request.path == '/mentors' %}text-bts-gold font-bold{% endif %}" href="/mentors">Earn</a>
+            <a class="hover:text-bts-gold transition-colors {% if request.path == '/freelancers' %}text-bts-gold font-bold{% endif %}" href="/freelancers">Freelance</a>
+            <a class="hover:text-bts-gold transition-colors {% if request.path == '/institutes' %}text-bts-gold font-bold{% endif %}" href="/institutes">Institutes</a>
+            <a class="hover:text-bts-gold transition-colors {% if request.path == '/clients' %}text-bts-gold font-bold{% endif %}" href="/clients">Clients</a>
+            <a class="hover:text-bts-gold transition-colors {% if request.path == '/library' %}text-bts-gold font-bold{% endif %}" href="/library">Library</a>
+            <a class="hover:text-bts-gold transition-colors {% if request.path == '/token' %}text-bts-gold font-bold{% endif %}" href="/token">BTS Credits</a>
         </div>
         <!-- Auth Buttons -->
         <div class="hidden lg:flex items-center gap-4">
@@ -30,23 +30,16 @@
     <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 absolute w-full left-0 shadow-lg top-20">
         <div class="flex flex-col px-6 py-4 space-y-4 text-lg font-medium text-gray-600 pb-8">
-            <a class="hover:text-bts-gold transition-colors" href="/learners">Learn</a>
-            <a class="hover:text-bts-gold transition-colors" href="/mentors">Earn</a>
-            <a class="hover:text-bts-gold transition-colors" href="/freelancers">Freelance</a>
-            <a class="hover:text-bts-gold transition-colors" href="/institutes">Institutes</a>
-            <a class="hover:text-bts-gold transition-colors" href="/clients">Clients</a>
-            <a class="hover:text-bts-gold transition-colors" href="/library">Library</a>
-            <a class="hover:text-bts-gold transition-colors" href="/token">BTS Credits</a>
+            <a class="hover:text-bts-gold transition-colors {% if request.path == '/learners' %}text-bts-gold font-bold{% endif %}" href="/learners">Learn</a>
+            <a class="hover:text-bts-gold transition-colors {% if request.path == '/mentors' %}text-bts-gold font-bold{% endif %}" href="/mentors">Earn</a>
+            <a class="hover:text-bts-gold transition-colors {% if request.path == '/freelancers' %}text-bts-gold font-bold{% endif %}" href="/freelancers">Freelance</a>
+            <a class="hover:text-bts-gold transition-colors {% if request.path == '/institutes' %}text-bts-gold font-bold{% endif %}" href="/institutes">Institutes</a>
+            <a class="hover:text-bts-gold transition-colors {% if request.path == '/clients' %}text-bts-gold font-bold{% endif %}" href="/clients">Clients</a>
+            <a class="hover:text-bts-gold transition-colors {% if request.path == '/library' %}text-bts-gold font-bold{% endif %}" href="/library">Library</a>
+            <a class="hover:text-bts-gold transition-colors {% if request.path == '/token' %}text-bts-gold font-bold{% endif %}" href="/token">BTS Credits</a>
             <hr class="border-gray-100 my-2">
             <a class="hover:text-bts-gold transition-colors" href="/signin">Sign In</a>
             <a class="bg-bts-gold hover:bg-bts-gold-hover text-white px-6 py-2.5 rounded-lg text-center font-bold transition-all" href="/join">Join Now</a>
         </div>
     </div>
 </header>
-
-<script>
-    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-        const menu = document.getElementById('mobile-menu');
-        menu.classList.toggle('hidden');
-    });
-</script>

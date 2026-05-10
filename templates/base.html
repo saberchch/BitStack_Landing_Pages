@@ -29,30 +29,7 @@
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     
-    <style data-purpose="base-typography">
-        body {
-            font-family: 'Inter', sans-serif;
-            color: #334155;
-        }
-    </style>
-    
-    <style data-purpose="layout-helpers">
-        .container-wide {
-            width: 100%;
-            padding: 0 4vw;
-        }
-
-        .pill-label {
-            background: #f1f5f9;
-            padding: 4px 12px;
-            border-radius: 9999px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: #64748b;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 <body class="bg-white min-h-screen flex flex-col">
     {% include 'header.html' %}
@@ -62,5 +39,6 @@
     </main>
 
     {% include 'footer.html' %}
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>
