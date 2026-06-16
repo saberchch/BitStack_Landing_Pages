@@ -2,7 +2,7 @@
     <nav class="container-wide h-20 flex items-center justify-between">
         <!-- Logo -->
         <a href="/" class="flex items-center gap-2" data-purpose="logo">
-            <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Bitstacks" class="h-12 lg:h-16">
+            <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Bitstacks" class="h-16 lg:h-20">
         </a>
         <!-- Navigation Links -->
         <div class="hidden lg:flex items-center gap-6 text-lg font-medium text-gray-600">
@@ -12,7 +12,7 @@
             <a class="hover:text-bts-gold transition-colors {% if request.path == '/institutes' %}text-bts-gold font-bold{% endif %}" href="/institutes">Institutes</a>
             <a class="hover:text-bts-gold transition-colors {% if request.path == '/clients' %}text-bts-gold font-bold{% endif %}" href="/clients">Clients</a>
             <a class="hover:text-bts-gold transition-colors {% if request.path == '/library' %}text-bts-gold font-bold{% endif %}" href="/library">Library</a>
-            <a class="hover:text-bts-gold transition-colors {% if request.path == '/token' %}text-bts-gold font-bold{% endif %}" href="/token">BTS Credits</a>
+            <a class="hover:text-bts-gold transition-colors {% if request.path == '/token' %}text-bts-gold font-bold{% endif %}" href="/token">BTS</a>
         </div>
         <!-- Auth Buttons -->
         <div class="hidden lg:flex items-center gap-4">
@@ -36,7 +36,7 @@
             <a class="hover:text-bts-gold transition-colors {% if request.path == '/institutes' %}text-bts-gold font-bold{% endif %}" href="/institutes">Institutes</a>
             <a class="hover:text-bts-gold transition-colors {% if request.path == '/clients' %}text-bts-gold font-bold{% endif %}" href="/clients">Clients</a>
             <a class="hover:text-bts-gold transition-colors {% if request.path == '/library' %}text-bts-gold font-bold{% endif %}" href="/library">Library</a>
-            <a class="hover:text-bts-gold transition-colors {% if request.path == '/token' %}text-bts-gold font-bold{% endif %}" href="/token">BTS Credits</a>
+            <a class="hover:text-bts-gold transition-colors {% if request.path == '/token' %}text-bts-gold font-bold{% endif %}" href="/token">BTS</a>
             <hr class="border-gray-100 my-2">
             <a class="hover:text-bts-gold transition-colors" href="/signin">Sign In</a>
             <a class="bg-bts-gold hover:bg-bts-gold-hover text-white px-6 py-2.5 rounded-lg text-center font-bold transition-all" href="/join">Join Now</a>

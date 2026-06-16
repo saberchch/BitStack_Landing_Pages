@@ -1,119 +1,118 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html lang="en" class="h-full">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Bitstack - Sign In</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='img/favicon.svg') }}">
     
-    {% include 'theme_config.html' %}
-    
-    <script id="tailwind-config">
+    <!-- Tailwind CSS v3 CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <script>
         tailwind.config = {
-            darkMode: "class",
             theme: {
                 extend: {
-                    colors: twColors,
-                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
-                    spacing: { "base": "8px", "xs": "4px", "md": "24px", "margin": "32px", "lg": "48px", "gutter": "24px", "sm": "12px", "xl": "80px" },
-                    fontFamily: {
-                        "headline-lg": ["Space Grotesk"], "body-md": ["Inter"], "body-lg": ["Inter"], "label-bold": ["Inter"], "headline-md": ["Space Grotesk"], "display-xl": ["Space Grotesk"]
-                    },
-                    fontSize: {
-                        "headline-lg": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
-                        "body-md": ["16px", { "lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400" }],
-                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
-                        "label-bold": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
-                        "headline-md": ["24px", { "lineHeight": "1.3", "letterSpacing": "0", "fontWeight": "600" }],
-                        "display-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    colors: {
+                        'bts-gold': '#d4a017',
+                        'bts-gold-hover': '#b88a14',
+                        'bts-navy': '#0a192f',
+                        'bts-light-gray': '#f8fafc',
                     }
                 }
             }
         }
     </script>
+    
+    <!-- Google Fonts (Inter) -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
     <style>
-        input:focus { outline: none !important; box-shadow: none !important; }
-        input:-webkit-autofill,
-        input:-webkit-autofill:hover, 
-        input:-webkit-autofill:focus, 
-        input:-webkit-autofill:active{
-            -webkit-box-shadow: 0 0 0 30px #1A1A1A inset !important;
-            -webkit-text-fill-color: #e2e2e2 !important;
-            transition: background-color 5000s ease-in-out 0s;
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        input:focus {
+            outline: none !important;
+            box-shadow: 0 0 0 2px rgba(212, 160, 23, 0.2) !important;
         }
     </style>
 </head>
-<body class="bg-background text-on-background min-h-screen flex overflow-hidden antialiased transition-colors duration-300">
-    <button onclick="toggleTheme()" class="absolute top-margin right-margin z-50 text-secondary hover:text-primary-container transition-colors p-2 bg-surface-container rounded-full shadow-sm">
-        <span class="material-symbols-outlined">light_mode</span>
-    </button>
-    <script>
-        function toggleTheme() {
-            const html = document.documentElement;
-            if (html.classList.contains('light')) {
-                html.classList.remove('light');
-                html.classList.add('dark');
-            } else {
-                html.classList.remove('dark');
-                html.classList.add('light');
-            }
-        }
-    </script>
+<body class="bg-white min-h-screen h-full flex flex-col items-center justify-center p-4 antialiased overflow-hidden">
+    
+    <!-- Subtle abstract light-gold glow in the background to feel premium -->
+    <div class="absolute top-0 right-0 w-80 h-80 bg-bts-gold/5 rounded-full filter blur-[100px] pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 bg-indigo-50/50 rounded-full filter blur-[100px] pointer-events-none"></div>
 
-    <!-- Left Panel -->
-    <div class="hidden lg:flex w-[45%] relative border-r border-surface-variant flex-col justify-between p-lg z-10 bg-surface-container-lowest transition-colors duration-300">
-        <div class="absolute inset-0 z-0 opacity-40 mix-blend-luminosity bg-center bg-cover transition-opacity" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDlEITvfZtO2mw5zggLvqJmzrk9gg6Gtp2LjWriuPCsnysz8qK7pgJOHpPaTfuv8otifyDF0OTv-j0P78Z0qPESLo8Cka-NF8pLSP5zOoh5kCywUcI1MHVXEPkQzZQLYKyxQhwMb5rm2VcOh32pAsgJerhTV01y2uWiD5AmbRJb64QkrAIptNcBmJnG0BgYJRys2YpG9EiM4FFo4C-xFCBCrdi8VA3pdVzIf0jVbBMRrmAjx-3NfrGYdrcjOvgxujNziGKJ8k6GhK0');"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent z-0 transition-colors duration-300"></div>
-        <div class="z-10 relative">
-            <a href="/" class="font-headline-md text-headline-md text-on-background font-black tracking-tighter uppercase transition-colors hover:text-primary-container">Bitstack</a>
+    <!-- Main Card - Designed to fit within viewport height -->
+    <div class="w-full max-w-[400px] bg-white border border-slate-100 shadow-xl rounded-2xl p-6 md:p-8 relative z-10 flex flex-col justify-center">
+        
+        <!-- Logo Header -->
+        <div class="flex flex-col items-center mb-6">
+            <a href="/" class="mb-3 transform hover:scale-105 transition-transform duration-300">
+                <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Bitstacks" class="h-14">
+            </a>
+            <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight text-center">Welcome Back</h1>
+            <p class="text-slate-500 text-xs mt-1 text-center">Authenticate to access your workspace</p>
         </div>
-        <div class="z-10 relative max-w-md">
-            <h2 class="font-headline-lg text-headline-lg text-on-background mb-sm">Precision.<br/>Growth.<br/>Scale.</h2>
-            <p class="font-body-lg text-body-lg text-secondary">The definitive platform for professionals demanding absolute control over their financial trajectory.</p>
-        </div>
-    </div>
 
-    <!-- Right Panel -->
-    <div class="w-full lg:w-[55%] flex flex-col justify-center items-center p-gutter md:p-margin relative z-20 bg-background transition-colors duration-300">
-        <!-- Mobile Logo Fallback -->
-        <div class="absolute top-margin left-gutter lg:hidden">
-            <a href="/" class="font-headline-md text-headline-md text-on-background font-black tracking-tighter uppercase transition-colors">Bitstack</a>
-        </div>
-        <div class="w-full max-w-[420px] flex flex-col gap-lg mt-margin lg:mt-0">
-            <div class="flex flex-col gap-xs">
-                <h1 class="font-headline-lg text-headline-lg text-on-background">Welcome Back</h1>
-                <p class="font-body-lg text-body-lg text-secondary">Authenticate to access your workspace.</p>
+        <form action="#" class="space-y-4" method="POST">
+            <!-- Email Address Input -->
+            <div class="space-y-1">
+                <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block" for="email">
+                    Email Address
+                </label>
+                <input 
+                    class="w-full h-11 bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 rounded-xl px-4 text-sm focus:bg-white focus:border-bts-gold transition-all duration-200" 
+                    id="email" 
+                    name="email" 
+                    placeholder="name@example.com" 
+                    required="" 
+                    type="email"
+                />
             </div>
-            <form action="#" class="flex flex-col gap-margin" method="POST">
-                <div class="flex flex-col gap-md">
-                    <div class="flex flex-col gap-xs">
-                        <label class="font-label-bold text-label-bold text-on-background tracking-widest uppercase" for="email">Email Address</label>
-                        <div class="relative">
-                            <input class="w-full h-[56px] bg-surface-container-lowest border-0 border-b border-surface-variant text-on-background font-body-lg px-xs placeholder:text-outline-variant focus:border-primary-container focus:border-b-[2px] focus:ring-0 transition-all" id="email" name="email" placeholder="name@example.com" required="" type="email"/>
-                        </div>
-                    </div>
-                    <div class="flex flex-col gap-xs">
-                        <div class="flex justify-between items-center">
-                            <label class="font-label-bold text-label-bold text-on-background tracking-widest uppercase" for="password">Password</label>
-                            <a href="/app/reset-password" class="font-body-sm text-body-sm text-secondary hover:text-primary-container transition-colors">Forgot password?</a>
-                        </div>
-                        <div class="relative">
-                            <input class="w-full h-[56px] bg-surface-container-lowest border-0 border-b border-surface-variant text-on-background font-body-lg px-xs placeholder:text-outline-variant focus:border-primary-container focus:border-b-[2px] focus:ring-0 transition-all" id="password" name="password" placeholder="••••••••" required="" type="password"/>
-                        </div>
-                    </div>
+
+            <!-- Password Input -->
+            <div class="space-y-1">
+                <div class="flex justify-between items-center">
+                    <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500" for="password">
+                        Password
+                    </label>
+                    <a href="#" class="text-[10px] font-semibold text-slate-400 hover:text-bts-gold transition-colors">
+                        Forgot password?
+                    </a>
                 </div>
-                <div class="flex flex-col gap-md mt-xs">
-                    <button class="w-full h-[56px] bg-primary-container text-on-primary-container font-headline-md text-[18px] tracking-tight hover:opacity-90 transition-opacity duration-200 flex items-center justify-center rounded" type="submit">
-                        Sign In
-                    </button>
-                    <p class="font-body-md text-body-md text-center text-secondary">
-                        New to Bitstack? <a class="text-primary-container hover:text-on-background transition-colors border-b border-transparent hover:border-on-background" href="/join">Create an account</a>
-                    </p>
-                </div>
-            </form>
+                <input 
+                    class="w-full h-11 bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 rounded-xl px-4 text-sm focus:bg-white focus:border-bts-gold transition-all duration-200" 
+                    id="password" 
+                    name="password" 
+                    placeholder="••••••••" 
+                    required="" 
+                    type="password"
+                />
+            </div>
+
+            <!-- Submit Button -->
+            <div class="pt-2">
+                <button 
+                    class="w-full h-12 bg-bts-gold hover:bg-bts-gold-hover text-white font-bold rounded-xl shadow-md shadow-bts-gold/10 hover:shadow-lg transition-all duration-300 flex items-center justify-center text-base tracking-wide" 
+                    type="submit"
+                >
+                    Sign In
+                </button>
+            </div>
+        </form>
+
+        <!-- Redirect Link -->
+        <div class="mt-6 text-center border-t border-slate-100 pt-4">
+            <p class="text-xs text-slate-500">
+                New to Bitstack? 
+                <a class="text-bts-gold font-bold hover:underline ml-1" href="/join">
+                    Create an account
+                </a>
+            </p>
         </div>
+
     </div>
 </body>
 </html>

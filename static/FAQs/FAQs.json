@@ -3,8 +3,8 @@
     "url": "/faqs",
     "hero": {
         "title": "Frequently Asked Questions",
-        "description": "Find clear answers about using Bitstack. Get quick guidance on accounts, learning support, mentoring, freelance projects, client workflows, BTS Credits, library resources, payments, and platform support.",
-        "searchPlaceholder": "Search questions, topics, services, BTS Credits, projects...",
+        "description": "Find clear answers about using Bitstack. Get quick guidance on accounts, learning support, mentoring, freelance projects, client workflows, BTS, library resources, payments, and platform support.",
+        "searchPlaceholder": "Search questions, topics, services, BTS, projects...",
         "buttons": [
             {
                 "label": "Contact Support",
@@ -39,7 +39,7 @@
         },
         {
             "id": "bts-credits",
-            "label": "BTS Credits"
+            "label": "BTS"
         },
         {
             "id": "library",
@@ -79,7 +79,7 @@
         {
             "category": "Account",
             "question": "Can Bitstack suspend an account?",
-            "answer": "Yes. Bitstack may suspend or restrict accounts that violate platform rules, misuse services, provide false information, abuse payment or BTS Credit systems, upload harmful content, or create safety and trust concerns."
+            "answer": "Yes. Bitstack may suspend or restrict accounts that violate platform rules, misuse services, provide false information, abuse payment or BTS systems, upload harmful content, or create safety and trust concerns."
         },
         {
             "category": "Learning & Mentoring",
@@ -94,7 +94,7 @@
         {
             "category": "Learning & Mentoring",
             "question": "How do I book a mentoring session?",
-            "answer": "Choose a mentor, select the type of session you need, review the available time slots, and confirm the booking. If the session requires payment or BTS Credits, the platform will guide you through the confirmation process."
+            "answer": "Choose a mentor, select the type of session you need, review the available time slots, and confirm the booking. If the session requires payment or BTS, the platform will guide you through the confirmation process."
         },
         {
             "category": "Learning & Mentoring",
@@ -139,7 +139,7 @@
         {
             "category": "Freelance",
             "question": "When do freelancers receive rewards?",
-            "answer": "Freelancers receive BTS Credits or platform rewards after a milestone or project is approved, according to the agreed workflow and platform rules. Rewards should only be released when the required work has been submitted and accepted."
+            "answer": "Freelancers receive BTS or platform rewards after a milestone or project is approved, according to the agreed workflow and platform rules. Rewards should only be released when the required work has been submitted and accepted."
         },
         {
             "category": "Freelance",
@@ -159,7 +159,7 @@
         {
             "category": "Clients",
             "question": "How do clients post a project?",
-            "answer": "Clients can create a project by describing the objective, required skills, expected deliverables, timeline, budget or BTS Credit reward, and acceptance criteria. Clear project descriptions help attract better proposals."
+            "answer": "Clients can create a project by describing the objective, required skills, expected deliverables, timeline, budget or BTS reward, and acceptance criteria. Clear project descriptions help attract better proposals."
         },
         {
             "category": "Clients",
@@ -169,7 +169,7 @@
         {
             "category": "Clients",
             "question": "What should a good project brief include?",
-            "answer": "A strong project brief should include: Project objective, Required deliverables, Expected timeline, Required skills or tools, Budget or BTS Credit reward, Acceptance criteria, Any files, examples, or references needed."
+            "answer": "A strong project brief should include: Project objective, Required deliverables, Expected timeline, Required skills or tools, Budget or BTS reward, Acceptance criteria, Any files, examples, or references needed."
         },
         {
             "category": "Clients",
@@ -182,39 +182,39 @@
             "answer": "Both sides should first communicate professionally and refer to the agreed project scope. If the issue cannot be resolved, Bitstack support may assist by reviewing the project description, milestone terms, submitted files, and communication records."
         },
         {
-            "category": "BTS Credits",
-            "question": "What are BTS Credits?",
-            "answer": "BTS Credits are internal platform credits used within the Bitstack ecosystem. They may be used for services, rewards, refunds, learning resources, mentoring sessions, freelance projects, and other approved platform activities."
+            "category": "BTS",
+            "question": "What are BTS?",
+            "answer": "BTS are internal platform credits used within the Bitstack ecosystem. They may be used for services, rewards, refunds, learning resources, mentoring sessions, freelance projects, and other approved platform activities."
         },
         {
-            "category": "BTS Credits",
-            "question": "Are BTS Credits cryptocurrency?",
-            "answer": "No. BTS Credits are not a public cryptocurrency, not a speculative token, and not publicly tradable outside Bitstack. They are internal platform credits designed to support activity inside the Bitstack ecosystem."
+            "category": "BTS",
+            "question": "Are BTS cryptocurrency?",
+            "answer": "No. BTS are not a public cryptocurrency, not a speculative token, and not publicly tradable outside Bitstack. They are internal platform credits designed to support activity inside the Bitstack ecosystem."
         },
         {
-            "category": "BTS Credits",
-            "question": "What can I use BTS Credits for?",
-            "answer": "Depending on platform rules, BTS Credits may be used for booking mentor sessions, accessing selected learning resources, paying for freelance project milestones, receiving refunds, receiving rewards for contributions, and participating in internal platform services."
+            "category": "BTS",
+            "question": "What can I use BTS for?",
+            "answer": "Depending on platform rules, BTS may be used for booking mentor sessions, accessing selected learning resources, paying for freelance project milestones, receiving refunds, receiving rewards for contributions, and participating in internal platform services."
         },
         {
-            "category": "BTS Credits",
-            "question": "Can I transfer BTS Credits to another user?",
-            "answer": "BTS Credits should only be used according to Bitstack rules. In the first version of the platform, it is better to avoid open user-to-user transfers unless they are part of an approved service workflow, such as project payments, mentoring payments, or refunds."
+            "category": "BTS",
+            "question": "Can I transfer BTS to another user?",
+            "answer": "BTS should only be used according to Bitstack rules. In the first version of the platform, it is better to avoid open user-to-user transfers unless they are part of an approved service workflow, such as project payments, mentoring payments, or refunds."
         },
         {
-            "category": "BTS Credits",
-            "question": "Can BTS Credits be refunded?",
+            "category": "BTS",
+            "question": "Can BTS be refunded?",
             "answer": "Refunds may be possible depending on the service status, cancellation timing, project milestone, dispute decision, or platform policy. Not every transaction is automatically refundable."
         },
         {
-            "category": "BTS Credits",
-            "question": "Can BTS Credits be exchanged outside the platform?",
-            "answer": "No. BTS Credits should not be presented as public money, foreign currency, cryptocurrency, or an external tradable asset. They are intended for internal use within Bitstack."
+            "category": "BTS",
+            "question": "Can BTS be exchanged outside the platform?",
+            "answer": "No. BTS should not be presented as public money, foreign currency, cryptocurrency, or an external tradable asset. They are intended for internal use within Bitstack."
         },
         {
-            "category": "BTS Credits",
-            "question": "Why does Bitstack use BTS Credits?",
-            "answer": "BTS Credits help organize internal payments, rewards, refunds, and platform activity in a transparent and structured way. They make it easier to connect learning, mentoring, freelancing, and resource contribution inside one ecosystem."
+            "category": "BTS",
+            "question": "Why does Bitstack use BTS?",
+            "answer": "BTS help organize internal payments, rewards, refunds, and platform activity in a transparent and structured way. They make it easier to connect learning, mentoring, freelancing, and resource contribution inside one ecosystem."
         },
         {
             "category": "Library",
@@ -239,7 +239,7 @@
         {
             "category": "Library",
             "question": "Can I download resources?",
-            "answer": "Downloads depend on the permissions set by Bitstack and the resource contributor. Some resources may be freely accessible, while others may require BTS Credits, account access, or specific permissions."
+            "answer": "Downloads depend on the permissions set by Bitstack and the resource contributor. Some resources may be freely accessible, while others may require BTS, account access, or specific permissions."
         },
         {
             "category": "Library",
@@ -259,7 +259,7 @@
         {
             "category": "Support",
             "question": "What issues can support help with?",
-            "answer": "Support can help with account access, profile issues, mentoring sessions, freelance projects, BTS Credits, library resources, payments, refunds, disputes, technical issues, and general platform questions."
+            "answer": "Support can help with account access, profile issues, mentoring sessions, freelance projects, BTS, library resources, payments, refunds, disputes, technical issues, and general platform questions."
         },
         {
             "category": "Support",
@@ -274,7 +274,7 @@
     ],
     "bottomCTA": {
         "title": "Still need help?",
-        "description": "Contact Bitstack support for account issues, learning services, freelance projects, BTS Credits, library resources, payments, disputes, or platform questions.",
+        "description": "Contact Bitstack support for account issues, learning services, freelance projects, BTS, library resources, payments, disputes, or platform questions.",
         "button": {
             "label": "Contact Support",
             "link": "/support"

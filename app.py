@@ -45,6 +45,10 @@ def signin():
 def join():
     return render_template('join.html')
 
+@app.route('/about-us')
+def about_us():
+    return render_template('about.html')
+
 @app.route('/faqs')
 def faqs():
     faqs_path = os.path.join(app.static_folder, 'FAQs', 'FAQs.json')
