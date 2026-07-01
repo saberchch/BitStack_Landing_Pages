@@ -4,7 +4,8 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Bitstack - Create Account</title>
-    <link class="w-full h-full" rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='img/favicon.svg') }}">
+    <meta name="description" content="Join Bitstack as a Student or Mentor. Create your account and become part of the ecosystem.">
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='img/favicon.svg') }}">
     
     <!-- Tailwind CSS v3 CDN -->
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
@@ -26,132 +27,796 @@
     <!-- Google Fonts (Inter) -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        input:focus {
+        body { font-family: 'Inter', sans-serif; }
+        input:focus, select:focus, textarea:focus {
             outline: none !important;
             box-shadow: 0 0 0 2px rgba(212, 160, 23, 0.2) !important;
         }
+        .form-section { display: none; }
+        .form-section.active { display: block; }
+
+        /* Role card selected state */
+        .role-card { transition: all 0.25s ease; cursor: pointer; }
+        .role-card:hover { transform: translateY(-2px); }
+        .role-card.selected {
+            border-color: #d4a017;
+            background: linear-gradient(135deg, rgba(212,160,23,0.06) 0%, rgba(212,160,23,0.02) 100%);
+            box-shadow: 0 0 0 1px #d4a017, 0 4px 20px rgba(212,160,23,0.1);
+        }
+        .role-card.selected .role-icon-wrap { background: rgba(212,160,23,0.12); color: #d4a017; }
+        .role-card.selected .role-title { color: #d4a017; }
+        .role-icon-wrap { transition: all 0.25s ease; }
+
+        /* Step indicator */
+        .step-dot { transition: all 0.3s ease; }
+        .step-dot.active { background: #d4a017; transform: scale(1.2); }
+        .step-dot.done { background: #d4a017; }
+        .step-line { transition: background 0.4s ease; }
+        .step-line.done { background: #d4a017; }
+
+        /* Progress animation */
+        @keyframes slideIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+        .step-panel { animation: slideIn 0.3s ease forwards; }
+
+        /* Sub-step panels — hidden by default, shown when .active */
+        .substep { display: none; }
+        .substep.active { display: block; animation: slideIn 0.3s ease forwards; }
+
+        /* File upload drag zone */
+        .upload-zone {
+            border: 2px dashed #e2e8f0;
+            transition: all 0.2s ease;
+        }
+        .upload-zone:hover, .upload-zone.dragover {
+            border-color: #d4a017;
+            background: rgba(212,160,23,0.03);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 4px; }
     </style>
 </head>
-<body class="bg-white min-h-screen h-full flex flex-col items-center justify-center p-4 antialiased overflow-y-auto">
-    
-    <!-- Subtle background glow -->
-    <div class="absolute top-0 right-0 w-80 h-80 bg-bts-gold/5 rounded-full filter blur-[100px] pointer-events-none"></div>
-    <div class="absolute bottom-0 left-0 w-80 h-80 bg-indigo-50/50 rounded-full filter blur-[100px] pointer-events-none"></div>
+<body class="bg-slate-50 min-h-screen flex flex-col items-center justify-start py-8 px-4 antialiased">
 
-    <!-- Main Card - Compact and height-optimized -->
-    <div class="w-full max-w-[420px] bg-white border border-slate-100 shadow-xl rounded-2xl p-6 md:p-8 relative z-10 flex flex-col justify-center my-auto">
-        
-        <!-- Logo Header -->
-        <div class="flex flex-col items-center mb-5">
-            {% from 'logo.html' import render_logo %}
-            <a href="/" class="flex items-center gap-3 mb-3 transform hover:scale-105 transition-transform duration-300">
-                {{ render_logo(theme='light', size='md') }}
-            </a>
-            <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight text-center">Create Account</h1>
-            <p class="text-slate-500 text-xs mt-1 text-center">Choose your role and set up your credentials</p>
-        </div>
+    <!-- Background decorations -->
+    <div class="fixed top-0 right-0 w-96 h-96 bg-bts-gold/5 rounded-full filter blur-[120px] pointer-events-none"></div>
+    <div class="fixed bottom-0 left-0 w-80 h-80 bg-indigo-100/40 rounded-full filter blur-[100px] pointer-events-none"></div>
 
-        <form action="#" class="space-y-4" method="POST">
-            <!-- Role Selector -->
-            <div class="space-y-2">
-                <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block">
-                    Select Pathway
-                </label>
-                <div class="grid grid-cols-3 gap-2">
-                    
-                    <!-- Student -->
-                    <label class="cursor-pointer group">
-                        <input checked="" class="peer sr-only" name="role" type="radio" value="student"/>
-                        <div class="h-20 flex flex-col items-center justify-center gap-1 border border-slate-200 bg-slate-50 rounded-xl peer-checked:border-bts-gold peer-checked:bg-bts-gold/5 peer-checked:text-bts-gold text-slate-500 hover:border-slate-300 hover:bg-slate-100/50 transition-all duration-200">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+    <!-- Main Container -->
+    <div class="w-full max-w-xl relative z-10">
+
+        <!-- Logo -->
+        {% from 'logo.html' import render_logo %}
+        <a href="/" class="flex items-center gap-3 mb-8 justify-center transform hover:scale-105 transition-transform duration-300">
+            {{ render_logo(theme='light', size='md') }}
+        </a>
+
+        <!-- Card -->
+        <div class="bg-white border border-slate-100 shadow-xl rounded-3xl overflow-hidden">
+
+            <!-- ===== STEP 1: Choose Role ===== -->
+            <div id="step-role" class="step-panel p-7">
+                <div class="text-center mb-7">
+                    <h1 class="text-2xl font-black text-slate-900 tracking-tight">Create Your Account</h1>
+                    <p class="text-slate-500 text-sm mt-1">Who are you joining as?</p>
+                </div>
+
+                <!-- Role Selection -->
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <!-- Student Card -->
+                    <div id="card-student" class="role-card bg-white border-2 border-slate-200 rounded-2xl p-5 text-center"
+                         onclick="selectRole('student')">
+                        <div class="role-icon-wrap w-14 h-14 rounded-xl bg-slate-100 text-slate-500 flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
                             </svg>
-                            <span class="text-[10px] font-bold uppercase tracking-wider">Student</span>
                         </div>
-                    </label>
+                        <h3 class="role-title font-bold text-slate-800 text-base">Student</h3>
+                        <p class="text-xs text-slate-400 mt-1 leading-relaxed">Learn, grow and explore skills</p>
+                    </div>
 
-                    <!-- Mentor -->
-                    <label class="cursor-pointer group">
-                        <input class="peer sr-only" name="role" type="radio" value="mentor"/>
-                        <div class="h-20 flex flex-col items-center justify-center gap-1 border border-slate-200 bg-slate-50 rounded-xl peer-checked:border-bts-gold peer-checked:bg-bts-gold/5 peer-checked:text-bts-gold text-slate-500 hover:border-slate-300 hover:bg-slate-100/50 transition-all duration-200">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    <!-- Mentor Card -->
+                    <div id="card-mentor" class="role-card bg-white border-2 border-slate-200 rounded-2xl p-5 text-center"
+                         onclick="selectRole('mentor')">
+                        <div class="role-icon-wrap w-14 h-14 rounded-xl bg-slate-100 text-slate-500 flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                             </svg>
-                            <span class="text-[10px] font-bold uppercase tracking-wider">Mentor</span>
                         </div>
-                    </label>
+                        <h3 class="role-title font-bold text-slate-800 text-base">Mentor</h3>
+                        <p class="text-xs text-slate-400 mt-1 leading-relaxed">Share expertise &amp; guide learners</p>
+                    </div>
+                </div>
 
-                    <!-- Freelancer -->
-                    <label class="cursor-pointer group">
-                        <input class="peer sr-only" name="role" type="radio" value="freelancer"/>
-                        <div class="h-20 flex flex-col items-center justify-center gap-1 border border-slate-200 bg-slate-50 rounded-xl peer-checked:border-bts-gold peer-checked:bg-bts-gold/5 peer-checked:text-bts-gold text-slate-500 hover:border-slate-300 hover:bg-slate-100/50 transition-all duration-200">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                            <span class="text-[10px] font-bold uppercase tracking-wider">Freelance</span>
-                        </div>
-                    </label>
+                <!-- Mentor approval notice -->
+                <div id="mentor-notice" class="hidden bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 mb-6">
+                    <div class="flex items-start gap-3">
+                        <svg class="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                        <p class="text-xs text-amber-700 font-medium">Mentor accounts require qualification review. Your application will be approved by our team before activation.</p>
+                    </div>
+                </div>
 
+                <button id="btn-role-next" onclick="goToStep(2)"
+                    class="w-full h-12 bg-bts-gold hover:bg-bts-gold-hover text-white font-bold rounded-xl shadow-md shadow-bts-gold/20 hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm tracking-wide disabled:opacity-40 disabled:cursor-not-allowed"
+                    disabled>
+                    Continue
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+
+                <!-- Google Sign In (Student only) -->
+                <div id="google-section" class="hidden mt-4">
+                    <div class="flex items-center gap-3 my-4">
+                        <div class="flex-1 h-px bg-slate-100"></div>
+                        <span class="text-xs text-slate-400 font-medium">or continue with</span>
+                        <div class="flex-1 h-px bg-slate-100"></div>
+                    </div>
+                    <button type="button"
+                        class="w-full h-11 border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-semibold rounded-xl transition-all duration-200 flex items-center justify-center gap-3 text-sm">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24">
+                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                        </svg>
+                        Sign up with Google
+                    </button>
                 </div>
             </div>
 
-            <!-- Email Address Input -->
-            <div class="space-y-1">
-                <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block" for="email">
-                    Email Address
-                </label>
-                <input 
-                    class="w-full h-11 bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 rounded-xl px-4 text-sm focus:bg-white focus:border-bts-gold transition-all duration-200" 
-                    id="email" 
-                    name="email" 
-                    placeholder="name@example.com" 
-                    required="" 
-                    type="email"
-                />
+            <!-- ===== STEP 2a: Student Form ===== -->
+            <div id="step-student" class="step-panel hidden">
+                <!-- Progress Header -->
+                <div class="bg-slate-50 border-b border-slate-100 px-7 py-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-2">
+                            <div class="w-7 h-7 rounded-full bg-bts-gold/10 flex items-center justify-center">
+                                <svg class="w-4 h-4 text-bts-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
+                                </svg>
+                            </div>
+                            <span class="text-sm font-bold text-slate-700">Student Registration</span>
+                        </div>
+                        <button onclick="goToStep(1)" class="text-xs text-slate-400 hover:text-bts-gold transition-colors font-medium flex items-center gap-1">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                            </svg>
+                            Change role
+                        </button>
+                    </div>
+                    <!-- Step dots -->
+                    <div class="flex items-center gap-2">
+                        <div class="step-dot w-2 h-2 rounded-full active" id="sdot-1"></div>
+                        <div class="flex-1 h-0.5 bg-slate-200 step-line" id="sline-1"></div>
+                        <div class="step-dot w-2 h-2 rounded-full bg-slate-200" id="sdot-2"></div>
+                        <div class="flex-1 h-0.5 bg-slate-200 step-line" id="sline-2"></div>
+                        <div class="step-dot w-2 h-2 rounded-full bg-slate-200" id="sdot-3"></div>
+                    </div>
+                </div>
+
+                <div class="p-7">
+                    <form id="form-student" action="#" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="role" value="student">
+
+                        <!-- SUB-STEP 1: Basic Info -->
+                        <div id="sstep-1" class="substep active space-y-4">
+                            <div>
+                                <h2 class="text-lg font-black text-slate-900">Basic Information</h2>
+                                <p class="text-xs text-slate-400 mt-0.5">Step 1 of 3 — Your personal details</p>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-3">
+                                <div class="space-y-1">
+                                    <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block" for="s-firstname">First Name</label>
+                                    <input id="s-firstname" name="first_name" type="text" placeholder="John" required
+                                        class="w-full h-11 bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 rounded-xl px-4 text-sm focus:bg-white focus:border-bts-gold transition-all duration-200">
+                                </div>
+                                <div class="space-y-1">
+                                    <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block" for="s-lastname">Last Name</label>
+                                    <input id="s-lastname" name="last_name" type="text" placeholder="Doe" required
+                                        class="w-full h-11 bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 rounded-xl px-4 text-sm focus:bg-white focus:border-bts-gold transition-all duration-200">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-3">
+                                <div class="space-y-1">
+                                    <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block" for="s-age">Age</label>
+                                    <input id="s-age" name="age" type="number" min="13" max="99" placeholder="22" required
+                                        class="w-full h-11 bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 rounded-xl px-4 text-sm focus:bg-white focus:border-bts-gold transition-all duration-200">
+                                </div>
+                                <div class="space-y-1">
+                                    <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block" for="s-phone">Phone Number</label>
+                                    <input id="s-phone" name="phone" type="tel" placeholder="+1 234 567 890" required
+                                        class="w-full h-11 bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 rounded-xl px-4 text-sm focus:bg-white focus:border-bts-gold transition-all duration-200">
+                                </div>
+                            </div>
+
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block" for="s-education">Level of Education</label>
+                                <select id="s-education" name="education_level" required
+                                    class="w-full h-11 bg-slate-50 border border-slate-200 text-slate-800 rounded-xl px-4 text-sm focus:bg-white focus:border-bts-gold transition-all duration-200 appearance-none">
+                                    <option value="" disabled selected>Select your level…</option>
+                                    <option>High School</option>
+                                    <option>Associate's Degree</option>
+                                    <option>Bachelor's Degree</option>
+                                    <option>Master's Degree</option>
+                                    <option>PhD / Doctorate</option>
+                                    <option>Self-taught / Bootcamp</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+
+                            <button type="button" onclick="studentNext(2)"
+                                class="w-full h-12 bg-bts-gold hover:bg-bts-gold-hover text-white font-bold rounded-xl shadow-md shadow-bts-gold/20 hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm tracking-wide">
+                                Continue
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- SUB-STEP 2: Account Info -->
+                        <div id="sstep-2" class="substep space-y-4">
+                            <div>
+                                <h2 class="text-lg font-black text-slate-900">Account Setup</h2>
+                                <p class="text-xs text-slate-400 mt-0.5">Step 2 of 3 — Your login credentials</p>
+                            </div>
+
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block" for="s-email">Email Address</label>
+                                <input id="s-email" name="email" type="email" placeholder="name@example.com" required
+                                    class="w-full h-11 bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 rounded-xl px-4 text-sm focus:bg-white focus:border-bts-gold transition-all duration-200">
+                            </div>
+
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block" for="s-password">Password</label>
+                                <div class="relative">
+                                    <input id="s-password" name="password" type="password" placeholder="Min. 8 characters" required
+                                        class="w-full h-11 bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 rounded-xl px-4 pr-11 text-sm focus:bg-white focus:border-bts-gold transition-all duration-200">
+                                    <button type="button" onclick="togglePwd('s-password', this)" class="absolute right-3 top-3 text-slate-400 hover:text-slate-600">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block" for="s-confirm">Confirm Password</label>
+                                <div class="relative">
+                                    <input id="s-confirm" name="confirm_password" type="password" placeholder="Re-enter password" required
+                                        class="w-full h-11 bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 rounded-xl px-4 pr-11 text-sm focus:bg-white focus:border-bts-gold transition-all duration-200">
+                                    <button type="button" onclick="togglePwd('s-confirm', this)" class="absolute right-3 top-3 text-slate-400 hover:text-slate-600">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-3 pt-1">
+                                <button type="button" onclick="studentNext(1)"
+                                    class="h-12 px-5 border border-slate-200 text-slate-600 font-semibold rounded-xl hover:bg-slate-50 transition-all duration-200 flex items-center gap-2 text-sm">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                                    </svg>
+                                    Back
+                                </button>
+                                <button type="button" onclick="studentNext(3)"
+                                    class="flex-1 h-12 bg-bts-gold hover:bg-bts-gold-hover text-white font-bold rounded-xl shadow-md shadow-bts-gold/20 hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm tracking-wide">
+                                    Continue
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!-- Google Divider (Student only) -->
+                            <div class="flex items-center gap-3">
+                                <div class="flex-1 h-px bg-slate-100"></div>
+                                <span class="text-xs text-slate-400 font-medium">or</span>
+                                <div class="flex-1 h-px bg-slate-100"></div>
+                            </div>
+                            <button type="button"
+                                class="w-full h-11 border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-semibold rounded-xl transition-all duration-200 flex items-center justify-center gap-3 text-sm">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24">
+                                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                                </svg>
+                                Continue with Google
+                            </button>
+                        </div>
+
+                        <!-- SUB-STEP 3: Review & Submit -->
+                        <div id="sstep-3" class="substep space-y-5">
+                            <div>
+                                <h2 class="text-lg font-black text-slate-900">Review &amp; Join</h2>
+                                <p class="text-xs text-slate-400 mt-0.5">Step 3 of 3 — Almost there!</p>
+                            </div>
+
+                            <!-- Terms -->
+                            <div class="bg-slate-50 rounded-xl p-4 space-y-3">
+                                <label class="flex items-start gap-3 cursor-pointer">
+                                    <input type="checkbox" id="s-terms" name="terms" required
+                                        class="mt-0.5 w-4 h-4 rounded border-slate-300 text-bts-gold focus:ring-bts-gold/30 flex-shrink-0">
+                                    <span class="text-xs text-slate-600 leading-relaxed">I agree to the
+                                        <a href="/terms" class="text-bts-gold font-semibold hover:underline">Terms of Service</a> and
+                                        <a href="/privacy" class="text-bts-gold font-semibold hover:underline">Privacy Policy</a>
+                                    </span>
+                                </label>
+                                <label class="flex items-start gap-3 cursor-pointer">
+                                    <input type="checkbox" id="s-newsletter" name="newsletter"
+                                        class="mt-0.5 w-4 h-4 rounded border-slate-300 text-bts-gold focus:ring-bts-gold/30 flex-shrink-0">
+                                    <span class="text-xs text-slate-600 leading-relaxed">Receive platform updates and learning opportunities</span>
+                                </label>
+                            </div>
+
+                            <div class="flex gap-3">
+                                <button type="button" onclick="studentNext(2)"
+                                    class="h-12 px-5 border border-slate-200 text-slate-600 font-semibold rounded-xl hover:bg-slate-50 transition-all duration-200 flex items-center gap-2 text-sm">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                                    </svg>
+                                    Back
+                                </button>
+                                <button type="submit"
+                                    class="flex-1 h-12 bg-bts-gold hover:bg-bts-gold-hover text-white font-bold rounded-xl shadow-md shadow-bts-gold/20 hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm tracking-wide">
+                                    Create My Account
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
 
-            <!-- Password Input -->
-            <div class="space-y-1">
-                <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block" for="password">
-                    Password
-                </label>
-                <input 
-                    class="w-full h-11 bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 rounded-xl px-4 text-sm focus:bg-white focus:border-bts-gold transition-all duration-200" 
-                    id="password" 
-                    name="password" 
-                    placeholder="••••••••" 
-                    required="" 
-                    type="password"
-                />
+            <!-- ===== STEP 2b: Mentor Form ===== -->
+            <div id="step-mentor" class="step-panel hidden">
+                <!-- Progress Header -->
+                <div class="bg-slate-50 border-b border-slate-100 px-7 py-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-2">
+                            <div class="w-7 h-7 rounded-full bg-bts-gold/10 flex items-center justify-center">
+                                <svg class="w-4 h-4 text-bts-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138z" />
+                                </svg>
+                            </div>
+                            <span class="text-sm font-bold text-slate-700">Mentor Application</span>
+                        </div>
+                        <button onclick="goToStep(1)" class="text-xs text-slate-400 hover:text-bts-gold transition-colors font-medium flex items-center gap-1">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                            </svg>
+                            Change role
+                        </button>
+                    </div>
+                    <!-- Step dots (4 steps) -->
+                    <div class="flex items-center gap-2">
+                        <div class="step-dot w-2 h-2 rounded-full active" id="mdot-1"></div>
+                        <div class="flex-1 h-0.5 bg-slate-200 step-line" id="mline-1"></div>
+                        <div class="step-dot w-2 h-2 rounded-full bg-slate-200" id="mdot-2"></div>
+                        <div class="flex-1 h-0.5 bg-slate-200 step-line" id="mline-2"></div>
+                        <div class="step-dot w-2 h-2 rounded-full bg-slate-200" id="mdot-3"></div>
+                        <div class="flex-1 h-0.5 bg-slate-200 step-line" id="mline-3"></div>
+                        <div class="step-dot w-2 h-2 rounded-full bg-slate-200" id="mdot-4"></div>
+                    </div>
+                </div>
+
+                <div class="p-7">
+                    <form id="form-mentor" action="#" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="role" value="mentor">
+
+                        <!-- MENTOR SUB-STEP 1: Personal Info -->
+                        <div id="mstep-1" class="substep active space-y-4">
+                            <div>
+                                <h2 class="text-lg font-black text-slate-900">Personal Information</h2>
+                                <p class="text-xs text-slate-400 mt-0.5">Step 1 of 4 — Tell us about yourself</p>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-3">
+                                <div class="space-y-1">
+                                    <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block" for="m-firstname">First Name</label>
+                                    <input id="m-firstname" name="first_name" type="text" placeholder="Jane" required
+                                        class="w-full h-11 bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 rounded-xl px-4 text-sm focus:bg-white focus:border-bts-gold transition-all duration-200">
+                                </div>
+                                <div class="space-y-1">
+                                    <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block" for="m-lastname">Last Name</label>
+                                    <input id="m-lastname" name="last_name" type="text" placeholder="Smith" required
+                                        class="w-full h-11 bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 rounded-xl px-4 text-sm focus:bg-white focus:border-bts-gold transition-all duration-200">
+                                </div>
+                            </div>
+
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block" for="m-email">Email Address</label>
+                                <input id="m-email" name="email" type="email" placeholder="professional@example.com" required
+                                    class="w-full h-11 bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 rounded-xl px-4 text-sm focus:bg-white focus:border-bts-gold transition-all duration-200">
+                            </div>
+
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block" for="m-phone">Phone Number</label>
+                                <input id="m-phone" name="phone" type="tel" placeholder="+1 234 567 890" required
+                                    class="w-full h-11 bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 rounded-xl px-4 text-sm focus:bg-white focus:border-bts-gold transition-all duration-200">
+                            </div>
+
+                            <button type="button" onclick="mentorNext(2)"
+                                class="w-full h-12 bg-bts-gold hover:bg-bts-gold-hover text-white font-bold rounded-xl shadow-md shadow-bts-gold/20 hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm tracking-wide">
+                                Continue
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- MENTOR SUB-STEP 2: Professional Info -->
+                        <div id="mstep-2" class="substep space-y-4">
+                            <div>
+                                <h2 class="text-lg font-black text-slate-900">Professional Background</h2>
+                                <p class="text-xs text-slate-400 mt-0.5">Step 2 of 4 — Your expertise &amp; qualifications</p>
+                            </div>
+
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block" for="m-title">Professional Title</label>
+                                <input id="m-title" name="professional_title" type="text" placeholder="e.g. Senior Blockchain Engineer" required
+                                    class="w-full h-11 bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 rounded-xl px-4 text-sm focus:bg-white focus:border-bts-gold transition-all duration-200">
+                            </div>
+
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block" for="m-expertise">Area of Expertise</label>
+                                <input id="m-expertise" name="expertise" type="text" placeholder="e.g. DeFi, Smart Contracts, Web3" required
+                                    class="w-full h-11 bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 rounded-xl px-4 text-sm focus:bg-white focus:border-bts-gold transition-all duration-200">
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-3">
+                                <div class="space-y-1">
+                                    <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block" for="m-degree">Highest Degree</label>
+                                    <select id="m-degree" name="highest_degree" required
+                                        class="w-full h-11 bg-slate-50 border border-slate-200 text-slate-800 rounded-xl px-4 text-sm focus:bg-white focus:border-bts-gold transition-all duration-200 appearance-none">
+                                        <option value="" disabled selected>Select…</option>
+                                        <option>Bachelor's Degree</option>
+                                        <option>Master's Degree</option>
+                                        <option>PhD / Doctorate</option>
+                                        <option>Professional Certification</option>
+                                        <option>Associate's Degree</option>
+                                        <option>Self-taught / Industry</option>
+                                    </select>
+                                </div>
+                                <div class="space-y-1">
+                                    <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block" for="m-years">Years of Experience</label>
+                                    <select id="m-years" name="years_experience" required
+                                        class="w-full h-11 bg-slate-50 border border-slate-200 text-slate-800 rounded-xl px-4 text-sm focus:bg-white focus:border-bts-gold transition-all duration-200 appearance-none">
+                                        <option value="" disabled selected>Select…</option>
+                                        <option>1–2 years</option>
+                                        <option>3–5 years</option>
+                                        <option>6–10 years</option>
+                                        <option>10+ years</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block" for="m-institution">Current Institution / Company</label>
+                                <input id="m-institution" name="institution" type="text" placeholder="e.g. MIT, Google, Coinbase" required
+                                    class="w-full h-11 bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 rounded-xl px-4 text-sm focus:bg-white focus:border-bts-gold transition-all duration-200">
+                            </div>
+
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block" for="m-bio">Short Bio / Teaching Philosophy</label>
+                                <textarea id="m-bio" name="bio" rows="3" placeholder="Tell students about your background and how you like to teach…" required
+                                    class="w-full bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 rounded-xl px-4 py-3 text-sm focus:bg-white focus:border-bts-gold transition-all duration-200 resize-none"></textarea>
+                            </div>
+
+                            <div class="flex gap-3">
+                                <button type="button" onclick="mentorNext(1)"
+                                    class="h-12 px-5 border border-slate-200 text-slate-600 font-semibold rounded-xl hover:bg-slate-50 transition-all duration-200 flex items-center gap-2 text-sm">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                                    </svg>
+                                    Back
+                                </button>
+                                <button type="button" onclick="mentorNext(3)"
+                                    class="flex-1 h-12 bg-bts-gold hover:bg-bts-gold-hover text-white font-bold rounded-xl shadow-md shadow-bts-gold/20 hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm tracking-wide">
+                                    Continue
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- MENTOR SUB-STEP 3: Documents -->
+                        <div id="mstep-3" class="substep space-y-4">
+                            <div>
+                                <h2 class="text-lg font-black text-slate-900">Supporting Documents</h2>
+                                <p class="text-xs text-slate-400 mt-0.5">Step 3 of 4 — Upload your credentials for review</p>
+                            </div>
+
+                            <!-- CV -->
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block">
+                                    CV / Resume <span class="text-bts-gold">*</span>
+                                </label>
+                                <label for="m-cv" class="upload-zone rounded-xl p-5 flex flex-col items-center justify-center gap-2 cursor-pointer">
+                                    <svg class="w-8 h-8 text-slate-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                    </svg>
+                                    <div class="text-center">
+                                        <p class="text-sm font-semibold text-slate-700" id="cv-label">Drop your CV here or <span class="text-bts-gold">browse</span></p>
+                                        <p class="text-xs text-slate-400 mt-0.5">PDF, DOC, DOCX — Max 10MB</p>
+                                    </div>
+                                    <input id="m-cv" name="cv" type="file" accept=".pdf,.doc,.docx" class="sr-only" onchange="updateLabel(this, 'cv-label')" required>
+                                </label>
+                            </div>
+
+                            <!-- Degree -->
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block">
+                                    Degree Certificate <span class="text-bts-gold">*</span>
+                                </label>
+                                <label for="m-degree-doc" class="upload-zone rounded-xl p-5 flex flex-col items-center justify-center gap-2 cursor-pointer">
+                                    <svg class="w-8 h-8 text-slate-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                                    </svg>
+                                    <div class="text-center">
+                                        <p class="text-sm font-semibold text-slate-700" id="degree-doc-label">Degree certificate or <span class="text-bts-gold">browse</span></p>
+                                        <p class="text-xs text-slate-400 mt-0.5">PDF, JPG, PNG — Max 10MB</p>
+                                    </div>
+                                    <input id="m-degree-doc" name="degree_document" type="file" accept=".pdf,.jpg,.jpeg,.png" class="sr-only" onchange="updateLabel(this, 'degree-doc-label')" required>
+                                </label>
+                            </div>
+
+                            <!-- Certifications (optional) -->
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-2 block">
+                                    Additional Certifications
+                                    <span class="text-slate-300 font-normal normal-case tracking-normal text-[10px]">— optional</span>
+                                </label>
+                                <label for="m-certs" class="upload-zone rounded-xl p-5 flex flex-col items-center justify-center gap-2 cursor-pointer">
+                                    <svg class="w-8 h-8 text-slate-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                                    </svg>
+                                    <div class="text-center">
+                                        <p class="text-sm font-semibold text-slate-700" id="certs-label">Upload certificates or <span class="text-bts-gold">browse</span></p>
+                                        <p class="text-xs text-slate-400 mt-0.5">PDF, JPG, PNG — Multiple allowed</p>
+                                    </div>
+                                    <input id="m-certs" name="certifications" type="file" accept=".pdf,.jpg,.jpeg,.png" multiple class="sr-only" onchange="updateLabel(this, 'certs-label', true)">
+                                </label>
+                            </div>
+
+                            <div class="flex gap-3">
+                                <button type="button" onclick="mentorNext(2)"
+                                    class="h-12 px-5 border border-slate-200 text-slate-600 font-semibold rounded-xl hover:bg-slate-50 transition-all duration-200 flex items-center gap-2 text-sm">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                                    </svg>
+                                    Back
+                                </button>
+                                <button type="button" onclick="mentorNext(4)"
+                                    class="flex-1 h-12 bg-bts-gold hover:bg-bts-gold-hover text-white font-bold rounded-xl shadow-md shadow-bts-gold/20 hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm tracking-wide">
+                                    Continue
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- MENTOR SUB-STEP 4: Password & Submit -->
+                        <div id="mstep-4" class="substep space-y-4">
+                            <div>
+                                <h2 class="text-lg font-black text-slate-900">Secure Your Account</h2>
+                                <p class="text-xs text-slate-400 mt-0.5">Step 4 of 4 — Create your password</p>
+                            </div>
+
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block" for="m-password">Password</label>
+                                <div class="relative">
+                                    <input id="m-password" name="password" type="password" placeholder="Min. 8 characters" required
+                                        class="w-full h-11 bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 rounded-xl px-4 pr-11 text-sm focus:bg-white focus:border-bts-gold transition-all duration-200">
+                                    <button type="button" onclick="togglePwd('m-password', this)" class="absolute right-3 top-3 text-slate-400 hover:text-slate-600">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block" for="m-confirm">Confirm Password</label>
+                                <div class="relative">
+                                    <input id="m-confirm" name="confirm_password" type="password" placeholder="Re-enter password" required
+                                        class="w-full h-11 bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 rounded-xl px-4 pr-11 text-sm focus:bg-white focus:border-bts-gold transition-all duration-200">
+                                    <button type="button" onclick="togglePwd('m-confirm', this)" class="absolute right-3 top-3 text-slate-400 hover:text-slate-600">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Notice box -->
+                            <div class="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3">
+                                <div class="flex items-start gap-3">
+                                    <svg class="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                    </svg>
+                                    <div>
+                                        <p class="text-xs text-amber-800 font-bold mb-0.5">Account Pending Review</p>
+                                        <p class="text-xs text-amber-700">Your application will be reviewed by our team. You'll receive an email notification once your account is approved, typically within 2–3 business days.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Terms -->
+                            <label class="flex items-start gap-3 cursor-pointer">
+                                <input type="checkbox" id="m-terms" name="terms" required
+                                    class="mt-0.5 w-4 h-4 rounded border-slate-300 text-bts-gold focus:ring-bts-gold/30 flex-shrink-0">
+                                <span class="text-xs text-slate-600 leading-relaxed">I agree to the
+                                    <a href="/terms" class="text-bts-gold font-semibold hover:underline">Terms of Service</a> and
+                                    <a href="/privacy" class="text-bts-gold font-semibold hover:underline">Privacy Policy</a>
+                                </span>
+                            </label>
+
+                            <div class="flex gap-3">
+                                <button type="button" onclick="mentorNext(3)"
+                                    class="h-12 px-5 border border-slate-200 text-slate-600 font-semibold rounded-xl hover:bg-slate-50 transition-all duration-200 flex items-center gap-2 text-sm">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                                    </svg>
+                                    Back
+                                </button>
+                                <button type="submit"
+                                    class="flex-1 h-12 bg-bts-gold hover:bg-bts-gold-hover text-white font-bold rounded-xl shadow-md shadow-bts-gold/20 hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm tracking-wide">
+                                    Submit Application
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
             </div>
 
-            <!-- Submit Button -->
-            <div class="pt-2">
-                <button 
-                    class="w-full h-12 bg-bts-gold hover:bg-bts-gold-hover text-white font-bold rounded-xl shadow-md shadow-bts-gold/10 hover:shadow-lg transition-all duration-300 flex items-center justify-center text-base tracking-wide" 
-                    type="submit"
-                >
-                    Create Account
-                </button>
-            </div>
-        </form>
+        </div><!-- End Card -->
 
-        <!-- Redirect Link -->
-        <div class="mt-6 text-center border-t border-slate-100 pt-4">
-            <p class="text-xs text-slate-500">
-                Already active? 
-                <a class="text-bts-gold font-bold hover:underline ml-1" href="/signin">
-                    Authenticate here
-                </a>
-            </p>
-        </div>
+        <!-- Sign In Link -->
+        <p class="text-center text-xs text-slate-400 mt-6 pb-4">
+            Already have an account?
+            <a href="/signin" class="text-bts-gold font-bold hover:underline ml-1">Sign In</a>
+        </p>
 
-    </div>
+    </div><!-- End Container -->
+
+<script>
+    let currentRole = null;
+
+    // ---- Role Selection ----
+    function selectRole(role) {
+        currentRole = role;
+        ['student', 'mentor'].forEach(r => {
+            const card = document.getElementById('card-' + r);
+            card.classList.toggle('selected', r === role);
+        });
+        document.getElementById('btn-role-next').disabled = false;
+        document.getElementById('mentor-notice').classList.toggle('hidden', role !== 'mentor');
+        document.getElementById('google-section').classList.toggle('hidden', role !== 'student');
+    }
+
+    // ---- Step navigation (top-level) ----
+    function goToStep(step) {
+        document.getElementById('step-role').classList.add('hidden');
+        document.getElementById('step-student').classList.add('hidden');
+        document.getElementById('step-mentor').classList.add('hidden');
+
+        if (step === 1) {
+            document.getElementById('step-role').classList.remove('hidden');
+        } else if (step === 2) {
+            if (currentRole === 'student') {
+                document.getElementById('step-student').classList.remove('hidden');
+                studentNext(1);
+            } else if (currentRole === 'mentor') {
+                document.getElementById('step-mentor').classList.remove('hidden');
+                mentorNext(1);
+            }
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ---- Student sub-steps ----
+    function studentNext(step) {
+        [1, 2, 3].forEach(i => {
+            const el = document.getElementById('sstep-' + i);
+            el.classList.remove('active');
+        });
+        document.getElementById('sstep-' + step).classList.add('active');
+
+        // Update dots
+        [1, 2, 3].forEach(i => {
+            const dot = document.getElementById('sdot-' + i);
+            const line = document.getElementById('sline-' + (i));
+            dot.classList.remove('active', 'done', 'bg-slate-200');
+            if (line) line.classList.remove('done');
+
+            if (i < step) {
+                dot.classList.add('done');
+                if (line) line.classList.add('done');
+            } else if (i === step) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.add('bg-slate-200');
+            }
+        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ---- Mentor sub-steps ----
+    function mentorNext(step) {
+        [1, 2, 3, 4].forEach(i => {
+            const el = document.getElementById('mstep-' + i);
+            el.classList.remove('active');
+        });
+        document.getElementById('mstep-' + step).classList.add('active');
+
+        // Update dots
+        [1, 2, 3, 4].forEach(i => {
+            const dot = document.getElementById('mdot-' + i);
+            const line = document.getElementById('mline-' + i);
+            dot.classList.remove('active', 'done', 'bg-slate-200');
+            if (line) line.classList.remove('done');
+
+            if (i < step) {
+                dot.classList.add('done');
+                if (line) line.classList.add('done');
+            } else if (i === step) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.add('bg-slate-200');
+            }
+        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ---- Password toggle ----
+    function togglePwd(inputId, btn) {
+        const input = document.getElementById(inputId);
+        const isText = input.type === 'text';
+        input.type = isText ? 'password' : 'text';
+    }
+
+    // ---- File upload label update ----
+    function updateLabel(input, labelId, multiple) {
+        const label = document.getElementById(labelId);
+        if (!input.files.length) return;
+        if (multiple && input.files.length > 1) {
+            label.innerHTML = `<span class="text-bts-gold font-semibold">${input.files.length} files selected</span>`;
+        } else {
+            label.innerHTML = `<span class="text-bts-gold font-semibold">${input.files[0].name}</span>`;
+        }
+    }
+
+    // ---- Drag over effects ----
+    document.querySelectorAll('.upload-zone').forEach(zone => {
+        zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('dragover'); });
+        zone.addEventListener('dragleave', () => zone.classList.remove('dragover'));
+        zone.addEventListener('drop', () => zone.classList.remove('dragover'));
+    });
+</script>
 </body>
 </html>
