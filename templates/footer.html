@@ -1,10 +1,11 @@
+{% from 'logo.html' import render_logo %}
 <footer class="bg-bts-navy text-white pt-20 pb-10 mt-auto">
     <div class="container-wide">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
             <!-- Brand Info -->
             <div class="lg:col-span-3">
-                <div class="flex items-center gap-2 mb-6" data-purpose="footer-logo">
-                    <img src="{{ url_for('static', filename='img/logo-white.svg') }}" alt="Bitstacks" class="h-20">
+                <div class="mb-6" data-purpose="footer-logo">
+                    {{ render_logo(theme='dark', size='md') }}
                 </div>
                 <p class="text-slate-400 text-lg mb-8 leading-relaxed max-w-xs">
                     Institutes • Mentors • Freelance Projects • Resources

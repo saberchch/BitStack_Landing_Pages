@@ -1,0 +1,18 @@
+{% macro render_logo(theme='light', size='md') %}
+<div class="flex items-center gap-3">
+    <!-- Logo Icon -->
+    <div class="relative flex items-center justify-center {% if size == 'lg' %}w-20 h-20{% else %}w-14 h-14{% endif %} bg-gradient-to-tr from-yellow-500/20 to-amber-500/20 rounded-2xl border border-yellow-500/30 shadow-lg shadow-yellow-500/5 animate-bounce">
+        <svg fill="none" class="{% if size == 'lg' %}w-10 h-10{% else %}w-7 h-7{% endif %} {% if theme == 'dark' %}text-yellow-400{% else %}text-yellow-500{% endif %}" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 2L4 8L16 14L28 8L16 2Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+            <path d="M4 16L16 22L28 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+            <path d="M4 24L16 30L28 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+    </div>
+
+    <!-- Text Branding -->
+    <div class="space-y-0.5 text-left">
+        <h1 class="{% if size == 'lg' %}text-2xl{% else %}text-xl{% endif %} font-black tracking-tight {% if theme == 'dark' %}text-white{% else %}text-slate-900{% endif %} leading-none">BITSTACKS</h1>
+        <p class="{% if size == 'lg' %}text-[10px]{% else %}text-[9px]{% endif %} uppercase tracking-widest {% if theme == 'dark' %}text-yellow-500{% else %}text-yellow-600{% endif %} font-extrabold leading-none">Ecosystem Sync</p>
+    </div>
+</div>
+{% endmacro %}

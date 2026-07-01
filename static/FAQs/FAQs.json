@@ -38,7 +38,7 @@
             "label": "Clients"
         },
         {
-            "id": "bts-credits",
+            "id": "bts-token",
             "label": "BTS"
         },
         {
@@ -184,22 +184,22 @@
         {
             "category": "BTS",
             "question": "What are BTS?",
-            "answer": "BTS are internal platform credits used within the Bitstack ecosystem. They may be used for services, rewards, refunds, learning resources, mentoring sessions, freelance projects, and other approved platform activities."
+            "answer": "BTS are internal platform token used within the Bitstack ecosystem. They may be used for services, rewards, refunds, learning resources, mentoring sessions, freelance projects, and other approved platform activities."
         },
         {
             "category": "BTS",
             "question": "Are BTS cryptocurrency?",
-            "answer": "No. BTS are not a public cryptocurrency, not a speculative token, and not publicly tradable outside Bitstack. They are internal platform credits designed to support activity inside the Bitstack ecosystem."
+            "answer": "No. BTS are not a public cryptocurrency, not a speculative token, and not publicly tradable outside Bitstack. They are internal platform token designed to support activity inside the Bitstack ecosystem."
         },
         {
             "category": "BTS",
             "question": "What can I use BTS for?",
-            "answer": "Depending on platform rules, BTS may be used for booking mentor sessions, accessing selected learning resources, paying for freelance project milestones, receiving refunds, receiving rewards for contributions, and participating in internal platform services."
+            "answer": "Depending on platform rules, BTS may be used for booking mentor sessions, accessing selected learning resources, honoring for freelance project milestones, receiving refunds, receiving rewards for contributions, and participating in internal platform services."
         },
         {
             "category": "BTS",
             "question": "Can I transfer BTS to another user?",
-            "answer": "BTS should only be used according to Bitstack rules. In the first version of the platform, it is better to avoid open user-to-user transfers unless they are part of an approved service workflow, such as project payments, mentoring payments, or refunds."
+            "answer": "BTS should only be used according to Bitstack rules. Bts tokens are not tangible and not directly transarable directly between users. all end user transaction are processed, valued, and secure in local currency"
         },
         {
             "category": "BTS",
@@ -214,7 +214,7 @@
         {
             "category": "BTS",
             "question": "Why does Bitstack use BTS?",
-            "answer": "BTS help organize internal payments, rewards, refunds, and platform activity in a transparent and structured way. They make it easier to connect learning, mentoring, freelancing, and resource contribution inside one ecosystem."
+            "answer": "BTS help organize internal transactions, rewards, refunds, and platform activity in a transparent and structured way. They make it easier to connect learning, mentoring, freelancing, and resource contribution inside one ecosystem."
         },
         {
             "category": "Library",

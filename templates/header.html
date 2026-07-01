@@ -1,8 +1,9 @@
+{% from 'logo.html' import render_logo %}
 <header class="sticky top-0 z-50 bg-white border-b border-gray-100">
     <nav class="container-wide h-20 flex items-center justify-between">
         <!-- Logo -->
-        <a href="/" class="flex items-center gap-2" data-purpose="logo">
-            <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Bitstacks" class="h-16 lg:h-20">
+        <a href="/" class="flex items-center gap-3" data-purpose="logo">
+            {{ render_logo(theme='light', size='md') }}
         </a>
         <!-- Navigation Links -->
         <div class="hidden lg:flex items-center gap-6 text-lg font-medium text-gray-600">
