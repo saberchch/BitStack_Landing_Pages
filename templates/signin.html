@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" class="h-full">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Bitstack - Sign In</title>
     <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='img/favicon.svg') }}">
-    
+
     <!-- Tailwind CSS v3 CDN -->
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
     <script>
@@ -22,48 +23,46 @@
             }
         }
     </script>
-    
+
     <!-- Google Fonts (Inter) -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
 
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
+
         input:focus {
             outline: none !important;
             box-shadow: 0 0 0 2px rgba(212, 160, 23, 0.2) !important;
         }
     </style>
 </head>
+
 <body class="bg-white min-h-screen h-full flex flex-col items-center justify-center p-4 antialiased overflow-hidden">
-    
+
     <!-- Subtle abstract light-gold glow in the background to feel premium -->
-    <div class="absolute top-0 right-0 w-80 h-80 bg-bts-gold/5 rounded-full filter blur-[100px] pointer-events-none"></div>
-    <div class="absolute bottom-0 left-0 w-80 h-80 bg-indigo-50/50 rounded-full filter blur-[100px] pointer-events-none"></div>
+    <div class="absolute top-0 right-0 w-80 h-80 bg-bts-gold/5 rounded-full filter blur-[100px] pointer-events-none">
+    </div>
+    <div
+        class="absolute bottom-0 left-0 w-80 h-80 bg-indigo-50/50 rounded-full filter blur-[100px] pointer-events-none">
+    </div>
 
     <!-- Main Card - Designed to fit within viewport height -->
-    <div class="w-full max-w-[400px] bg-white border border-slate-100 shadow-xl rounded-2xl p-6 md:p-8 relative z-10 flex flex-col justify-center">
-        
+    <div
+        class="w-full max-w-[400px] bg-white border border-slate-100 shadow-xl rounded-2xl p-6 md:p-8 relative z-10 flex flex-col justify-center">
+
         <!-- Logo Header -->
         <div class="flex flex-col items-center mb-6">
-            <a href="/" class="flex items-center gap-3 mb-3 transform hover:scale-105 transition-transform duration-300">
-                <!-- Logo Icon -->
-                <div class="relative flex items-center justify-center w-14 h-14 bg-gradient-to-tr from-yellow-500/20 to-amber-500/20 rounded-2xl border border-yellow-500/30 shadow-lg shadow-yellow-500/5 animate-bounce">
-                    <svg fill="none" class="w-7 h-7 text-yellow-500" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16 2L4 8L16 14L28 8L16 2Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-                        <path d="M4 16L16 22L28 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-                        <path d="M4 24L16 30L28 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-                    </svg>
-                </div>
-
-                <div class="space-y-0.5 text-left">
-                    <h1 class="text-xl font-black tracking-tight text-slate-900 leading-none">BITSTACKS</h1>
-                    <p class="text-[9px] uppercase tracking-widest text-yellow-600 font-extrabold leading-none">Ecosystem Sync</p>
-                </div>
+            {% from 'logo.html' import render_logo %}
+            <!-- Logo -->
+            <a href="/" class="flex items-center gap-3" data-purpose="logo">
+                {{ render_logo(theme='light', size='md') }}
             </a>
+
             <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight text-center">Welcome Back</h1>
             <p class="text-slate-500 text-xs mt-1 text-center">Authenticate to access your workspace</p>
         </div>
@@ -74,14 +73,9 @@
                 <label class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block" for="email">
                     Email Address
                 </label>
-                <input 
-                    class="w-full h-11 bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 rounded-xl px-4 text-sm focus:bg-white focus:border-bts-gold transition-all duration-200" 
-                    id="email" 
-                    name="email" 
-                    placeholder="name@example.com" 
-                    required="" 
-                    type="email"
-                />
+                <input
+                    class="w-full h-11 bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 rounded-xl px-4 text-sm focus:bg-white focus:border-bts-gold transition-all duration-200"
+                    id="email" name="email" placeholder="name@example.com" required="" type="email" />
             </div>
 
             <!-- Password Input -->
@@ -94,22 +88,16 @@
                         Forgot password?
                     </a>
                 </div>
-                <input 
-                    class="w-full h-11 bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 rounded-xl px-4 text-sm focus:bg-white focus:border-bts-gold transition-all duration-200" 
-                    id="password" 
-                    name="password" 
-                    placeholder="••••••••" 
-                    required="" 
-                    type="password"
-                />
+                <input
+                    class="w-full h-11 bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 rounded-xl px-4 text-sm focus:bg-white focus:border-bts-gold transition-all duration-200"
+                    id="password" name="password" placeholder="••••••••" required="" type="password" />
             </div>
 
             <!-- Submit Button -->
             <div class="pt-2">
-                <button 
-                    class="w-full h-12 bg-bts-gold hover:bg-bts-gold-hover text-white font-bold rounded-xl shadow-md shadow-bts-gold/10 hover:shadow-lg transition-all duration-300 flex items-center justify-center text-base tracking-wide" 
-                    type="submit"
-                >
+                <button
+                    class="w-full h-12 bg-bts-gold hover:bg-bts-gold-hover text-white font-bold rounded-xl shadow-md shadow-bts-gold/10 hover:shadow-lg transition-all duration-300 flex items-center justify-center text-base tracking-wide"
+                    type="submit">
                     Sign In
                 </button>
             </div>
@@ -118,7 +106,7 @@
         <!-- Redirect Link -->
         <div class="mt-6 text-center border-t border-slate-100 pt-4">
             <p class="text-xs text-slate-500">
-                New to Bitstack? 
+                New to Bitstack?
                 <a class="text-bts-gold font-bold hover:underline ml-1" href="/join">
                     Create an account
                 </a>
@@ -127,4 +115,5 @@
 
     </div>
 </body>
+
 </html>
